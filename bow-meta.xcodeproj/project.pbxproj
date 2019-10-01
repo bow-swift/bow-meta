@@ -14,6 +14,7 @@
 		113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E32343A47D00D9C1AD /* ImportVisitor.swift */; };
 		113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* MemberVisitor.swift */; };
 		113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */; };
+		113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E92343A56D00D9C1AD /* CopyVisitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		113746E32343A47D00D9C1AD /* ImportVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitor.swift; sourceTree = "<group>"; };
 		113746E52343A4ED00D9C1AD /* MemberVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVisitor.swift; sourceTree = "<group>"; };
 		113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedPropertyVisitor.swift; sourceTree = "<group>"; };
+		113746E92343A56D00D9C1AD /* CopyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
+				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* MemberVisitor.swift */,
 			);
@@ -243,6 +246,7 @@
 				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
 				113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
+				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
