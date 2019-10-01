@@ -11,6 +11,7 @@
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
 		113746E12343A43700D9C1AD /* Bow in Frameworks */ = {isa = PBXBuildFile; productRef = 113746E02343A43700D9C1AD /* Bow */; };
+		113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E32343A47D00D9C1AD /* ImportVisitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746C923439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetaTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		113746E32343A47D00D9C1AD /* ImportVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		113746BB23439F9C00D9C1AD /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				113746E22343A45F00D9C1AD /* Visitors */,
 				113746BD23439F9C00D9C1AD /* Info.plist */,
 			);
 			path = Meta;
@@ -102,6 +105,14 @@
 				113746C623439F9C00D9C1AD /* MetaTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		113746E22343A45F00D9C1AD /* Visitors */ = {
+			isa = PBXGroup;
+			children = (
+				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
+			);
+			path = Visitors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,7 @@
 		113746D123439F9C00D9C1AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -435,6 +448,7 @@
 		113746D223439F9C00D9C1AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
