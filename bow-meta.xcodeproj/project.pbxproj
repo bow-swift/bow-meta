@@ -12,6 +12,8 @@
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
 		113746E12343A43700D9C1AD /* Bow in Frameworks */ = {isa = PBXBuildFile; productRef = 113746E02343A43700D9C1AD /* Bow */; };
 		113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E32343A47D00D9C1AD /* ImportVisitor.swift */; };
+		113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* MemberVisitor.swift */; };
+		113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		113746C923439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		113746E32343A47D00D9C1AD /* ImportVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitor.swift; sourceTree = "<group>"; };
+		113746E52343A4ED00D9C1AD /* MemberVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVisitor.swift; sourceTree = "<group>"; };
+		113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedPropertyVisitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,9 @@
 		113746E22343A45F00D9C1AD /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
+				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
+				113746E52343A4ED00D9C1AD /* MemberVisitor.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
+				113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
