@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
+		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
+		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
+		113746E12343A43700D9C1AD /* Bow in Frameworks */ = {isa = PBXBuildFile; productRef = 113746E02343A43700D9C1AD /* Bow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113746E12343A43700D9C1AD /* Bow in Frameworks */,
+				113746DF2343A43700D9C1AD /* BowEffects in Frameworks */,
+				113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +131,11 @@
 			dependencies = (
 			);
 			name = Meta;
+			packageProductDependencies = (
+				113746DB2343A3F500D9C1AD /* SwiftSyntax */,
+				113746DE2343A43700D9C1AD /* BowEffects */,
+				113746E02343A43700D9C1AD /* Bow */,
+			);
 			productName = "bow-meta";
 			productReference = 113746B923439F9C00D9C1AD /* Meta.framework */;
 			productType = "com.apple.product-type.framework";
@@ -176,6 +187,10 @@
 				Base,
 			);
 			mainGroup = 113746AF23439F9C00D9C1AD;
+			packageReferences = (
+				113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */,
+			);
 			productRefGroup = 113746BA23439F9C00D9C1AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -467,6 +482,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.50000.0;
+			};
+		};
+		113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bow-swift/bow.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		113746DB2343A3F500D9C1AD /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+		113746DE2343A43700D9C1AD /* BowEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = BowEffects;
+		};
+		113746E02343A43700D9C1AD /* Bow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = Bow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 113746B023439F9C00D9C1AD /* Project object */;
 }
