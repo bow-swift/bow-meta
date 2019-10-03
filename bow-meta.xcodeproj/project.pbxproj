@@ -12,12 +12,14 @@
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
 		113746E12343A43700D9C1AD /* Bow in Frameworks */ = {isa = PBXBuildFile; productRef = 113746E02343A43700D9C1AD /* Bow */; };
 		113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E32343A47D00D9C1AD /* ImportVisitor.swift */; };
-		113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* MemberVisitor.swift */; };
+		113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* FieldVisitor.swift */; };
 		113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */; };
 		113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E92343A56D00D9C1AD /* CopyVisitor.swift */; };
 		119DD0982344E27400E1E62D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0962344E27000E1E62D /* Article.swift */; };
 		119DD09B2344E35400E1E62D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0992344E35200E1E62D /* Author.swift */; };
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
+		119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */; };
+		119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A52344E7D400E1E62D /* Field+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +39,14 @@
 		113746C923439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		113746E32343A47D00D9C1AD /* ImportVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitor.swift; sourceTree = "<group>"; };
-		113746E52343A4ED00D9C1AD /* MemberVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVisitor.swift; sourceTree = "<group>"; };
+		113746E52343A4ED00D9C1AD /* FieldVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitor.swift; sourceTree = "<group>"; };
 		113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedPropertyVisitor.swift; sourceTree = "<group>"; };
 		113746E92343A56D00D9C1AD /* CopyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitor.swift; sourceTree = "<group>"; };
 		119DD0962344E27000E1E62D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		119DD0992344E35200E1E62D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
+		119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitorTests.swift; sourceTree = "<group>"; };
+		119DD0A52344E7D400E1E62D /* Field+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		113746C623439F9C00D9C1AD /* MetaTests */ = {
 			isa = PBXGroup;
 			children = (
+				119DD0A42344E7C500E1E62D /* Extensions */,
 				113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */,
 				113746C923439F9C00D9C1AD /* Info.plist */,
 				119DD0952344E26000E1E62D /* Fixtures */,
@@ -126,8 +131,8 @@
 			children = (
 				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
+				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
-				113746E52343A4ED00D9C1AD /* MemberVisitor.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -144,9 +149,18 @@
 		119DD09C2344E39B00E1E62D /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
+				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 			);
 			path = Visitors;
+			sourceTree = "<group>";
+		};
+		119DD0A42344E7C500E1E62D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
-				113746E62343A4ED00D9C1AD /* MemberVisitor.swift in Sources */,
+				113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 			);
@@ -281,6 +295,8 @@
 			files = (
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
+				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
+				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
