@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: xcode11
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - set -o pipefail
+        - swift test
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
