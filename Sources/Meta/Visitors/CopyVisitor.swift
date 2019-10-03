@@ -1,9 +1,9 @@
 import SwiftSyntax
 
-class CopyVisitor: SyntaxVisitor {
-    private(set) var generatedCode = ""
+public class CopyVisitor: SyntaxVisitor {
+    public private(set) var generatedCode = ""
     
-    override func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
+    override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
         let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
         let fields = node.fields
         

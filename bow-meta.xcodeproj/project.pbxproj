@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
+		11175E8323462F1100F26788 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E8123462EE700F26788 /* CopyVisitorTests.swift */; };
+		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
+		11175E8B2346335700F26788 /* testGeneratedCopyMethod.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
@@ -33,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11175E8123462EE700F26788 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
+		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
+		11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGeneratedCopyMethod.1.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +72,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */,
+				11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11175E872346334D00F26788 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				11175E882346334D00F26788 /* CopyVisitorTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		11175E882346334D00F26788 /* CopyVisitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */,
+			);
+			path = CopyVisitorTests;
+			sourceTree = "<group>";
+		};
 		113746AF23439F9C00D9C1AD = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +125,9 @@
 		113746C623439F9C00D9C1AD /* MetaTests */ = {
 			isa = PBXGroup;
 			children = (
-				119DD0A42344E7C500E1E62D /* Extensions */,
 				113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */,
 				113746C923439F9C00D9C1AD /* Info.plist */,
+				119DD0A42344E7C500E1E62D /* Extensions */,
 				119DD0952344E26000E1E62D /* Fixtures */,
 				119DD09C2344E39B00E1E62D /* Visitors */,
 			);
@@ -149,6 +173,8 @@
 		119DD09C2344E39B00E1E62D /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
+				11175E872346334D00F26788 /* __Snapshots__ */,
+				11175E8123462EE700F26788 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 			);
@@ -159,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
+				11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +240,9 @@
 				113746C523439F9C00D9C1AD /* PBXTargetDependency */,
 			);
 			name = MetaTests;
+			packageProductDependencies = (
+				11175E7F23462ED000F26788 /* SnapshotTesting */,
+			);
 			productName = "bow-metaTests";
 			productReference = 113746C223439F9C00D9C1AD /* MetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -249,6 +279,7 @@
 			packageReferences = (
 				113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */,
 				113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */,
+				11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 113746BA23439F9C00D9C1AD /* Products */;
 			projectDirPath = "";
@@ -296,8 +327,11 @@
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
+				11175E8323462F1100F26788 /* CopyVisitorTests.swift in Sources */,
+				11175E8B2346335700F26788 /* testGeneratedCopyMethod.1.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +588,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.6.0;
+			};
+		};
 		113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-syntax.git";
@@ -573,6 +615,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		11175E7F23462ED000F26788 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
 		113746DB2343A3F500D9C1AD /* SwiftSyntax */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */;
