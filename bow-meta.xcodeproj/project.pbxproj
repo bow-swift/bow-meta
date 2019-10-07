@@ -33,6 +33,9 @@
 		1143341F234B4F3700BFF775 /* Kleisli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143341E234B4F3700BFF775 /* Kleisli.swift */; };
 		11433421234B4FAA00BFF775 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433420234B4FAA00BFF775 /* IO.swift */; };
 		11433423234B50E200BFF775 /* CopyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433422234B50E200BFF775 /* CopyGenerator.swift */; };
+		11433433234B75C600BFF775 /* OpticsGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143342A234B75C600BFF775 /* OpticsGenerator.framework */; };
+		1143343A234B75C600BFF775 /* OpticsGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1143342C234B75C600BFF775 /* OpticsGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1143344B234B766000BFF775 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433444234B763100BFF775 /* main.swift */; };
 		119DD0982344E27400E1E62D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0962344E27000E1E62D /* Article.swift */; };
 		119DD09B2344E35400E1E62D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0992344E35200E1E62D /* Author.swift */; };
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
@@ -47,6 +50,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 113746B823439F9C00D9C1AD;
 			remoteInfo = "bow-meta";
+		};
+		11433434234B75C600BFF775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 113746B023439F9C00D9C1AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11433429234B75C600BFF775;
+			remoteInfo = OpticsGenerator;
+		};
+		11433446234B763D00BFF775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 113746B023439F9C00D9C1AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 113746B823439F9C00D9C1AD;
+			remoteInfo = Meta;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,6 +94,12 @@
 		1143341E234B4F3700BFF775 /* Kleisli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kleisli.swift; sourceTree = "<group>"; };
 		11433420234B4FAA00BFF775 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
 		11433422234B50E200BFF775 /* CopyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyGenerator.swift; sourceTree = "<group>"; };
+		1143342A234B75C600BFF775 /* OpticsGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpticsGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1143342C234B75C600BFF775 /* OpticsGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpticsGenerator.h; sourceTree = "<group>"; };
+		1143342D234B75C600BFF775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11433432234B75C600BFF775 /* OpticsGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11433439234B75C600BFF775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11433444234B763100BFF775 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		119DD0962344E27000E1E62D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		119DD0992344E35200E1E62D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
@@ -104,6 +127,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11433427234B75C600BFF775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1143342F234B75C600BFF775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11433433234B75C600BFF775 /* OpticsGenerator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +151,7 @@
 				113746D323439FE000D9C1AD /* Sources */,
 				113746D423439FEC00D9C1AD /* Tests */,
 				113746BA23439F9C00D9C1AD /* Products */,
+				11433448234B764B00BFF775 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +160,8 @@
 			children = (
 				113746B923439F9C00D9C1AD /* Meta.framework */,
 				113746C223439F9C00D9C1AD /* MetaTests.xctest */,
+				1143342A234B75C600BFF775 /* OpticsGenerator.framework */,
+				11433432234B75C600BFF775 /* OpticsGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				113746BB23439F9C00D9C1AD /* Meta */,
+				1143342B234B75C600BFF775 /* OpticsGenerator */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -161,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				113746C623439F9C00D9C1AD /* MetaTests */,
+				11433436234B75C600BFF775 /* OpticsGeneratorTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -259,6 +302,31 @@
 			path = Environments;
 			sourceTree = "<group>";
 		};
+		1143342B234B75C600BFF775 /* OpticsGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				1143342C234B75C600BFF775 /* OpticsGenerator.h */,
+				1143342D234B75C600BFF775 /* Info.plist */,
+				11433444234B763100BFF775 /* main.swift */,
+			);
+			path = OpticsGenerator;
+			sourceTree = "<group>";
+		};
+		11433436234B75C600BFF775 /* OpticsGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11433439234B75C600BFF775 /* Info.plist */,
+			);
+			path = OpticsGeneratorTests;
+			sourceTree = "<group>";
+		};
+		11433448234B764B00BFF775 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		119DD0952344E26000E1E62D /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +363,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11433425234B75C600BFF775 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1143343A234B75C600BFF775 /* OpticsGenerator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +421,45 @@
 			productReference = 113746C223439F9C00D9C1AD /* MetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		11433429234B75C600BFF775 /* OpticsGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1143343B234B75C600BFF775 /* Build configuration list for PBXNativeTarget "OpticsGenerator" */;
+			buildPhases = (
+				11433425234B75C600BFF775 /* Headers */,
+				11433426234B75C600BFF775 /* Sources */,
+				11433427234B75C600BFF775 /* Frameworks */,
+				11433428234B75C600BFF775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11433447234B763D00BFF775 /* PBXTargetDependency */,
+			);
+			name = OpticsGenerator;
+			packageProductDependencies = (
+			);
+			productName = OpticsGenerator;
+			productReference = 1143342A234B75C600BFF775 /* OpticsGenerator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		11433431234B75C600BFF775 /* OpticsGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1143343E234B75C600BFF775 /* Build configuration list for PBXNativeTarget "OpticsGeneratorTests" */;
+			buildPhases = (
+				1143342E234B75C600BFF775 /* Sources */,
+				1143342F234B75C600BFF775 /* Frameworks */,
+				11433430234B75C600BFF775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11433435234B75C600BFF775 /* PBXTargetDependency */,
+			);
+			name = OpticsGeneratorTests;
+			productName = OpticsGeneratorTests;
+			productReference = 11433432234B75C600BFF775 /* OpticsGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,6 +477,12 @@
 					113746C123439F9C00D9C1AD = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
+					};
+					11433429234B75C600BFF775 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					11433431234B75C600BFF775 = {
+						CreatedOnToolsVersion = 11.0;
 					};
 				};
 			};
@@ -385,6 +506,8 @@
 			targets = (
 				113746B823439F9C00D9C1AD /* Meta */,
 				113746C123439F9C00D9C1AD /* MetaTests */,
+				11433429234B75C600BFF775 /* OpticsGenerator */,
+				11433431234B75C600BFF775 /* OpticsGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,6 +525,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1143340C234B401600BFF775 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11433428234B75C600BFF775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11433430234B75C600BFF775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +584,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11433426234B75C600BFF775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1143344B234B766000BFF775 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1143342E234B75C600BFF775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -454,6 +606,16 @@
 			isa = PBXTargetDependency;
 			target = 113746B823439F9C00D9C1AD /* Meta */;
 			targetProxy = 113746C423439F9C00D9C1AD /* PBXContainerItemProxy */;
+		};
+		11433435234B75C600BFF775 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11433429234B75C600BFF775 /* OpticsGenerator */;
+			targetProxy = 11433434234B75C600BFF775 /* PBXContainerItemProxy */;
+		};
+		11433447234B763D00BFF775 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 113746B823439F9C00D9C1AD /* Meta */;
+			targetProxy = 11433446234B763D00BFF775 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -594,6 +756,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.bow-meta";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -619,6 +782,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.bow-meta";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -667,6 +831,90 @@
 			};
 			name = Release;
 		};
+		1143343C234B75C600BFF775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OpticsGenerator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGenerator";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1143343D234B75C600BFF775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OpticsGenerator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGenerator";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1143343F234B75C600BFF775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGeneratorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		11433440234B75C600BFF775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGeneratorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -693,6 +941,24 @@
 			buildConfigurations = (
 				113746D123439F9C00D9C1AD /* Debug */,
 				113746D223439F9C00D9C1AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1143343B234B75C600BFF775 /* Build configuration list for PBXNativeTarget "OpticsGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1143343C234B75C600BFF775 /* Debug */,
+				1143343D234B75C600BFF775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1143343E234B75C600BFF775 /* Build configuration list for PBXNativeTarget "OpticsGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1143343F234B75C600BFF775 /* Debug */,
+				11433440234B75C600BFF775 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

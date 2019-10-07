@@ -1,7 +1,7 @@
 import Bow
 import BowEffects
 
-extension Kleisli {
+public extension Kleisli {
     func widen<DD, E: Error>() -> EnvIO<DD, E, A> where D == Any, F == IOPartial<E> {
         self.contramap(id)
     }
