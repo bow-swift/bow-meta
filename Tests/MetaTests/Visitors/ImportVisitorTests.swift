@@ -10,7 +10,7 @@ class ImportVisitorTests: XCTestCase {
         let ast = try SyntaxTreeParser.parse(input)
         ast.walk(visitor)
         
-        let imports = visitor.imports.map { $0.description.trimmingCharacters(in: .whitespacesAndNewlines) }.sorted()
+        let imports = visitor.imports.sorted()
         let expected = ["import Meta", "import SwiftSyntax", "import XCTest"]
         
         XCTAssertEqual(imports, expected)
