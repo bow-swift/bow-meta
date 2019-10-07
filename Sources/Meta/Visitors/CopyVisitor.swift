@@ -1,6 +1,6 @@
 import SwiftSyntax
 
-public class CopyVisitor: SyntaxVisitor, Codegen {
+public class CopyVisitor: SyntaxVisitor, CodegenVisitor {
     public private(set) var generatedCode = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {

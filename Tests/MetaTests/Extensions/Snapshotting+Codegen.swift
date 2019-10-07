@@ -5,7 +5,7 @@ import Meta
 import BowEffects
 
 extension Snapshotting where Value == URL, Format == String {
-    static func generatedCode<T: Codegen>(_ visitor: T) -> Snapshotting<URL, String> {
+    static func generatedCode<T: CodegenVisitor>(_ visitor: T) -> Snapshotting<URL, String> {
         var strategy = Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
             let tree = try! SyntaxTreeParser.parse(url)
             tree.walk(visitor)

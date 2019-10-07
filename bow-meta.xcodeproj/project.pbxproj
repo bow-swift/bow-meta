@@ -18,8 +18,8 @@
 		113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* FieldVisitor.swift */; };
 		113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */; };
 		113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E92343A56D00D9C1AD /* CopyVisitor.swift */; };
-		114333F2234B2AF900BFF775 /* Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F1234B2AF900BFF775 /* Codegen.swift */; };
-		114333F8234B355800BFF775 /* GenerateCopyMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F7234B355800BFF775 /* GenerateCopyMethod.swift */; };
+		114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F1234B2AF900BFF775 /* CodegenVisitor.swift */; };
+		114333F8234B355800BFF775 /* GenerateCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F7234B355800BFF775 /* GenerateCode.swift */; };
 		114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */; };
 		11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */; };
 		1143340B234B401100BFF775 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FB234B3A6900BFF775 /* Company.swift */; };
@@ -62,8 +62,8 @@
 		113746E52343A4ED00D9C1AD /* FieldVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitor.swift; sourceTree = "<group>"; };
 		113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedPropertyVisitor.swift; sourceTree = "<group>"; };
 		113746E92343A56D00D9C1AD /* CopyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitor.swift; sourceTree = "<group>"; };
-		114333F1234B2AF900BFF775 /* Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codegen.swift; sourceTree = "<group>"; };
-		114333F7234B355800BFF775 /* GenerateCopyMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateCopyMethod.swift; sourceTree = "<group>"; };
+		114333F1234B2AF900BFF775 /* CodegenVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodegenVisitor.swift; sourceTree = "<group>"; };
+		114333F7234B355800BFF775 /* GenerateCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateCode.swift; sourceTree = "<group>"; };
 		114333FB234B3A6900BFF775 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyGeneratorTests.swift; sourceTree = "<group>"; };
 		11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		113746E22343A45F00D9C1AD /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
-				114333F1234B2AF900BFF775 /* Codegen.swift */,
+				114333F1234B2AF900BFF775 /* CodegenVisitor.swift */,
 				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
@@ -180,7 +180,7 @@
 		114333F6234B354600BFF775 /* Generators */ = {
 			isa = PBXGroup;
 			children = (
-				114333F7234B355800BFF775 /* GenerateCopyMethod.swift */,
+				114333F7234B355800BFF775 /* GenerateCode.swift */,
 				11433410234B438400BFF775 /* Algebras */,
 				11433413234B45EB00BFF775 /* Dependencies */,
 				11433424234B6EA400BFF775 /* Environments */,
@@ -421,11 +421,11 @@
 				113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */,
 				1143341F234B4F3700BFF775 /* Kleisli.swift in Sources */,
 				11433421234B4FAA00BFF775 /* IO.swift in Sources */,
-				114333F2234B2AF900BFF775 /* Codegen.swift in Sources */,
+				114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */,
 				1143340F234B430C00BFF775 /* Set.swift in Sources */,
 				1143341D234B4B4600BFF775 /* SwiftSyntaxCopyGenerator.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
-				114333F8234B355800BFF775 /* GenerateCopyMethod.swift in Sources */,
+				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
