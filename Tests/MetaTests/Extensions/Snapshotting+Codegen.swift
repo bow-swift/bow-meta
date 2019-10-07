@@ -2,6 +2,7 @@ import Foundation
 import SnapshotTesting
 import SwiftSyntax
 import Meta
+import BowEffects
 
 extension Snapshotting where Value == URL, Format == String {
     static func generatedCode<T: Codegen>(_ visitor: T) -> Snapshotting<URL, String> {
@@ -15,4 +16,14 @@ extension Snapshotting where Value == URL, Format == String {
     }
     
     static let copyMethod: Snapshotting<URL, String> = .generatedCode(CopyVisitor())
+    
+    static var copyGeneration: Snapshotting<URL, String> {
+        var strategy = Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
+            try! generateCopyMethod(forFilesIn: url.path)
+                .unsafeRunSync()
+            
+        }
+        strategy.pathExtension = "swift"
+        return strategy
+    }
 }
