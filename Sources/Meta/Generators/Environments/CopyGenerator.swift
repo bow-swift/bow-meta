@@ -10,6 +10,6 @@ extension CopyGenerator: HasFileSystem {
 
 extension CopyGenerator: HasCodeGenerator {
     public var generator: CodeGenerator {
-        SwiftSyntaxCopyGenerator()
+        SwiftSyntaxGenerator(visitor: CopyVisitor())
     }
 }

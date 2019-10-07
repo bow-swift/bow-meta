@@ -8,14 +8,13 @@ class BaseCodeGenerator: CodeGenerator {
         fatalError("Implement generate(for:) in subclasses")
     }
     
-    func generateImports(forFiles files: [String]) -> RIO<Any, String> {
-        files.map(URL.init(fileURLWithPath:))
-            .traverse(generateImport(forFile:))
-            .map { list in
-                list.combineAll()
-                    .sorted()
-                    .joined(separator: "\n")
-            }^
+    func generateImport(forFile file: URL) -> RIO<Any, Set<String>> {
+        Task.invoke {
+            let visitor = ImportVisitor()
+            let ast = try SyntaxTreeParser.parse(file)
+            ast.walk(visitor)
+            return visitor.imports
+        }.handleError { _ in Set() }^.env
     }
     
     func pack(code: String, imports: String) -> RIO<Any, String> {
@@ -26,14 +25,5 @@ class BaseCodeGenerator: CodeGenerator {
             \(code)
             """
         }.env
-    }
-
-    private func generateImport(forFile file: URL) -> RIO<Any, Set<String>> {
-        Task.invoke {
-            let visitor = ImportVisitor()
-            let ast = try SyntaxTreeParser.parse(file)
-            ast.walk(visitor)
-            return visitor.imports
-        }.handleError { _ in Set() }^.env
     }
 }

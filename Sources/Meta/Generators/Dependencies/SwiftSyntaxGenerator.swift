@@ -3,8 +3,14 @@ import SwiftSyntax
 import Bow
 import BowEffects
 
-class SwiftSyntaxCopyGenerator: BaseCodeGenerator {
-    override func generate(for file: URL) -> EnvIO<Any, Error, String> {
+class SwiftSyntaxGenerator: BaseCodeGenerator {
+    private let makeVisitor: () -> CodegenVisitor
+    
+    init(visitor: @autoclosure @escaping () -> CodegenVisitor) {
+        self.makeVisitor = visitor
+    }
+    
+    override func generate(for file: URL) -> RIO<Any, String> {
         self.generateCopyMethod(for: file).env
     }
     
@@ -12,7 +18,7 @@ class SwiftSyntaxCopyGenerator: BaseCodeGenerator {
         func generateCode(for file: URL) -> Task<String> {
             Task.invoke {
                 let ast = try SyntaxTreeParser.parse(file)
-                let visitor = CopyVisitor()
+                let visitor = self.makeVisitor()
                 ast.walk(visitor)
                 if visitor.generatedCode.isEmpty {
                     return ""
