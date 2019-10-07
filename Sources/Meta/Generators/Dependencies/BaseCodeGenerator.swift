@@ -3,9 +3,11 @@ import Bow
 import BowEffects
 import SwiftSyntax
 
-class BaseCodeGenerator {}
-
-extension BaseCodeGenerator: CodeGenerator {
+class BaseCodeGenerator: CodeGenerator {
+    func generate(for file: URL) -> RIO<Any, String> {
+        fatalError("Implement generate(for:) in subclasses")
+    }
+    
     func generateImports(forFiles files: [String]) -> RIO<Any, String> {
         files.map(URL.init(fileURLWithPath:))
             .traverse(generateImport(forFile:))

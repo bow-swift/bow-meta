@@ -17,11 +17,11 @@ extension Snapshotting where Value == URL, Format == String {
     
     static let copyMethod: Snapshotting<URL, String> = .generatedCode(CopyVisitor())
     
-    static var copyGeneration: Snapshotting<URL, String> {
+    static func copyGeneration<D: CodegenDependencies>(for environment: D) -> Snapshotting<URL, String> {
         var strategy = Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
-            try! generateCopyMethod(forFilesIn: url.path)
+            try! generateCode(forFilesIn: url.path)
+                .provide(environment)
                 .unsafeRunSync()
-            
         }
         strategy.pathExtension = "swift"
         return strategy

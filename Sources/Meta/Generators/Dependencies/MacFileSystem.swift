@@ -32,7 +32,7 @@ extension MacFileSystem: FileSystem {
     
     func write(code: String, in output: String) -> EnvIO<Any, Error, Void> {
         Task.invoke {
-            try code.write(toFile: "\(output)/CopyGenerated.swift", atomically: true, encoding: .utf8)
+            try code.write(toFile: output, atomically: true, encoding: .utf8)
         }.env
     }
 }

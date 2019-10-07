@@ -3,11 +3,9 @@ import SwiftSyntax
 import Bow
 import BowEffects
 
-class SwiftSyntaxCopyGenerator: BaseCodeGenerator {}
-
-extension SwiftSyntaxCopyGenerator: CopyGenerator {
-    func generate(for file: URL) -> EnvIO<Any, Error, String> {
-        EnvIO { _ in self.generateCopyMethod(for: file) }
+class SwiftSyntaxCopyGenerator: BaseCodeGenerator {
+    override func generate(for file: URL) -> EnvIO<Any, Error, String> {
+        self.generateCopyMethod(for: file).env
     }
     
     private func generateCopyMethod(for file: URL) -> Task<String> {

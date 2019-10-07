@@ -1,5 +1,6 @@
 import XCTest
 import SnapshotTesting
+import Meta
 
 class CopyGeneratorTests: XCTestCase {
     func testGeneratorMultipleFiles() {
@@ -8,6 +9,6 @@ class CopyGeneratorTests: XCTestCase {
             .deletingLastPathComponent()
             .appendingPathComponent("Fixtures")
         
-        assertSnapshot(matching: input, as: .copyGeneration)
+        assertSnapshot(matching: input, as: .copyGeneration(for: CopyGenerator()))
     }
 }
