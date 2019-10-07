@@ -15,7 +15,8 @@ DerivedData
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+**/*/xcuserdata
+**/*/xcshareddata
 Carthage/
 
 ## Other
@@ -44,3 +45,5 @@ Pods/
 
 ## OSX generated
 .DS_Store
+
+Package.resolved

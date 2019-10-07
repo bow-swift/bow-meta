@@ -3,11 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
+		11175E8323462F1100F26788 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E8123462EE700F26788 /* CopyVisitorTests.swift */; };
+		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
+		11175E8B2346335700F26788 /* testGeneratedCopyMethod.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
+		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
+		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
+		113746E12343A43700D9C1AD /* Bow in Frameworks */ = {isa = PBXBuildFile; productRef = 113746E02343A43700D9C1AD /* Bow */; };
+		113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E32343A47D00D9C1AD /* ImportVisitor.swift */; };
+		113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E52343A4ED00D9C1AD /* FieldVisitor.swift */; };
+		113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */; };
+		113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113746E92343A56D00D9C1AD /* CopyVisitor.swift */; };
+		114333F2234B2AF900BFF775 /* Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F1234B2AF900BFF775 /* Codegen.swift */; };
+		119DD0982344E27400E1E62D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0962344E27000E1E62D /* Article.swift */; };
+		119DD09B2344E35400E1E62D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0992344E35200E1E62D /* Author.swift */; };
+		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
+		119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */; };
+		119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A52344E7D400E1E62D /* Field+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,11 +38,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11175E8123462EE700F26788 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
+		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
+		11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGeneratedCopyMethod.1.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746C923439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetaTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		113746E32343A47D00D9C1AD /* ImportVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitor.swift; sourceTree = "<group>"; };
+		113746E52343A4ED00D9C1AD /* FieldVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitor.swift; sourceTree = "<group>"; };
+		113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedPropertyVisitor.swift; sourceTree = "<group>"; };
+		113746E92343A56D00D9C1AD /* CopyVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitor.swift; sourceTree = "<group>"; };
+		114333F1234B2AF900BFF775 /* Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codegen.swift; sourceTree = "<group>"; };
+		119DD0962344E27000E1E62D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		119DD0992344E35200E1E62D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
+		119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitorTests.swift; sourceTree = "<group>"; };
+		119DD0A52344E7D400E1E62D /* Field+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113746E12343A43700D9C1AD /* Bow in Frameworks */,
+				113746DF2343A43700D9C1AD /* BowEffects in Frameworks */,
+				113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,12 +74,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */,
+				11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11175E872346334D00F26788 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				11175E882346334D00F26788 /* CopyVisitorTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		11175E882346334D00F26788 /* CopyVisitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11175E892346334D00F26788 /* testGeneratedCopyMethod.1.swift */,
+			);
+			path = CopyVisitorTests;
+			sourceTree = "<group>";
+		};
 		113746AF23439F9C00D9C1AD = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +118,7 @@
 		113746BB23439F9C00D9C1AD /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				113746E22343A45F00D9C1AD /* Visitors */,
 				113746BD23439F9C00D9C1AD /* Info.plist */,
 			);
 			path = Meta;
@@ -76,8 +127,11 @@
 		113746C623439F9C00D9C1AD /* MetaTests */ = {
 			isa = PBXGroup;
 			children = (
-				113746C923439F9C00D9C1AD /* Info.plist */,
 				113746D72343A0CD00D9C1AD /* MetaTests-Bridging-Header.h */,
+				113746C923439F9C00D9C1AD /* Info.plist */,
+				119DD0A42344E7C500E1E62D /* Extensions */,
+				119DD0952344E26000E1E62D /* Fixtures */,
+				119DD09C2344E39B00E1E62D /* Visitors */,
 			);
 			path = MetaTests;
 			sourceTree = "<group>";
@@ -96,6 +150,47 @@
 				113746C623439F9C00D9C1AD /* MetaTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		113746E22343A45F00D9C1AD /* Visitors */ = {
+			isa = PBXGroup;
+			children = (
+				114333F1234B2AF900BFF775 /* Codegen.swift */,
+				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
+				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
+				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
+				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
+			);
+			path = Visitors;
+			sourceTree = "<group>";
+		};
+		119DD0952344E26000E1E62D /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				119DD0962344E27000E1E62D /* Article.swift */,
+				119DD0992344E35200E1E62D /* Author.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		119DD09C2344E39B00E1E62D /* Visitors */ = {
+			isa = PBXGroup;
+			children = (
+				11175E872346334D00F26788 /* __Snapshots__ */,
+				11175E8123462EE700F26788 /* CopyVisitorTests.swift */,
+				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
+				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
+			);
+			path = Visitors;
+			sourceTree = "<group>";
+		};
+		119DD0A42344E7C500E1E62D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
+				11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +220,11 @@
 			dependencies = (
 			);
 			name = Meta;
+			packageProductDependencies = (
+				113746DB2343A3F500D9C1AD /* SwiftSyntax */,
+				113746DE2343A43700D9C1AD /* BowEffects */,
+				113746E02343A43700D9C1AD /* Bow */,
+			);
 			productName = "bow-meta";
 			productReference = 113746B923439F9C00D9C1AD /* Meta.framework */;
 			productType = "com.apple.product-type.framework";
@@ -143,6 +243,9 @@
 				113746C523439F9C00D9C1AD /* PBXTargetDependency */,
 			);
 			name = MetaTests;
+			packageProductDependencies = (
+				11175E7F23462ED000F26788 /* SnapshotTesting */,
+			);
 			productName = "bow-metaTests";
 			productReference = 113746C223439F9C00D9C1AD /* MetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -176,6 +279,11 @@
 				Base,
 			);
 			mainGroup = 113746AF23439F9C00D9C1AD;
+			packageReferences = (
+				113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */,
+				11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 113746BA23439F9C00D9C1AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
+				113746E62343A4ED00D9C1AD /* FieldVisitor.swift in Sources */,
+				114333F2234B2AF900BFF775 /* Codegen.swift in Sources */,
+				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
+				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +328,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
+				119DD0982344E27400E1E62D /* Article.swift in Sources */,
+				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
+				11175E8323462F1100F26788 /* CopyVisitorTests.swift in Sources */,
+				11175E8B2346335700F26788 /* testGeneratedCopyMethod.1.swift in Sources */,
+				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
+				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +521,7 @@
 		113746D123439F9C00D9C1AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -420,6 +542,7 @@
 		113746D223439F9C00D9C1AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -467,6 +590,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.6.0;
+			};
+		};
+		113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.50000.0;
+			};
+		};
+		113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bow-swift/bow.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11175E7F23462ED000F26788 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		113746DB2343A3F500D9C1AD /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DA2343A3F500D9C1AD /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+		113746DE2343A43700D9C1AD /* BowEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = BowEffects;
+		};
+		113746E02343A43700D9C1AD /* Bow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = Bow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 113746B023439F9C00D9C1AD /* Project object */;
 }
