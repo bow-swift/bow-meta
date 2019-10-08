@@ -3,40 +3,55 @@ import SwiftSyntax
 import Bow
 import BowEffects
 
-class SwiftSyntaxGenerator: BaseCodeGenerator {
+class SwiftSyntaxGenerator: CodeGenerator {
     private let makeVisitor: () -> CodegenVisitor
     
     init(visitor: @autoclosure @escaping () -> CodegenVisitor) {
         self.makeVisitor = visitor
     }
     
-    override func generate(for file: URL) -> RIO<Any, String> {
-        self.generateCopyMethod(for: file).env
-    }
-    
-    private func generateCopyMethod(for file: URL) -> Task<String> {
-        func generateCode(for file: URL) -> Task<String> {
-            Task.invoke {
-                let ast = try SyntaxTreeParser.parse(file)
-                let visitor = self.makeVisitor()
-                ast.walk(visitor)
-                if visitor.generatedCode.isEmpty {
-                    return ""
-                } else {
-                    return """
-                    // MARK: - Generated from file \(file.lastPathComponent)
-                    
-                    \(visitor.generatedCode)
-                    """
-                }
-            }.handleError { _ in "" }^
-        }
-        
+    func generate(for file: URL) -> RIO<Any, String> {
         let code = Task<String>.var()
         
         return binding(
                  |<-ConsoleIO.print("Generating code for file: \(file.lastPathComponent)"),
-            code <- generateCode(for: file),
-            yield: code.get)^
+                 code <- self.runVisitor(for: file),
+            yield: code.get)^.env
+    }
+    
+    func generateImport(forFile file: URL) -> RIO<Any, Set<String>> {
+        Task.invoke {
+            let visitor = ImportVisitor()
+            let ast = try SyntaxTreeParser.parse(file)
+            ast.walk(visitor)
+            return visitor.imports
+        }.handleError { _ in Set() }^.env
+    }
+    
+    func pack(code: String, imports: String) -> RIO<Any, String> {
+        Task.invoke {
+            """
+            \(imports)
+            
+            \(code)
+            """
+        }.env
+    }
+    
+    func runVisitor(for file: URL) -> Task<String> {
+        Task.invoke {
+            let ast = try SyntaxTreeParser.parse(file)
+            let visitor = self.makeVisitor()
+            ast.walk(visitor)
+            if visitor.generatedCode.isEmpty {
+                return ""
+            } else {
+                return """
+                // MARK: - Generated from file \(file.lastPathComponent)
+                
+                \(visitor.generatedCode)
+                """
+            }
+        }.handleError { _ in "" }^
     }
 }
