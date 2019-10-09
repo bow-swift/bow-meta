@@ -10,6 +10,9 @@
 		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
 		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
 		111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */; };
+		111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8502234DCDBB003FE646 /* IsoVisitor.swift */; };
+		111F8505234DCF6F003FE646 /* BowOptics in Frameworks */ = {isa = PBXBuildFile; productRef = 111F8504234DCF6F003FE646 /* BowOptics */; };
+		111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8506234DD16E003FE646 /* IsoVisitorTests.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
@@ -69,6 +72,8 @@
 /* Begin PBXFileReference section */
 		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
 		111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
+		111F8502234DCDBB003FE646 /* IsoVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitor.swift; sourceTree = "<group>"; };
+		111F8506234DD16E003FE646 /* IsoVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitorTests.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +118,7 @@
 				113746E12343A43700D9C1AD /* Bow in Frameworks */,
 				113746DF2343A43700D9C1AD /* BowEffects in Frameworks */,
 				113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */,
+				111F8505234DCF6F003FE646 /* BowOptics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +220,7 @@
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
+				111F8502234DCDBB003FE646 /* IsoVisitor.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
+				111F8506234DD16E003FE646 /* IsoVisitorTests.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 				113746DB2343A3F500D9C1AD /* SwiftSyntax */,
 				113746DE2343A43700D9C1AD /* BowEffects */,
 				113746E02343A43700D9C1AD /* Bow */,
+				111F8504234DCF6F003FE646 /* BowOptics */,
 			);
 			productName = "bow-meta";
 			productReference = 113746B923439F9C00D9C1AD /* Meta.framework */;
@@ -558,6 +567,7 @@
 				1143340F234B430C00BFF775 /* Set.swift in Sources */,
 				1143341D234B4B4600BFF775 /* SwiftSyntaxGenerator.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
+				111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */,
 				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 			);
@@ -568,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
+				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
@@ -993,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		111F8504234DCF6F003FE646 /* BowOptics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = BowOptics;
 		};
 		113746DB2343A3F500D9C1AD /* SwiftSyntax */ = {
 			isa = XCSwiftPackageProductDependency;
