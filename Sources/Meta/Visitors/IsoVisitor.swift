@@ -29,11 +29,10 @@ public class IsoVisitor: SyntaxVisitor, CodegenVisitor {
     private func body(_ structName: String, _ fields: [Field]) -> String {
         let instance = structName.lowercased()
         let tuple = fields.map { field in "\(instance).\(field.name)" }.joined(separator: ", ")
-        let get = "{ \(instance) in (\(tuple))"
+        let get = "{ \(instance) in (\(tuple)) }"
         let reverseGet = "\(structName).init"
         return """
-               Iso(get: \(get),
-                   reverseGet: \(reverseGet))
+               Iso(get: \(get), reverseGet: \(reverseGet))
                """
     }
 }
