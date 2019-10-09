@@ -1,5 +1,5 @@
 import SwiftSyntax
 
-public protocol Codegen: SyntaxVisitor {
+public protocol CodegenVisitor: SyntaxVisitor {
     var generatedCode: String { get }
 }
