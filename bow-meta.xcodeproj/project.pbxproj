@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
 		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
+		111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
+		111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +337,7 @@
 		119DD09C2344E39B00E1E62D /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
+				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 			);
@@ -567,6 +570,7 @@
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
+				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
 				11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */,
 				114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */,

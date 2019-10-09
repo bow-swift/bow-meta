@@ -1,14 +1,15 @@
 import XCTest
-import SnapshotTesting
 import Meta
+import SnapshotTesting
 
-class CopyGeneratorTests: XCTestCase {
-    func testGeneratorMultipleFiles() {
+class CopyVisitorTests: XCTestCase {
+    func testGeneratedCopyMethod() {
         let input = URL(fileURLWithPath: String(#file))
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .appendingPathComponent("Fixtures")
+            .appendingPathComponent("Article.swift")
         
-        assertSnapshot(matching: input, as: .generatedCode(using: CopyGenerator()))
+        assertSnapshot(matching: input, as: .copyMethod)
     }
 }
