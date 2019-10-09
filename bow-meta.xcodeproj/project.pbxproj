@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		11039BF7234E845B0022EE33 /* LensVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11039BF6234E845B0022EE33 /* LensVisitor.swift */; };
 		11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11039BF8234E86590022EE33 /* LensVisitorTests.swift */; };
+		11039BFC234E87DC0022EE33 /* LensGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11039BFB234E87DC0022EE33 /* LensGenerator.swift */; };
+		11039BFE234E881C0022EE33 /* LensGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11039BFD234E881C0022EE33 /* LensGeneratorTests.swift */; };
+		11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11039C00234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift */; };
 		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
 		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
 		111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */; };
@@ -78,6 +81,9 @@
 /* Begin PBXFileReference section */
 		11039BF6234E845B0022EE33 /* LensVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensVisitor.swift; sourceTree = "<group>"; };
 		11039BF8234E86590022EE33 /* LensVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensVisitorTests.swift; sourceTree = "<group>"; };
+		11039BFB234E87DC0022EE33 /* LensGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensGenerator.swift; sourceTree = "<group>"; };
+		11039BFD234E881C0022EE33 /* LensGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensGeneratorTests.swift; sourceTree = "<group>"; };
+		11039C00234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testLensGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
 		111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
 		111F8502234DCDBB003FE646 /* IsoVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitor.swift; sourceTree = "<group>"; };
@@ -161,6 +167,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11039BFF234E885D0022EE33 /* LensGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11039C00234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift */,
+			);
+			path = LensGeneratorTests;
+			sourceTree = "<group>";
+		};
 		111F850E234DD338003FE646 /* IsoGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +277,7 @@
 				11433402234B3EAF00BFF775 /* __Snapshots__ */,
 				114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */,
 				111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */,
+				11039BFD234E881C0022EE33 /* LensGeneratorTests.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -279,6 +294,7 @@
 		11433402234B3EAF00BFF775 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				11039BFF234E885D0022EE33 /* LensGeneratorTests */,
 				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11433403234B3EAF00BFF775 /* CopyGeneratorTests */,
 			);
@@ -326,6 +342,7 @@
 			children = (
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
 				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
+				11039BFB234E87DC0022EE33 /* LensGenerator.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -585,6 +602,7 @@
 				11433412234B439200BFF775 /* FileSystem.swift in Sources */,
 				11433423234B50E200BFF775 /* CopyGenerator.swift in Sources */,
 				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
+				11039BFC234E87DC0022EE33 /* LensGenerator.swift in Sources */,
 				11433417234B468D00BFF775 /* CodeGenerator.swift in Sources */,
 				11039BF7234E845B0022EE33 /* LensVisitor.swift in Sources */,
 				11433415234B45FF00BFF775 /* MacFileSystem.swift in Sources */,
@@ -617,10 +635,12 @@
 				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,
 				114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
+				11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
 				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
+				11039BFE234E881C0022EE33 /* LensGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
