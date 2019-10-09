@@ -13,6 +13,10 @@
 		111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8502234DCDBB003FE646 /* IsoVisitor.swift */; };
 		111F8505234DCF6F003FE646 /* BowOptics in Frameworks */ = {isa = PBXBuildFile; productRef = 111F8504234DCF6F003FE646 /* BowOptics */; };
 		111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8506234DD16E003FE646 /* IsoVisitorTests.swift */; };
+		111F850A234DD28D003FE646 /* IsoGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8509234DD28D003FE646 /* IsoGenerator.swift */; };
+		111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */; };
+		111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */; };
+		111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
@@ -24,7 +28,6 @@
 		114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F1234B2AF900BFF775 /* CodegenVisitor.swift */; };
 		114333F8234B355800BFF775 /* GenerateCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F7234B355800BFF775 /* GenerateCode.swift */; };
 		114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */; };
-		11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */; };
 		1143340B234B401100BFF775 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FB234B3A6900BFF775 /* Company.swift */; };
 		1143340C234B401600BFF775 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11433408234B3F8400BFF775 /* README.md */; };
 		1143340F234B430C00BFF775 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143340E234B430C00BFF775 /* Set.swift */; };
@@ -74,6 +77,10 @@
 		111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
 		111F8502234DCDBB003FE646 /* IsoVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitor.swift; sourceTree = "<group>"; };
 		111F8506234DD16E003FE646 /* IsoVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitorTests.swift; sourceTree = "<group>"; };
+		111F8509234DD28D003FE646 /* IsoGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoGenerator.swift; sourceTree = "<group>"; };
+		111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoGeneratorTests.swift; sourceTree = "<group>"; };
+		111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testIsoGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
+		111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testCopyGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +94,6 @@
 		114333F7234B355800BFF775 /* GenerateCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateCode.swift; sourceTree = "<group>"; };
 		114333FB234B3A6900BFF775 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyGeneratorTests.swift; sourceTree = "<group>"; };
-		11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		11433408234B3F8400BFF775 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1143340E234B430C00BFF775 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		11433411234B439200BFF775 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
@@ -149,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111F850E234DD338003FE646 /* IsoGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */,
+			);
+			path = IsoGeneratorTests;
+			sourceTree = "<group>";
+		};
 		113746AF23439F9C00D9C1AD = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +255,7 @@
 			children = (
 				11433402234B3EAF00BFF775 /* __Snapshots__ */,
 				114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */,
+				111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -257,6 +272,7 @@
 		11433402234B3EAF00BFF775 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11433403234B3EAF00BFF775 /* CopyGeneratorTests */,
 			);
 			path = __Snapshots__;
@@ -265,7 +281,7 @@
 		11433403234B3EAF00BFF775 /* CopyGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
-				11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */,
+				111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */,
 			);
 			path = CopyGeneratorTests;
 			sourceTree = "<group>";
@@ -302,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
+				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -570,6 +587,7 @@
 				111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */,
 				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
+				111F850A234DD28D003FE646 /* IsoGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,16 +595,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */,
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
-				11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */,
+				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,
 				114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
