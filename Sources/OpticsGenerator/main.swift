@@ -47,7 +47,7 @@ func main() -> Task<Void> {
     return binding(
         (input, output) <- getArguments(),
                         |<-generateCopy(input.get, output.get),
-                        |<-generateIso(input.get, output.get)
+                        |<-generateIso(input.get, output.get),
         yield:())^
 }
 
