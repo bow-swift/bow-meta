@@ -26,10 +26,18 @@ func getArguments() -> Task<(URL, URL)> {
     }
 }
 
-func generateCopy(_ input: URL, _ output: URL) -> Task<Void> {
+func generate<D: CodegenDependencies>(_ input: URL, _ output: URL, _ filename: String, _ generator: D) -> Task<Void> {
     generateCode(forFilesIn: input.path,
-                 saveIn: output.appendingPathComponent("CopyGeneration.swift").path)
-        .provide(CopyGenerator())
+             saveIn: output.appendingPathComponent(filename).path)
+        .provide(generator)
+}
+
+func generateCopy(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "CopyGeneration.swift", CopyGenerator())
+}
+
+func generateIso(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "IsoGeneration.swift", IsoGenerator())
 }
 
 func main() -> Task<Void> {
@@ -39,6 +47,7 @@ func main() -> Task<Void> {
     return binding(
         (input, output) <- getArguments(),
                         |<-generateCopy(input.get, output.get),
+                        |<-generateIso(input.get, output.get)
         yield:())^
 }
 
