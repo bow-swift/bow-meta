@@ -10,6 +10,13 @@
 		11175E8023462ED000F26788 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11175E7F23462ED000F26788 /* SnapshotTesting */; };
 		11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */; };
 		111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */; };
+		111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8502234DCDBB003FE646 /* IsoVisitor.swift */; };
+		111F8505234DCF6F003FE646 /* BowOptics in Frameworks */ = {isa = PBXBuildFile; productRef = 111F8504234DCF6F003FE646 /* BowOptics */; };
+		111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8506234DD16E003FE646 /* IsoVisitorTests.swift */; };
+		111F850A234DD28D003FE646 /* IsoGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8509234DD28D003FE646 /* IsoGenerator.swift */; };
+		111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */; };
+		111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */; };
+		111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */; };
 		113746C323439F9C00D9C1AD /* Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113746B923439F9C00D9C1AD /* Meta.framework */; };
 		113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DB2343A3F500D9C1AD /* SwiftSyntax */; };
 		113746DF2343A43700D9C1AD /* BowEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 113746DE2343A43700D9C1AD /* BowEffects */; };
@@ -21,7 +28,6 @@
 		114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F1234B2AF900BFF775 /* CodegenVisitor.swift */; };
 		114333F8234B355800BFF775 /* GenerateCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333F7234B355800BFF775 /* GenerateCode.swift */; };
 		114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */; };
-		11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */; };
 		1143340B234B401100BFF775 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114333FB234B3A6900BFF775 /* Company.swift */; };
 		1143340C234B401600BFF775 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11433408234B3F8400BFF775 /* README.md */; };
 		1143340F234B430C00BFF775 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143340E234B430C00BFF775 /* Set.swift */; };
@@ -40,6 +46,7 @@
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
 		119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */; };
 		119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A52344E7D400E1E62D /* Field+Equatable.swift */; };
+		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +76,12 @@
 /* Begin PBXFileReference section */
 		11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Codegen.swift"; sourceTree = "<group>"; };
 		111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyVisitorTests.swift; sourceTree = "<group>"; };
+		111F8502234DCDBB003FE646 /* IsoVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitor.swift; sourceTree = "<group>"; };
+		111F8506234DD16E003FE646 /* IsoVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoVisitorTests.swift; sourceTree = "<group>"; };
+		111F8509234DD28D003FE646 /* IsoGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoGenerator.swift; sourceTree = "<group>"; };
+		111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoGeneratorTests.swift; sourceTree = "<group>"; };
+		111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testIsoGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
+		111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testCopyGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		113746B923439F9C00D9C1AD /* Meta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113746BD23439F9C00D9C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		113746C223439F9C00D9C1AD /* MetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +95,6 @@
 		114333F7234B355800BFF775 /* GenerateCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateCode.swift; sourceTree = "<group>"; };
 		114333FB234B3A6900BFF775 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyGeneratorTests.swift; sourceTree = "<group>"; };
-		11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		11433408234B3F8400BFF775 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1143340E234B430C00BFF775 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		11433411234B439200BFF775 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
 		119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitorTests.swift; sourceTree = "<group>"; };
 		119DD0A52344E7D400E1E62D /* Field+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Equatable.swift"; sourceTree = "<group>"; };
+		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +126,7 @@
 				113746E12343A43700D9C1AD /* Bow in Frameworks */,
 				113746DF2343A43700D9C1AD /* BowEffects in Frameworks */,
 				113746DC2343A3F500D9C1AD /* SwiftSyntax in Frameworks */,
+				111F8505234DCF6F003FE646 /* BowOptics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111F850E234DD338003FE646 /* IsoGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				111F8512234DD4D3003FE646 /* testIsoGeneratorMultipleFiles.1.swift */,
+			);
+			path = IsoGeneratorTests;
+			sourceTree = "<group>";
+		};
 		113746AF23439F9C00D9C1AD = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +236,7 @@
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
+				111F8502234DCDBB003FE646 /* IsoVisitor.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -234,6 +257,7 @@
 			children = (
 				11433402234B3EAF00BFF775 /* __Snapshots__ */,
 				114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */,
+				111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -250,6 +274,7 @@
 		11433402234B3EAF00BFF775 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11433403234B3EAF00BFF775 /* CopyGeneratorTests */,
 			);
 			path = __Snapshots__;
@@ -258,7 +283,7 @@
 		11433403234B3EAF00BFF775 /* CopyGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
-				11433404234B3EAF00BFF775 /* testGeneratorMultipleFiles.1.swift */,
+				111F8514234DD4DA003FE646 /* testCopyGeneratorMultipleFiles.1.swift */,
 			);
 			path = CopyGeneratorTests;
 			sourceTree = "<group>";
@@ -295,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
+				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -340,6 +366,7 @@
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
+				111F8506234DD16E003FE646 /* IsoVisitorTests.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -349,6 +376,7 @@
 			children = (
 				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
 				11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */,
+				8BFE7E3D234DE843003E97BF /* URL+Paths.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +420,7 @@
 				113746DB2343A3F500D9C1AD /* SwiftSyntax */,
 				113746DE2343A43700D9C1AD /* BowEffects */,
 				113746E02343A43700D9C1AD /* Bow */,
+				111F8504234DCF6F003FE646 /* BowOptics */,
 			);
 			productName = "bow-meta";
 			productReference = 113746B923439F9C00D9C1AD /* Meta.framework */;
@@ -480,6 +509,7 @@
 					};
 					11433431234B75C600BFF775 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -558,8 +588,10 @@
 				1143340F234B430C00BFF775 /* Set.swift in Sources */,
 				1143341D234B4B4600BFF775 /* SwiftSyntaxGenerator.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
+				111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */,
 				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
+				111F850A234DD28D003FE646 /* IsoGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,15 +599,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */,
+				8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */,
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
+				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
-				11433406234B3EBA00BFF775 /* testGeneratorMultipleFiles.1.swift in Sources */,
+				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,
 				114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;
@@ -889,6 +926,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGeneratorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -897,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;
@@ -993,6 +1032,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 11175E7E23462ED000F26788 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		111F8504234DCF6F003FE646 /* BowOptics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113746DD2343A43700D9C1AD /* XCRemoteSwiftPackageReference "bow" */;
+			productName = BowOptics;
 		};
 		113746DB2343A3F500D9C1AD /* SwiftSyntax */ = {
 			isa = XCSwiftPackageProductDependency;

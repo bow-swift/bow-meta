@@ -5,9 +5,11 @@ import BowEffects
 
 class SwiftSyntaxGenerator: CodeGenerator {
     private let makeVisitor: () -> CodegenVisitor
+    private let requiredImports: Set<String>
     
-    init(visitor: @autoclosure @escaping () -> CodegenVisitor) {
+    init(visitor: @autoclosure @escaping () -> CodegenVisitor, requiredImports: Set<String> = Set()) {
         self.makeVisitor = visitor
+        self.requiredImports = requiredImports
     }
     
     func generate(for file: URL) -> RIO<Any, String> {
@@ -24,8 +26,8 @@ class SwiftSyntaxGenerator: CodeGenerator {
             let visitor = ImportVisitor()
             let ast = try SyntaxTreeParser.parse(file)
             ast.walk(visitor)
-            return visitor.imports
-        }.handleError { _ in Set() }^.env
+            return visitor.imports.union(self.requiredImports)
+        }.handleError { _ in self.requiredImports }^.env
     }
     
     func pack(code: String, imports: String) -> RIO<Any, String> {

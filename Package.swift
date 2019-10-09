@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         // Library targets
         .target(name: "Meta",
-                dependencies: ["SwiftSyntax", "Bow", "BowEffects"]),
+                dependencies: ["SwiftSyntax", "Bow", "BowEffects", "BowOptics"]),
         .target(name: "OpticsGenerator",
                 dependencies: ["Meta"]),
 
