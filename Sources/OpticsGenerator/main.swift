@@ -40,6 +40,10 @@ func generateIso(_ input: URL, _ output: URL) -> Task<Void> {
     generate(input, output, "IsoGeneration.swift", IsoGenerator())
 }
 
+func generateLens(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "LensGeneration.swift", LensGenerator())
+}
+
 func main() -> Task<Void> {
     let input = Task<URL>.var()
     let output = Task<URL>.var()
@@ -48,6 +52,7 @@ func main() -> Task<Void> {
         (input, output) <- getArguments(),
                         |<-generateCopy(input.get, output.get),
                         |<-generateIso(input.get, output.get),
+                        |<-generateLens(input.get, output.get),
         yield:())^
 }
 
