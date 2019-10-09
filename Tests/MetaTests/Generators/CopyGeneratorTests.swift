@@ -3,7 +3,7 @@ import SnapshotTesting
 import Meta
 
 class CopyGeneratorTests: XCTestCase {
-    func testGeneratorMultipleFiles() {
+    func testCopyGeneratorMultipleFiles() {
         let input = URL(fileURLWithPath: String(#file))
             .deletingLastPathComponent()
             .deletingLastPathComponent()
