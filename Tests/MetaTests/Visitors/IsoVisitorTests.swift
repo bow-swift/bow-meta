@@ -4,12 +4,6 @@ import SnapshotTesting
 
 class IsoVisitorTests: XCTestCase {
     func testGeneratedIso() {
-        let input = URL(fileURLWithPath: String(#file))
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Fixtures")
-            .appendingPathComponent("Article.swift")
-        
-        assertSnapshot(matching: input, as: .iso)
+        assertSnapshot(matching: URL.meta.fixtures.file(.article), as: .iso)
     }
 }

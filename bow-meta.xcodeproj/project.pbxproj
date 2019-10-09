@@ -46,6 +46,7 @@
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
 		119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */; };
 		119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0A52344E7D400E1E62D /* Field+Equatable.swift */; };
+		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
 		119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldVisitorTests.swift; sourceTree = "<group>"; };
 		119DD0A52344E7D400E1E62D /* Field+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Field+Equatable.swift"; sourceTree = "<group>"; };
+		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			children = (
 				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
 				11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */,
+				8BFE7E3D234DE843003E97BF /* URL+Paths.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 					};
 					11433431234B75C600BFF775 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -596,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */,
+				8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */,
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
@@ -910,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;
@@ -920,6 +926,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bow-swift.OpticsGeneratorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -928,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OpticsGeneratorTests/Info.plist;

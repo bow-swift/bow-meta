@@ -4,11 +4,6 @@ import Meta
 
 class IsoGeneratorTests: XCTestCase {
     func testIsoGeneratorMultipleFiles() {
-        let input = URL(fileURLWithPath: String(#file))
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Fixtures")
-        
-        assertSnapshot(matching: input, as: .generatedCode(using: IsoGenerator()))
+        assertSnapshot(matching: URL.meta.fixtures, as: .generatedCode(using: IsoGenerator()))
     }
 }

@@ -4,10 +4,8 @@ import SwiftSyntax
 
 class ImportVisitorTests: XCTestCase {
     func testFetchesAllImports() throws {
-        let input = URL(fileURLWithPath: String(#file))
         let visitor = ImportVisitor()
-        
-        let ast = try SyntaxTreeParser.parse(input)
+        let ast = try SyntaxTreeParser.parse(URL.currentFile())
         ast.walk(visitor)
         
         let imports = visitor.imports.sorted()
