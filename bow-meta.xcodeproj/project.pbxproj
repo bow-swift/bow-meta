@@ -48,6 +48,9 @@
 		1143344B234B766000BFF775 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433444234B763100BFF775 /* main.swift */; };
 		116867F8234F467800976262 /* OptionalVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867F7234F467800976262 /* OptionalVisitor.swift */; };
 		116867FB234F4AB800976262 /* OptionalVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867F9234F4A6F00976262 /* OptionalVisitorTests.swift */; };
+		116867FD234F4D2D00976262 /* OptionalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867FC234F4D2D00976262 /* OptionalGenerator.swift */; };
+		116867FF234F4D9500976262 /* OptionalGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867FE234F4D9500976262 /* OptionalGeneratorTests.swift */; };
+		11686802234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686801234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift */; };
 		119DD0982344E27400E1E62D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0962344E27000E1E62D /* Article.swift */; };
 		119DD09B2344E35400E1E62D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0992344E35200E1E62D /* Author.swift */; };
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
@@ -124,6 +127,9 @@
 		11433444234B763100BFF775 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		116867F7234F467800976262 /* OptionalVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalVisitor.swift; sourceTree = "<group>"; };
 		116867F9234F4A6F00976262 /* OptionalVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalVisitorTests.swift; sourceTree = "<group>"; };
+		116867FC234F4D2D00976262 /* OptionalGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalGenerator.swift; sourceTree = "<group>"; };
+		116867FE234F4D9500976262 /* OptionalGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalGeneratorTests.swift; sourceTree = "<group>"; };
+		11686801234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testOptionalGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		119DD0962344E27000E1E62D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		119DD0992344E35200E1E62D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 				114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */,
 				111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */,
 				11039BFD234E881C0022EE33 /* LensGeneratorTests.swift */,
+				116867FE234F4D9500976262 /* OptionalGeneratorTests.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -299,9 +306,10 @@
 		11433402234B3EAF00BFF775 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
-				11039BFF234E885D0022EE33 /* LensGeneratorTests */,
-				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11433403234B3EAF00BFF775 /* CopyGeneratorTests */,
+				111F850E234DD338003FE646 /* IsoGeneratorTests */,
+				11039BFF234E885D0022EE33 /* LensGeneratorTests */,
+				11686800234F4E4800976262 /* OptionalGeneratorTests */,
 			);
 			path = __Snapshots__;
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
 				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
 				11039BFB234E87DC0022EE33 /* LensGenerator.swift */,
+				116867FC234F4D2D00976262 /* OptionalGenerator.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -375,6 +384,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11686800234F4E4800976262 /* OptionalGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11686801234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift */,
+			);
+			path = OptionalGeneratorTests;
 			sourceTree = "<group>";
 		};
 		119DD0952344E26000E1E62D /* Fixtures */ = {
@@ -620,6 +637,7 @@
 				1143341D234B4B4600BFF775 /* SwiftSyntaxGenerator.swift in Sources */,
 				113746E42343A47D00D9C1AD /* ImportVisitor.swift in Sources */,
 				111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */,
+				116867FD234F4D2D00976262 /* OptionalGenerator.swift in Sources */,
 				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
 				116867F8234F467800976262 /* OptionalVisitor.swift in Sources */,
@@ -637,6 +655,7 @@
 				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
+				116867FF234F4D9500976262 /* OptionalGeneratorTests.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
 				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,
@@ -646,6 +665,7 @@
 				11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				11686802234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */,
 				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 				11039BFE234E881C0022EE33 /* LensGeneratorTests.swift in Sources */,
