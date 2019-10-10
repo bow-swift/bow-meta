@@ -17,6 +17,8 @@ extension Snapshotting where Value == URL, Format == String {
     
     static let iso: Snapshotting<URL, String> = .generatedCode(visitor: IsoVisitor())
     
+    static let lens: Snapshotting<URL, String> = .generatedCode(visitor: LensVisitor())
+    
     static func generatedCode<D: CodegenDependencies>(using environment: D) -> Snapshotting<URL, String> {
         var strategy = Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
             try! generateCode(forFilesIn: url.path)

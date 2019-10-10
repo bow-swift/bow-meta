@@ -1,16 +1,16 @@
-public class IsoGenerator {
+public class LensGenerator {
     public init() {}
 }
 
-extension IsoGenerator: HasFileSystem {
+extension LensGenerator: HasFileSystem {
     public var fileSystem: FileSystem {
         MacFileSystem()
     }
 }
 
-extension IsoGenerator: HasCodeGenerator {
+extension LensGenerator: HasCodeGenerator {
     public var generator: CodeGenerator {
-        SwiftSyntaxGenerator(visitor: IsoVisitor(),
+        SwiftSyntaxGenerator(visitor: LensVisitor(),
                              requiredImports: Set(["import BowOptics"]))
     }
 }
