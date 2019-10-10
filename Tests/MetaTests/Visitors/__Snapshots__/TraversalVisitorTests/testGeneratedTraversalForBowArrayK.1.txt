@@ -1,0 +1,12 @@
+extension Blog {
+    static var articlesTraversal: Traversal<Blog, Article> {
+        articlesLens + [Article].traversal
+    }
+}
+
+extension Company {
+    static var employeesTraversal: Traversal<Company, Employee> {
+        employeesLens + ArrayK<Employee>.traversal
+    }
+}
+
