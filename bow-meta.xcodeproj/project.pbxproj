@@ -46,6 +46,8 @@
 		11433433234B75C600BFF775 /* OpticsGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143342A234B75C600BFF775 /* OpticsGenerator.framework */; };
 		1143343A234B75C600BFF775 /* OpticsGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1143342C234B75C600BFF775 /* OpticsGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1143344B234B766000BFF775 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11433444234B763100BFF775 /* main.swift */; };
+		116867F8234F467800976262 /* OptionalVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867F7234F467800976262 /* OptionalVisitor.swift */; };
+		116867FB234F4AB800976262 /* OptionalVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116867F9234F4A6F00976262 /* OptionalVisitorTests.swift */; };
 		119DD0982344E27400E1E62D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0962344E27000E1E62D /* Article.swift */; };
 		119DD09B2344E35400E1E62D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD0992344E35200E1E62D /* Author.swift */; };
 		119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */; };
@@ -120,6 +122,8 @@
 		11433432234B75C600BFF775 /* OpticsGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11433439234B75C600BFF775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11433444234B763100BFF775 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		116867F7234F467800976262 /* OptionalVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalVisitor.swift; sourceTree = "<group>"; };
+		116867F9234F4A6F00976262 /* OptionalVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalVisitorTests.swift; sourceTree = "<group>"; };
 		119DD0962344E27000E1E62D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		119DD0992344E35200E1E62D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportVisitorTests.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
 				111F8502234DCDBB003FE646 /* IsoVisitor.swift */,
 				11039BF6234E845B0022EE33 /* LensVisitor.swift */,
+				116867F7234F467800976262 /* OptionalVisitor.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 				111F8506234DD16E003FE646 /* IsoVisitorTests.swift */,
 				11039BF8234E86590022EE33 /* LensVisitorTests.swift */,
+				116867F9234F4A6F00976262 /* OptionalVisitorTests.swift */,
 			);
 			path = Visitors;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				111F8503234DCDBB003FE646 /* IsoVisitor.swift in Sources */,
 				114333F8234B355800BFF775 /* GenerateCode.swift in Sources */,
 				113746EA2343A56D00D9C1AD /* CopyVisitor.swift in Sources */,
+				116867F8234F467800976262 /* OptionalVisitor.swift in Sources */,
 				111F850A234DD28D003FE646 /* IsoGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +641,7 @@
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
 				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,
 				114333FF234B3E0700BFF775 /* CopyGeneratorTests.swift in Sources */,
+				116867FB234F4AB800976262 /* OptionalVisitorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
