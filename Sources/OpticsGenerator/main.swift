@@ -44,6 +44,10 @@ func generateLens(_ input: URL, _ output: URL) -> Task<Void> {
     generate(input, output, "LensGeneration.swift", LensGenerator())
 }
 
+func generateOptional(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "OptionalGeneration.swift", OptionalGenerator())
+}
+
 func main() -> Task<Void> {
     let input = Task<URL>.var()
     let output = Task<URL>.var()
@@ -53,6 +57,7 @@ func main() -> Task<Void> {
                         |<-generateCopy(input.get, output.get),
                         |<-generateIso(input.get, output.get),
                         |<-generateLens(input.get, output.get),
+                        |<-generateOptional(input.get, output.get),
         yield:())^
 }
 

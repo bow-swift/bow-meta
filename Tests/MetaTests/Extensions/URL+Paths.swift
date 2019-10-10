@@ -14,6 +14,7 @@ extension URL {
     enum File: String {
         case article = "Article.swift"
         case author = "Author.swift"
+        case company = "Subfolder/Company.swift"
     }
     
     var fixtures: URL { appendingPathComponent("Fixtures") }
