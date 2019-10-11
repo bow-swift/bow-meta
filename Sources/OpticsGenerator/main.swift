@@ -52,6 +52,10 @@ func generateTraversal(_ input: URL, _ output: URL) -> Task<Void> {
     generate(input, output, "TraversalGeneration.swift", TraversalGenerator())
 }
 
+func generateFold(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "FoldGeneration.swift", FoldGenerator())
+}
+
 func main() -> Task<Void> {
     let input = Task<URL>.var()
     let output = Task<URL>.var()
@@ -63,6 +67,7 @@ func main() -> Task<Void> {
                         |<-generateLens(input.get, output.get),
                         |<-generateOptional(input.get, output.get),
                         |<-generateTraversal(input.get, output.get),
+                        |<-generateFold(input.get, output.get),
         yield:())^
 }
 
