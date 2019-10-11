@@ -357,6 +357,7 @@
 				11433420234B4FAA00BFF775 /* IO.swift */,
 				1143341E234B4F3700BFF775 /* Kleisli.swift */,
 				1143340E234B430C00BFF775 /* Set.swift */,
+				11311A6723509CA000039794 /* String+NoArray.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
