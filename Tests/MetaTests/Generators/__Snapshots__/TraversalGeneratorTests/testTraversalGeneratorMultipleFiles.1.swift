@@ -11,12 +11,22 @@ extension Company {
     }
 }
 
+extension Employee {
+    static var phonesTraversal: Traversal<Employee, String> {
+        phonesLens + NEA<String>.traversal
+    }
+
+    static var emailsTraversal: Traversal<Employee, String> {
+        emailsLens + NonEmptyArray<String>.traversal
+    }
+}
+
 
 // MARK: - Generated from file Author.swift
 
 extension Author {
     static var socialTraversal: Traversal<Author, SocialNetwork> {
-        socialLens + [SocialNetwork].traversal
+        socialLens + Array<SocialNetwork>.traversal
     }
 }
 

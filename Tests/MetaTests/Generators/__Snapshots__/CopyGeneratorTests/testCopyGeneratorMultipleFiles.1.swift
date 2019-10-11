@@ -15,8 +15,12 @@ extension Company {
 }
 
 extension Employee {
-    func copy(withName name: String? = nil) -> Employee {
-        Employee(name: name ?? self.name)
+    func copy(withName name: String? = nil,
+			  withPhones phones: NEA<String>? = nil,
+			  withEmails emails: NonEmptyArray<String>? = nil) -> Employee {
+        Employee(name: name ?? self.name,
+			phones: phones ?? self.phones,
+			emails: emails ?? self.emails)
     }
 }
 
@@ -25,7 +29,7 @@ extension Employee {
 
 extension Author {
     func copy(withName name: String? = nil,
-			  withSocial social: [SocialNetwork]? = nil) -> Author {
+			  withSocial social: Array<SocialNetwork>? = nil) -> Author {
         Author(name: name ?? self.name,
 			social: social ?? self.social)
     }

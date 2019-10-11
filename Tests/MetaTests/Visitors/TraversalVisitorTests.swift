@@ -7,7 +7,7 @@ class TraversalVisitorTests: XCTestCase {
         assertSnapshot(matching: URL.meta.fixtures.file(.article), as: .traversal)
     }
     
-    func testGeneratedTraversalForBowArrayK() {
+    func testGeneratedTraversalForBowArrayKandNEA() {
         assertSnapshot(matching: URL.meta.fixtures.file(.company), as: .traversal)
     }
 }

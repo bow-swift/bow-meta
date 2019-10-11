@@ -27,6 +27,16 @@ extension Employee {
         Lens(get: { $0.name },
              set: { $0.copy(withName: $1) })
     }
+
+    static var phonesLens: Lens<Employee, NEA<String>> {
+        Lens(get: { $0.phones },
+             set: { $0.copy(withPhones: $1) })
+    }
+
+    static var emailsLens: Lens<Employee, NonEmptyArray<String>> {
+        Lens(get: { $0.emails },
+             set: { $0.copy(withEmails: $1) })
+    }
 }
 
 
@@ -38,7 +48,7 @@ extension Author {
              set: { $0.copy(withName: $1) })
     }
 
-    static var socialLens: Lens<Author, [SocialNetwork]> {
+    static var socialLens: Lens<Author, Array<SocialNetwork>> {
         Lens(get: { $0.social },
              set: { $0.copy(withSocial: $1) })
     }

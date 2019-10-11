@@ -9,7 +9,7 @@ class FieldVisitorTests: XCTestCase {
         ast.walk(visitor)
         
         let expected = [Field(name: "name", type: "String"),
-                        Field(name: "social", type: "[SocialNetwork]")]
+                        Field(name: "social", type: "Array<SocialNetwork>")]
         
         XCTAssertTrue(visitor.fields == expected)
     }

@@ -7,7 +7,7 @@ enum SocialNetwork {
 
 struct Author {
     let name: String
-    let social: [SocialNetwork]
+    let social: Array<SocialNetwork>
     
     var hasTwitter: Bool {
         social.map { item in

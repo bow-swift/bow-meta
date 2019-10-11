@@ -12,8 +12,8 @@ extension Company {
 }
 
 extension Employee {
-    static var iso: Iso<Employee, (String)> {
-        Iso(get: { employee in (employee.name) }, reverseGet: Employee.init)
+    static var iso: Iso<Employee, (String, NEA<String>, NonEmptyArray<String>)> {
+        Iso(get: { employee in (employee.name, employee.phones, employee.emails) }, reverseGet: Employee.init)
     }
 }
 
@@ -21,7 +21,7 @@ extension Employee {
 // MARK: - Generated from file Author.swift
 
 extension Author {
-    static var iso: Iso<Author, (String, [SocialNetwork])> {
+    static var iso: Iso<Author, (String, Array<SocialNetwork>)> {
         Iso(get: { author in (author.name, author.social) }, reverseGet: Author.init)
     }
 }
