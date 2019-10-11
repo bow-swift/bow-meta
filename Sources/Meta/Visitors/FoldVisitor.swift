@@ -1,6 +1,6 @@
 import SwiftSyntax
 
-public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
+public class FoldVisitor: SyntaxVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
@@ -8,11 +8,11 @@ public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
         let fields = node.fields.filter(isArrayType)
         
         if fields.count > 0 {
-            let traversalsCode = generateTraversals(for: fields, structName: structName)
+            let foldsCode = generateFolds(for: fields, structName: structName)
             
             let code = """
             extension \(structName) {
-            \(traversalsCode)
+            \(foldsCode)
             }
             
             """
@@ -30,14 +30,14 @@ public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
             field.type.hasPrefix("NonEmptyArray<")
     }
     
-    private func generateTraversals(for fields: [Field], structName: String) -> String {
-        fields.map { field in self.generateTraversal(field, structName: structName) }.joined(separator: "\n\n")
+    private func generateFolds(for fields: [Field], structName: String) -> String {
+        fields.map { field in self.generateFold(field, structName: structName) }.joined(separator: "\n\n")
     }
     
-    private func generateTraversal(_ field: Field, structName: String) -> String {
+    private func generateFold(_ field: Field, structName: String) -> String {
         """
-            static var \(field.name)Traversal: Traversal<\(structName), \(field.type.nonArray)> {
-                \(field.name)Lens + \(field.type).traversal
+            static var \(field.name)Fold: Fold<\(structName), \(field.type.nonArray)> {
+                \(field.name)Lens + \(field.type).fold
             }
         """
     }
