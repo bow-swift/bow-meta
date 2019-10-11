@@ -61,6 +61,11 @@
 		11F274C4234F6F2F00BC4CFB /* TraversalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274C3234F6F2F00BC4CFB /* TraversalGenerator.swift */; };
 		11F274C6234F6F5F00BC4CFB /* TraversalGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274C5234F6F5F00BC4CFB /* TraversalGeneratorTests.swift */; };
 		11F274C9234F6FAA00BC4CFB /* testTraversalGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274C8234F6FAA00BC4CFB /* testTraversalGeneratorMultipleFiles.1.swift */; };
+		11F274CB234F7B4F00BC4CFB /* FoldVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274CA234F7B4F00BC4CFB /* FoldVisitor.swift */; };
+		11F274CE234F7BF000BC4CFB /* FoldVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */; };
+		11F274D0234F7C5300BC4CFB /* FoldGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274CF234F7C5300BC4CFB /* FoldGenerator.swift */; };
+		11F274D3234F7CF100BC4CFB /* FoldGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274D1234F7CE000BC4CFB /* FoldGeneratorTests.swift */; };
+		11F274D7234F7D7200BC4CFB /* testFoldGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F274D5234F7D4D00BC4CFB /* testFoldGeneratorMultipleFiles.1.swift */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +150,11 @@
 		11F274C3234F6F2F00BC4CFB /* TraversalGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraversalGenerator.swift; sourceTree = "<group>"; };
 		11F274C5234F6F5F00BC4CFB /* TraversalGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraversalGeneratorTests.swift; sourceTree = "<group>"; };
 		11F274C8234F6FAA00BC4CFB /* testTraversalGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTraversalGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
+		11F274CA234F7B4F00BC4CFB /* FoldVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldVisitor.swift; sourceTree = "<group>"; };
+		11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldVisitorTests.swift; sourceTree = "<group>"; };
+		11F274CF234F7C5300BC4CFB /* FoldGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldGenerator.swift; sourceTree = "<group>"; };
+		11F274D1234F7CE000BC4CFB /* FoldGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldGeneratorTests.swift; sourceTree = "<group>"; };
+		11F274D5234F7D4D00BC4CFB /* testFoldGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testFoldGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +283,7 @@
 				113746E72343A51A00D9C1AD /* ComputedPropertyVisitor.swift */,
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
+				11F274CA234F7B4F00BC4CFB /* FoldVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
 				111F8502234DCDBB003FE646 /* IsoVisitor.swift */,
 				11039BF6234E845B0022EE33 /* LensVisitor.swift */,
@@ -298,6 +309,7 @@
 			children = (
 				11433402234B3EAF00BFF775 /* __Snapshots__ */,
 				114333FD234B3DC700BFF775 /* CopyGeneratorTests.swift */,
+				11F274D1234F7CE000BC4CFB /* FoldGeneratorTests.swift */,
 				111F850B234DD2BE003FE646 /* IsoGeneratorTests.swift */,
 				11039BFD234E881C0022EE33 /* LensGeneratorTests.swift */,
 				116867FE234F4D9500976262 /* OptionalGeneratorTests.swift */,
@@ -318,6 +330,7 @@
 		11433402234B3EAF00BFF775 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				11F274D4234F7D4D00BC4CFB /* FoldGeneratorTests */,
 				11433403234B3EAF00BFF775 /* CopyGeneratorTests */,
 				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11039BFF234E885D0022EE33 /* LensGeneratorTests */,
@@ -367,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
+				11F274CF234F7C5300BC4CFB /* FoldGenerator.swift */,
 				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
 				11039BFB234E87DC0022EE33 /* LensGenerator.swift */,
 				116867FC234F4D2D00976262 /* OptionalGenerator.swift */,
@@ -423,6 +437,7 @@
 			children = (
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
+				11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 				111F8506234DD16E003FE646 /* IsoVisitorTests.swift */,
 				11039BF8234E86590022EE33 /* LensVisitorTests.swift */,
@@ -448,6 +463,14 @@
 				11F274C8234F6FAA00BC4CFB /* testTraversalGeneratorMultipleFiles.1.swift */,
 			);
 			path = TraversalGeneratorTests;
+			sourceTree = "<group>";
+		};
+		11F274D4234F7D4D00BC4CFB /* FoldGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				11F274D5234F7D4D00BC4CFB /* testFoldGeneratorMultipleFiles.1.swift */,
+			);
+			path = FoldGeneratorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,6 +670,7 @@
 			files = (
 				11433412234B439200BFF775 /* FileSystem.swift in Sources */,
 				11433423234B50E200BFF775 /* CopyGenerator.swift in Sources */,
+				11F274D0234F7C5300BC4CFB /* FoldGenerator.swift in Sources */,
 				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
 				11039BFC234E87DC0022EE33 /* LensGenerator.swift in Sources */,
 				11433417234B468D00BFF775 /* CodeGenerator.swift in Sources */,
@@ -656,6 +680,7 @@
 				1143341F234B4F3700BFF775 /* Kleisli.swift in Sources */,
 				11433421234B4FAA00BFF775 /* IO.swift in Sources */,
 				11F274C4234F6F2F00BC4CFB /* TraversalGenerator.swift in Sources */,
+				11F274CB234F7B4F00BC4CFB /* FoldVisitor.swift in Sources */,
 				114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */,
 				1143340F234B430C00BFF775 /* Set.swift in Sources */,
 				1143341D234B4B4600BFF775 /* SwiftSyntaxGenerator.swift in Sources */,
@@ -675,10 +700,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				111F8518234DD545003FE646 /* testIsoGeneratorMultipleFiles.1.swift in Sources */,
+				11F274CE234F7BF000BC4CFB /* FoldVisitorTests.swift in Sources */,
+				11F274D3234F7CF100BC4CFB /* FoldGeneratorTests.swift in Sources */,
 				8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */,
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
+				11F274D7234F7D7200BC4CFB /* testFoldGeneratorMultipleFiles.1.swift in Sources */,
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
 				116867FF234F4D9500976262 /* OptionalGeneratorTests.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
