@@ -1,0 +1,22 @@
+extension Blog {
+    static var articlesFold: Fold<Blog, Article> {
+        articlesLens + [Article].fold
+    }
+}
+
+extension Company {
+    static var employeesFold: Fold<Company, Employee> {
+        employeesLens + ArrayK<Employee>.fold
+    }
+}
+
+extension Employee {
+    static var phonesFold: Fold<Employee, String> {
+        phonesLens + NEA<String>.fold
+    }
+
+    static var emailsFold: Fold<Employee, String> {
+        emailsLens + NonEmptyArray<String>.fold
+    }
+}
+
