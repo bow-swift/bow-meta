@@ -14,4 +14,12 @@ extension String {
             return self
         }
     }
+    
+    var isArrayType: Bool {
+        hasPrefix("[") ||
+        hasPrefix("Array<") ||
+        hasPrefix("ArrayK<") ||
+        hasPrefix("NEA<") ||
+        hasPrefix("NonEmptyArray<")
+    }
 }

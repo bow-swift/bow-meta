@@ -4,6 +4,18 @@ import SwiftSyntax
 import Meta
 import BowEffects
 
+
+extension Snapshotting where Value == URL, Format == String {
+    static let copyMethod: Snapshotting<URL, String> = .generatedCode(visitor: CopyVisitor())
+    static let fold: Snapshotting<URL, String> = .generatedCode(visitor: FoldVisitor())
+    static let iso: Snapshotting<URL, String> = .generatedCode(visitor: IsoVisitor())
+    static let lens: Snapshotting<URL, String> = .generatedCode(visitor: LensVisitor())
+    static let optional: Snapshotting<URL, String> = .generatedCode(visitor: OptionalVisitor())
+    static let prism: Snapshotting<URL, String> = .generatedCode(visitor: PrismVisitor())
+    static let traversal: Snapshotting<URL, String> = .generatedCode(visitor: TraversalVisitor())
+}
+
+
 extension Snapshotting where Value == URL, Format == String {
     static func generatedCode<T: CodegenVisitor>(visitor: T) -> Snapshotting<URL, String> {
         Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
@@ -12,18 +24,6 @@ extension Snapshotting where Value == URL, Format == String {
             return visitor.generatedCode
         }
     }
-    
-    static let copyMethod: Snapshotting<URL, String> = .generatedCode(visitor: CopyVisitor())
-    
-    static let iso: Snapshotting<URL, String> = .generatedCode(visitor: IsoVisitor())
-    
-    static let lens: Snapshotting<URL, String> = .generatedCode(visitor: LensVisitor())
-    
-    static let optional: Snapshotting<URL, String> = .generatedCode(visitor: OptionalVisitor())
-    
-    static let traversal: Snapshotting<URL, String> = .generatedCode(visitor: TraversalVisitor())
-    
-    static let fold: Snapshotting<URL, String> = .generatedCode(visitor: FoldVisitor())
     
     static func generatedCode<D: CodegenDependencies>(using environment: D) -> Snapshotting<URL, String> {
         var strategy = Snapshotting<String, String>.lines.pullback { (url: URL) -> String in
