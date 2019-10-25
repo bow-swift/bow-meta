@@ -72,6 +72,9 @@
 		8B2D41432361E1BE00EBFC88 /* PrismVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D41422361E1BE00EBFC88 /* PrismVisitorTests.swift */; };
 		8B2D41462361E7CA00EBFC88 /* CaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D41442361E66100EBFC88 /* CaseVisitor.swift */; };
 		8B3FD5652363093D001AD7B7 /* __Snapshots__ in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FD5642363093D001AD7B7 /* __Snapshots__ */; };
+		8B3FD56723630ABE001AD7B7 /* CaseVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD56623630ABE001AD7B7 /* CaseVisitorTests.swift */; };
+		8B3FD56923630EE8001AD7B7 /* Case+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */; };
+		8B3FD57623631464001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD57523631464001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +170,9 @@
 		8B2D41422361E1BE00EBFC88 /* PrismVisitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismVisitorTests.swift; sourceTree = "<group>"; };
 		8B2D41442361E66100EBFC88 /* CaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseVisitor.swift; sourceTree = "<group>"; };
 		8B3FD5642363093D001AD7B7 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
+		8B3FD56623630ABE001AD7B7 /* CaseVisitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseVisitorTests.swift; sourceTree = "<group>"; };
+		8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Case+Equatable.swift"; sourceTree = "<group>"; };
+		8B3FD57523631464001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +356,7 @@
 				111F850E234DD338003FE646 /* IsoGeneratorTests */,
 				11039BFF234E885D0022EE33 /* LensGeneratorTests */,
 				11686800234F4E4800976262 /* OptionalGeneratorTests */,
+				8B3FD56C23630FF1001AD7B7 /* PrismGeneratorTests */,
 				11F274C7234F6FAA00BC4CFB /* TraversalGeneratorTests */,
 			);
 			path = __Snapshots__;
@@ -452,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				8B3FD5642363093D001AD7B7 /* __Snapshots__ */,
+				8B3FD56623630ABE001AD7B7 /* CaseVisitorTests.swift */,
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */,
@@ -468,6 +476,7 @@
 		119DD0A42344E7C500E1E62D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */,
 				119DD0A52344E7D400E1E62D /* Field+Equatable.swift */,
 				11175E84234630FD00F26788 /* Snapshotting+Codegen.swift */,
 				8BFE7E3D234DE843003E97BF /* URL+Paths.swift */,
@@ -489,6 +498,14 @@
 				11F274D5234F7D4D00BC4CFB /* testFoldGeneratorMultipleFiles.1.swift */,
 			);
 			path = FoldGeneratorTests;
+			sourceTree = "<group>";
+		};
+		8B3FD56C23630FF1001AD7B7 /* PrismGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B3FD57523631464001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */,
+			);
+			path = PrismGeneratorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -727,6 +744,7 @@
 				11F274D3234F7CF100BC4CFB /* FoldGeneratorTests.swift in Sources */,
 				8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */,
 				8B2D41412361E0F100EBFC88 /* PrismGeneratorTests.swift in Sources */,
+				8B3FD56923630EE8001AD7B7 /* Case+Equatable.swift in Sources */,
 				119DD09B2344E35400E1E62D /* Author.swift in Sources */,
 				111F8508234DD1BF003FE646 /* IsoVisitorTests.swift in Sources */,
 				119DD0982344E27400E1E62D /* Article.swift in Sources */,
@@ -743,10 +761,12 @@
 				11686807234F6D4300976262 /* TraversalVisitorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */,
+				8B3FD57623631464001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
 				11686802234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */,
 				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
+				8B3FD56723630ABE001AD7B7 /* CaseVisitorTests.swift in Sources */,
 				11175E862346310800F26788 /* Snapshotting+Codegen.swift in Sources */,
 				11039BFE234E881C0022EE33 /* LensGeneratorTests.swift in Sources */,
 			);

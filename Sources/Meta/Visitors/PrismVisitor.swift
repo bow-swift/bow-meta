@@ -51,15 +51,16 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
         let prismName = "\(state)Prism"
         let opticsTypes = associatedValues.map { field in field.type }
         let opticsTypesName = opticsTypes.count > 1 ? "(\(opticsTypes.joined(separator: ", ")))" : opticsTypes.first!
+        let opticsTypesParameters = opticsTypesName.lowercased().replacingOccurrences(of: "?", with: "")
         
         let prism = """
                     
                         static var \(prismName): Prism<\(enumName), \(opticsTypesName)> {
                             Prism(getOrModify: { state in
-                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsTypesName.lowercased()) = state else { return Either.left(state) }"
-                                                        : "guard case let .\(state)(\(opticsTypesName.lowercased())) = state else { return Either.left(state) }"
+                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsTypesParameters) = state else { return Either.left(state) }"
+                                                        : "guard case let .\(state)(\(opticsTypesParameters)) = state else { return Either.left(state) }"
                                 )
-                                return Either.right(\(opticsTypesName.lowercased()))
+                                return Either.right(\(opticsTypesParameters))
                             }, reverseGet: \(enumName).\(state))
                         }
                     """
@@ -77,7 +78,8 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
         guard (2...10).contains(associatedValues.count) else { return "" }
         
         let associatedNames = associatedValues.map { associated -> String in
-            associated.name.isEmpty ? associated.type.lowercased() : associated.name
+            associated.name.isEmpty ? associated.type.lowercased().replacingOccurrences(of: "?", with: "")
+                                    : associated.name
         }
         
         let differentsNames = Array(Set(associatedNames)).count == associatedValues.count
