@@ -23,46 +23,13 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
     }
     
     private func generatePrisms(for cases: [Case], enumName: String) -> String {
-        cases.map { `case` in self.generatePrism(`case`, enumName: enumName) }.joined(separator: "\n\n")
+        cases.map { `case` in self.generatePrism(`case`, enumName: enumName) }.joined(separator: "\n")
     }
     
     private func generatePrism(_ case: Case, enumName: String) -> String {
         let hasAssociatedValues = `case`.associatedValues != nil
-        return hasAssociatedValues ? generateAssociatedValuePrisms(in: `case`, enumName: enumName)
+        return hasAssociatedValues ? generateAssociatedValuesPrism(in: `case`, enumName: enumName)
                                    : generatePrism(state: `case`.name, enumName: enumName)
-    }
-    
-    private func generateAssociatedValuePrisms(in case: Case, enumName: String) -> String {
-        
-        func casePatternMatching(_ case: Case, associatedName: String, index: Int) -> String {
-            let elements = `case`.associatedValues?.count ?? 0
-            return (0..<elements).map { i in i == index ? associatedName : "_" }.joined(separator: ", ")
-        }
-        
-        guard let associatedValues = `case`.associatedValues else { return "" }
-        
-        let associatedValuesPrims = associatedValues.enumerated().map { (index, associated) -> String in
-            let associatedName = associated.name.isEmpty ? "\(associated.type.lowercased())\(index)" : associated.name
-            let patternMatching = casePatternMatching(`case`, associatedName: associatedName, index: index)
-            let state = `case`.name
-            let type = associated.type
-            
-            return  """
-                            static var \(associatedName)Prism: Prism<\(enumName), \(type)> {
-                                Prism(getOrModify: { state in
-                                    guard case let .\(state)(\(patternMatching)) = state else { return Either.left(state) }
-                                    return Either.right(\(associatedName))
-                                }, reverseGet: \(enumName).\(state))
-                            }
-                    """
-        }
-        
-        return  """
-                    
-                    enum \(`case`.name.capitalized) {
-                \(associatedValuesPrims.joined(separator: "\n\n"))
-                    }
-                """
     }
     
     private func generatePrism(state: String, enumName: String) -> String {
@@ -75,5 +42,60 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
                 }, reverseGet: { \(enumName).\(state) })
             }
         """
+    }
+    
+    private func generateAssociatedValuesPrism(in case: Case, enumName: String) -> String {
+        guard let associatedValues = `case`.associatedValues else { return "" }
+        
+        let state = `case`.name
+        let prismName = "\(state)Prism"
+        let opticsTypes = associatedValues.map { field in field.type }
+        let opticsTypesName = opticsTypes.count > 1 ? "(\(opticsTypes.joined(separator: ", ")))" : opticsTypes.first!
+        
+        let prism = """
+                    
+                        static var \(prismName): Prism<\(enumName), \(opticsTypesName)> {
+                            Prism(getOrModify: { state in
+                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsTypesName.lowercased()) = state else { return Either.left(state) }"
+                                                        : "guard case let .\(state)(\(opticsTypesName.lowercased())) = state else { return Either.left(state) }"
+                                )
+                                return Either.right(\(opticsTypesName.lowercased()))
+                            }, reverseGet: \(enumName).\(state))
+                        }
+                    """
+        
+        let associatedValuesOptics = generateAssociatedValuesOptics(inEnum: enumName, case: state, forPrism: prismName, withAssociatedValues: associatedValues)
+        
+        return  """
+                \(prism)\(associatedValuesOptics)
+                """
+    }
+    
+    
+    
+    private func generateAssociatedValuesOptics(inEnum enumName: String, case caseName: String, forPrism prismName: String, withAssociatedValues associatedValues: [Field]) -> String {
+        guard (2...10).contains(associatedValues.count) else { return "" }
+        
+        let associatedNames = associatedValues.map { associated -> String in
+            associated.name.isEmpty ? associated.type.lowercased() : associated.name
+        }
+        
+        let differentsNames = Array(Set(associatedNames)).count == associatedValues.count
+        
+        let optics = zip(associatedValues, associatedNames).enumerated().map { (index, associatedInfo) -> String in
+            let ((_, type), associatedName) = associatedInfo
+            let name = "\(associatedName)\(differentsNames ? "" : "\(index)")"
+            return  """
+                            static let \(name)Optional: Optional<\(enumName), \(type)> = \(prismName) + Tuple\(associatedValues.count)._\(index)
+                    """
+        }
+        
+        return  """
+                
+                
+                    enum \(caseName.capitalized) {
+                \(optics.joined(separator: "\n"))
+                    }
+                """
     }
 }

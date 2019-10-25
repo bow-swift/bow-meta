@@ -11,6 +11,7 @@ extension PrismGenerator: HasFileSystem {
 extension PrismGenerator: HasCodeGenerator {
     public var generator: CodeGenerator {
         SwiftSyntaxGenerator(visitor: PrismVisitor(),
-                             requiredImports: Set(["import BowOptics"]))
+                             requiredImports: Set(["import Bow",
+                                                   "import BowOptics"]))
     }
 }
