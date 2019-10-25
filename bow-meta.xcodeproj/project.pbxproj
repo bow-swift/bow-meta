@@ -71,6 +71,7 @@
 		8B2D41412361E0F100EBFC88 /* PrismGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D41402361E0F100EBFC88 /* PrismGeneratorTests.swift */; };
 		8B2D41432361E1BE00EBFC88 /* PrismVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D41422361E1BE00EBFC88 /* PrismVisitorTests.swift */; };
 		8B2D41462361E7CA00EBFC88 /* CaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D41442361E66100EBFC88 /* CaseVisitor.swift */; };
+		8B3FD5652363093D001AD7B7 /* __Snapshots__ in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FD5642363093D001AD7B7 /* __Snapshots__ */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +166,7 @@
 		8B2D41402361E0F100EBFC88 /* PrismGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismGeneratorTests.swift; sourceTree = "<group>"; };
 		8B2D41422361E1BE00EBFC88 /* PrismVisitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismVisitorTests.swift; sourceTree = "<group>"; };
 		8B2D41442361E66100EBFC88 /* CaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseVisitor.swift; sourceTree = "<group>"; };
+		8B3FD5642363093D001AD7B7 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -449,6 +451,7 @@
 		119DD09C2344E39B00E1E62D /* Visitors */ = {
 			isa = PBXGroup;
 			children = (
+				8B3FD5642363093D001AD7B7 /* __Snapshots__ */,
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */,
@@ -657,6 +660,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3FD5652363093D001AD7B7 /* __Snapshots__ in Resources */,
 				1143340C234B401600BFF775 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
