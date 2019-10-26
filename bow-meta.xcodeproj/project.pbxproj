@@ -73,8 +73,8 @@
 		8B3FD5652363093D001AD7B7 /* __Snapshots__ in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FD5642363093D001AD7B7 /* __Snapshots__ */; };
 		8B3FD56723630ABE001AD7B7 /* CaseVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD56623630ABE001AD7B7 /* CaseVisitorTests.swift */; };
 		8B3FD56923630EE8001AD7B7 /* Case+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */; };
-		8B3FD578236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD577236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8B3FD57B23632F7F001AD7B7 /* String+NoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD57923632F7A001AD7B7 /* String+NoArray.swift */; };
+		8BBC64C62364634B009883B2 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC64C52364634B009883B2 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -171,8 +171,8 @@
 		8B3FD5642363093D001AD7B7 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 		8B3FD56623630ABE001AD7B7 /* CaseVisitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseVisitorTests.swift; sourceTree = "<group>"; };
 		8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Case+Equatable.swift"; sourceTree = "<group>"; };
-		8B3FD577236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8B3FD57923632F7A001AD7B7 /* String+NoArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoArray.swift"; sourceTree = "<group>"; };
+		8BBC64C52364634B009883B2 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -503,7 +503,7 @@
 		8B3FD56C23630FF1001AD7B7 /* PrismGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B3FD577236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */,
+				8BBC64C52364634B009883B2 /* testPrismGeneratorMultipleFile.1.swift */,
 			);
 			path = PrismGeneratorTests;
 			sourceTree = "<group>";
@@ -761,7 +761,7 @@
 				11686807234F6D4300976262 /* TraversalVisitorTests.swift in Sources */,
 				119DD0A72344E7DF00E1E62D /* Field+Equatable.swift in Sources */,
 				11039C01234E885D0022EE33 /* testLensGeneratorMultipleFiles.1.swift in Sources */,
-				8B3FD578236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
+				8BBC64C62364634B009883B2 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
 				11686802234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */,

@@ -45,23 +45,29 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
     }
     
     private func generateAssociatedValuesPrism(in case: Case, enumName: String) -> String {
+        func combineTypes(_ types: [String]) -> String {
+            guard types.count > 0 else { return "" }
+            return types.count > 1 ? "(\(types.joined(separator: ", ")))" : types.first!
+        }
+        
         guard `case`.associatedValues.count > 0 else { return "" }
         
         let associatedValues = `case`.associatedValues
         let state = `case`.name
         let prismName = "\(state)Prism"
         let opticsTypes = associatedValues.map { field in field.type }
-        let opticsTypesName = opticsTypes.count > 1 ? "(\(opticsTypes.joined(separator: ", ")))" : opticsTypes.first!
-        let opticsTypesParameters = opticsTypesName.lowercased().replacingOccurrences(of: "?", with: "")
-        
+        let opticsParameters = opticsTypes.enumerated().map { index, type in "\(type.lowercased().replacingOccurrences(of: "?", with: ""))\(index)" }
+        let opticsTypesName = combineTypes(opticsTypes)
+        let opticsParametersName = combineTypes(opticsParameters)
+                                                   
         let prism = """
                     
                         static var \(prismName): Prism<\(enumName), \(opticsTypesName)> {
                             Prism(getOrModify: { state in
-                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsTypesParameters) = state else { return Either.left(state) }"
-                                                        : "guard case let .\(state)(\(opticsTypesParameters)) = state else { return Either.left(state) }"
+                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsParametersName) = state else { return Either.left(state) }"
+                                                        : "guard case let .\(state)(\(opticsParametersName)) = state else { return Either.left(state) }"
                                 )
-                                return Either.right(\(opticsTypesParameters))
+                                return Either.right(\(opticsParametersName))
                             }, reverseGet: \(enumName).\(state))
                         }
                     """

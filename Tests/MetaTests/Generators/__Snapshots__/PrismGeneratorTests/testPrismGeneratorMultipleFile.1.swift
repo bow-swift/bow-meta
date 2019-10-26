@@ -10,15 +10,15 @@ extension SocialNetwork {
 
     static var twitterPrism: Prism<SocialNetwork, String> {
         Prism(getOrModify: { state in
-            guard case let .twitter(string) = state else { return Either.left(state) }
-            return Either.right(string)
+            guard case let .twitter(string0) = state else { return Either.left(state) }
+            return Either.right(string0)
         }, reverseGet: SocialNetwork.twitter)
     }
 
     static var githubPrism: Prism<SocialNetwork, String> {
         Prism(getOrModify: { state in
-            guard case let .github(string) = state else { return Either.left(state) }
-            return Either.right(string)
+            guard case let .github(string0) = state else { return Either.left(state) }
+            return Either.right(string0)
         }, reverseGet: SocialNetwork.github)
     }
 }
@@ -37,15 +37,15 @@ extension PublicationState {
 
     static var publishedPrism: Prism<PublicationState, Date> {
         Prism(getOrModify: { state in
-            guard case let .published(date) = state else { return Either.left(state) }
-            return Either.right(date)
+            guard case let .published(date0) = state else { return Either.left(state) }
+            return Either.right(date0)
         }, reverseGet: PublicationState.published)
     }
 
     static var deletedPrism: Prism<PublicationState, (Date, String?)> {
         Prism(getOrModify: { state in
-            guard case let .deleted(date, string) = state else { return Either.left(state) }
-            return Either.right((date, string))
+            guard case let .deleted(date0, string1) = state else { return Either.left(state) }
+            return Either.right((date0, string1))
         }, reverseGet: PublicationState.deleted)
     }
 
