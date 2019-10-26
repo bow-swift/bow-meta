@@ -56,6 +56,10 @@ func generateFold(_ input: URL, _ output: URL) -> Task<Void> {
     generate(input, output, "FoldGeneration.swift", FoldGenerator())
 }
 
+func generatePrism(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "PrismGeneration.swift", PrismGenerator())
+}
+
 func main() -> Task<Void> {
     let input = Task<URL>.var()
     let output = Task<URL>.var()
@@ -68,6 +72,7 @@ func main() -> Task<Void> {
                         |<-generateOptional(input.get, output.get),
                         |<-generateTraversal(input.get, output.get),
                         |<-generateFold(input.get, output.get),
+                        |<-generatePrism(input.get, output.get),
         yield:())^
 }
 

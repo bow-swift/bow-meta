@@ -1,0 +1,29 @@
+extension PublicationState {
+    
+    static var draftPrism: Prism<PublicationState, Void> {
+        Prism(getOrModify: { state in
+            guard case .draft = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { PublicationState.draft })
+    }
+
+    static var publishedPrism: Prism<PublicationState, Date> {
+        Prism(getOrModify: { state in
+            guard case let .published(date0) = state else { return Either.left(state) }
+            return Either.right(date0)
+        }, reverseGet: PublicationState.published)
+    }
+
+    static var deletedPrism: Prism<PublicationState, (Date, String?)> {
+        Prism(getOrModify: { state in
+            guard case let .deleted(date0, string1) = state else { return Either.left(state) }
+            return Either.right((date0, string1))
+        }, reverseGet: PublicationState.deleted)
+    }
+
+    enum Deleted {
+        static let dateOptional: Optional<PublicationState, Date> = deletedPrism + Tuple2._0
+        static let reasonOptional: Optional<PublicationState, String?> = deletedPrism + Tuple2._1
+    }
+}
+

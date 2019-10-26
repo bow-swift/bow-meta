@@ -22,13 +22,7 @@ public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
         return .skipChildren
     }
     
-    private func isArrayType(_ field: Field) -> Bool {
-        return field.type.hasPrefix("[") ||
-            field.type.hasPrefix("Array<") ||
-            field.type.hasPrefix("ArrayK<") ||
-            field.type.hasPrefix("NEA<") ||
-            field.type.hasPrefix("NonEmptyArray<")
-    }
+    private func isArrayType(_ field: Field) -> Bool { field.type.isArrayType }
     
     private func generateTraversals(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateTraversal(field, structName: structName) }.joined(separator: "\n\n")

@@ -3,6 +3,7 @@ import Foundation
 enum PublicationState {
     case draft
     case published(Date)
+    case deleted(Date, reason: String?)
 }
 
 struct Article {
