@@ -1,6 +1,6 @@
 import SwiftSyntax
 
-public typealias Case = (name: String, associatedValues: [Field]?)
+public typealias Case = (name: String, associatedValues: [Field])
 
 public extension EnumDeclSyntax {
     var cases: [Case] {
@@ -31,8 +31,10 @@ public class CaseVisitor: SyntaxVisitor {
 
 extension EnumCaseElementSyntax {
     
-    var associatedValues: [Field]? {
-        associatedValue?.parameterList.compactMap { parameter in
+    var associatedValues: [Field] {
+        guard let parameterList = associatedValue?.parameterList else { return [] }
+        
+        return parameterList.compactMap { parameter in
             guard let type = parameter.type?.description else { return nil }
             let paramName = parameter.firstName?.description ?? ""
             return Field(name: paramName, type: type)
