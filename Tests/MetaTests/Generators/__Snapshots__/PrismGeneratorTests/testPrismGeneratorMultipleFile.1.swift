@@ -26,32 +26,74 @@ extension SocialNetwork {
 
 // MARK: - Generated from file Article.swift
 
-extension PublicationState {
+extension WrittingStyle {
     
-    static var draftPrism: Prism<PublicationState, Void> {
+    static var expositoryPrism: Prism<WrittingStyle, Void> {
         Prism(getOrModify: { state in
-            guard case .draft = state else { return Either.left(state) }
+            guard case .expository = state else { return Either.left(state) }
             return Either.right(())
-        }, reverseGet: { PublicationState.draft })
+        }, reverseGet: { WrittingStyle.expository })
+    }
+    
+    static var descriptivePrism: Prism<WrittingStyle, Void> {
+        Prism(getOrModify: { state in
+            guard case .descriptive = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { WrittingStyle.descriptive })
+    }
+    
+    static var persuasivePrism: Prism<WrittingStyle, Void> {
+        Prism(getOrModify: { state in
+            guard case .persuasive = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { WrittingStyle.persuasive })
+    }
+    
+    static var narrativePrism: Prism<WrittingStyle, Void> {
+        Prism(getOrModify: { state in
+            guard case .narrative = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { WrittingStyle.narrative })
+    }
+}
+
+extension PublicationState {
+
+    static var draftPrism: Prism<PublicationState, (Date, String?)> {
+        Prism(getOrModify: { state in
+            guard case let .draft(date0, string1) = state else { return Either.left(state) }
+            return Either.right((date0, string1))
+        }, reverseGet: PublicationState.draft)
     }
 
-    static var publishedPrism: Prism<PublicationState, Date> {
+    enum Draft {
+        static let dateOptional: Optional<PublicationState, Date> = draftPrism + Tuple2._0
+        static let commentsOptional: Optional<PublicationState, String?> = draftPrism + Tuple2._1
+    }
+
+    static var publishedPrism: Prism<PublicationState, (Date, String?)> {
         Prism(getOrModify: { state in
-            guard case let .published(date0) = state else { return Either.left(state) }
-            return Either.right(date0)
+            guard case let .published(date0, string1) = state else { return Either.left(state) }
+            return Either.right((date0, string1))
         }, reverseGet: PublicationState.published)
     }
 
-    static var deletedPrism: Prism<PublicationState, (Date, String?)> {
+    enum Published {
+        static let dateOptional: Optional<PublicationState, Date> = publishedPrism + Tuple2._0
+        static let commentsOptional: Optional<PublicationState, String?> = publishedPrism + Tuple2._1
+    }
+
+    static var deletedPrism: Prism<PublicationState, (Date, String?, String?)> {
         Prism(getOrModify: { state in
-            guard case let .deleted(date0, string1) = state else { return Either.left(state) }
-            return Either.right((date0, string1))
+            guard case let .deleted(date0, string1, string2) = state else { return Either.left(state) }
+            return Either.right((date0, string1, string2))
         }, reverseGet: PublicationState.deleted)
     }
 
     enum Deleted {
-        static let dateOptional: Optional<PublicationState, Date> = deletedPrism + Tuple2._0
-        static let reasonOptional: Optional<PublicationState, String?> = deletedPrism + Tuple2._1
+        static let dateOptional: Optional<PublicationState, Date> = deletedPrism + Tuple3._0
+        static let reasonOptional: Optional<PublicationState, String?> = deletedPrism + Tuple3._1
+        static let commentsOptional: Optional<PublicationState, String?> = deletedPrism + Tuple3._2
     }
 }
 

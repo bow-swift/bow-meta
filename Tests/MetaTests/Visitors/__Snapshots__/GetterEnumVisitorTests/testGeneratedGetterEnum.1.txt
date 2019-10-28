@@ -1,9 +1,9 @@
 extension PublicationState {
-    static var publicationStateDateGetter = Getter<PublicationState, Date> { state in
+    static var publicationStateFieldsGetter = Getter<PublicationState, (date: Date, comments: String?)> { state in
         switch state {
-        case let .draft(date): return date
-        case let .published(date): return date
-        case let .deleted(date, _): return date
+        case let .draft(date, comments): return (date, comments)
+        case let .published(date, comments): return (date, comments)
+        case let .deleted(date, _, comments): return (date, comments)
         }
     }
 }

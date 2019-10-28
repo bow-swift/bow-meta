@@ -74,9 +74,9 @@
 		8B3FD5B523670F60001AD7B7 /* testCopyGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5AA23670F60001AD7B7 /* testCopyGeneratorMultipleFiles.1.swift */; };
 		8B3FD5B623670F60001AD7B7 /* testIsoGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5AC23670F60001AD7B7 /* testIsoGeneratorMultipleFiles.1.swift */; };
 		8B3FD5B723670F60001AD7B7 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5AE23670F60001AD7B7 /* testOptionalGeneratorMultipleFiles.1.swift */; };
-		8B3FD5B823670F60001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5B023670F60001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8B3FD5B923670F60001AD7B7 /* testTraversalGeneratorMultipleFiles.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5B223670F60001AD7B7 /* testTraversalGeneratorMultipleFiles.1.swift */; };
 		8B3FD5BC2367107E001AD7B7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5BA2367107B001AD7B7 /* String+Extensions.swift */; };
+		8B3FD5BE23671601001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD5BD23671601001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,9 +174,9 @@
 		8B3FD5AA23670F60001AD7B7 /* testCopyGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testCopyGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		8B3FD5AC23670F60001AD7B7 /* testIsoGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testIsoGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		8B3FD5AE23670F60001AD7B7 /* testOptionalGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testOptionalGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
-		8B3FD5B023670F60001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8B3FD5B223670F60001AD7B7 /* testTraversalGeneratorMultipleFiles.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTraversalGeneratorMultipleFiles.1.swift; sourceTree = "<group>"; };
 		8B3FD5BA2367107B001AD7B7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8B3FD5BD23671601001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -501,7 +501,7 @@
 		8B3FD5AF23670F60001AD7B7 /* PrismGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B3FD5B023670F60001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */,
+				8B3FD5BD23671601001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */,
 			);
 			path = PrismGeneratorTests;
 			sourceTree = "<group>";
@@ -759,9 +759,9 @@
 				119DD0A32344E5C100E1E62D /* FieldVisitorTests.swift in Sources */,
 				8B3FD5B423670F60001AD7B7 /* testFoldGeneratorMultipleFiles.1.swift in Sources */,
 				116867FF234F4D9500976262 /* OptionalGeneratorTests.swift in Sources */,
+				8B3FD5BE23671601001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
 				8B3FD5B523670F60001AD7B7 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				111F8501234DCABB003FE646 /* CopyVisitorTests.swift in Sources */,
-				8B3FD5B823670F60001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
 				1143340B234B401100BFF775 /* Company.swift in Sources */,
 				11F274C6234F6F5F00BC4CFB /* TraversalGeneratorTests.swift in Sources */,
 				111F850D234DD2D6003FE646 /* IsoGeneratorTests.swift in Sources */,

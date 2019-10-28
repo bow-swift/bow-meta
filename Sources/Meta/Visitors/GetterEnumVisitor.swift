@@ -45,7 +45,7 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
             return "        case let .\(`case`.name)(\(parameters)): return \(getterParametersName)"
         }
         
-        let getterTypesName = combineValues(fields.map { field in field.type })
+        let getterTypesName = combineValues(fields.map { field in "\(field.name): \(field.type)" })
         let getterName = generateGetterName(forFields: fields, inEnum: enumName)
         
         return  """

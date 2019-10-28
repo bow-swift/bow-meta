@@ -30,8 +30,8 @@ extension Author {
 // MARK: - Generated from file Article.swift
 
 extension Article {
-    static var iso: Iso<Article, (String, String?, PublicationState, Author)> {
-        Iso(get: { article in (article.title, article.subtitle, article.state, article.author) }, reverseGet: Article.init)
+    static var iso: Iso<Article, (String, String?, PublicationState, Author, WrittingStyle)> {
+        Iso(get: { article in (article.title, article.subtitle, article.state, article.author, article.style) }, reverseGet: Article.init)
     }
 }
 

@@ -8,10 +8,13 @@ class CaseVisitorTests: XCTestCase {
         let ast = try SyntaxTreeParser.parse(URL.meta.fixtures.file(.article))
         ast.walk(visitor)
         
-        let expected: [Case] = [(name: "draft", []),
-                                (name: "published",  [Field(name: "", type: "Date")]),
-                                (name: "deleted",    [Field(name: "", type: "Date"),
-                                                      Field(name: "reason", type: "String?")])]
+        let expected: [Case] = [Case(name: "expository",  associatedValues: []),
+                                Case(name: "descriptive", associatedValues: []),
+                                Case(name: "persuasive",  associatedValues: []),
+                                Case(name: "narrative",   associatedValues: []),
+                                Case(name: "draft",      associatedValues: [Field(name: "date", type: "Date"), Field(name: "comments", type: "String?")]),
+                                Case(name: "published",  associatedValues: [Field(name: "date", type: "Date"), Field(name: "comments", type: "String?")]),
+                                Case(name: "deleted",    associatedValues: [Field(name: "date", type: "Date"), Field(name: "reason", type: "String?"), Field(name: "comments", type: "String?")])]
         
         XCTAssertTrue(visitor.cases == expected)
     }

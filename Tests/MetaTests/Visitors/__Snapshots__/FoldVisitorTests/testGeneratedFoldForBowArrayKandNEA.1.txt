@@ -1,9 +1,3 @@
-extension Blog {
-    static var articlesFold: Fold<Blog, Article> {
-        articlesLens + [Article].fold
-    }
-}
-
 extension Company {
     static var employeesFold: Fold<Company, Employee> {
         employeesLens + ArrayK<Employee>.fold
