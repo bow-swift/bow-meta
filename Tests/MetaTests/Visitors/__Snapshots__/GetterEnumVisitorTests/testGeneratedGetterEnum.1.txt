@@ -1,0 +1,10 @@
+extension PublicationState {
+    static var publicationStateDateGetter = Getter<PublicationState, Date> { state in
+        switch state {
+        case let .draft(date): return date
+        case let .published(date): return date
+        case let .deleted(date, _): return date
+        }
+    }
+}
+

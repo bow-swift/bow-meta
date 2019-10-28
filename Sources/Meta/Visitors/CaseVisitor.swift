@@ -1,6 +1,14 @@
 import SwiftSyntax
 
-public typealias Case = (name: String, associatedValues: [Field])
+public struct Case: Equatable {
+    let name: String
+    let associatedValues: [Field]
+    
+    public init(name: String, associatedValues: [Field]) {
+        self.name = name
+        self.associatedValues = associatedValues
+    }
+}
 
 public extension EnumDeclSyntax {
     var cases: [Case] {
@@ -15,7 +23,7 @@ public class CaseVisitor: SyntaxVisitor {
     
     override public func visit(_ node: EnumCaseDeclSyntax) -> SyntaxVisitorContinueKind {
         let cases: [Case] = node.elements.reduce(into: []) { partial, element in
-            let newCase = (name: element.identifier.description, associatedValues: element.associatedValues)
+            let newCase = Case(name: element.identifier.description, associatedValues: element.associatedValues)
             partial.append(newCase)
         }
         
