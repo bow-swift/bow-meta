@@ -3,7 +3,6 @@ import BowOptics
 import Foundation
 
 
-
 // MARK: - Generated from file Author.swift
 
 extension SocialNetwork {

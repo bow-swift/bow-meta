@@ -1,6 +1,4 @@
 import SwiftSyntax
-import Bow
-
 
 public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
@@ -14,6 +12,7 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
         let code =  """
                     extension \(enumName) {
                     \(generateGetters(for: commonFields, in: cases, forEnum: enumName))
+                    \(generateIndividualGetters(for: commonFields, in: cases, forEnum: enumName))
                     }
                     
                     """
@@ -28,9 +27,11 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
             `case`.associatedValues.filter { field in !field.name.isEmpty }
         }
         
-        return associatedFields.k().reduceLeftOption { partial, types in
+        let commonsFields = associatedFields.k().reduceLeftOption { partial, types in
             Array(Set(partial).intersection(Set(types)))
         }.getOrElse([])
+        
+        return cases.first?.associatedValues.filter { field in commonsFields.contains(field) } ?? []
     }
     
     private func generateGetters(for fields: [Field], in cases: [Case], forEnum enumName: String) -> String {
@@ -45,19 +46,46 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
             return "        case let .\(`case`.name)(\(parameters)): return \(getterParametersName)"
         }
         
-        let getterTypesName = combineValues(fields.map { field in "\(field.name): \(field.type)" })
-        let getterName = generateGetterName(forFields: fields, inEnum: enumName)
+        func opticGetter(for fields: [Field], in cases: [Case], forEnum enumName: String, namedElements: Bool) -> String {
+            let getterName = opticGetterName(forFields: fields, inEnum: enumName, namedElements: namedElements)
+            let getterTypes = namedElements ? combineValues(fields.map { field in "\(field.name): \(field.type)" })
+                                            : combineValues(fields.map { field in field.type })
+            
+            return  """
+                    
+                        static var \(getterName) = Getter<\(enumName), \(getterTypes)> { state in
+                            switch state {
+                    \(cases.map { `case` in extractFields(fields, inCase: `case`) }.joined(separator: "\n") )
+                            }
+                        }
+                    """
+        }
+        
         
         return  """
-                    static var \(getterName) = Getter<\(enumName), \(getterTypesName)> { state in
-                        switch state {
-                \(cases.map { `case` in extractFields(fields, inCase: `case`) }.joined(separator: "\n") )
-                        }
-                    }
+                    \(opticGetter(for: fields, in: cases, forEnum: enumName, namedElements: false))
+                    \(fields.count > 1 ? opticGetter(for: fields, in: cases, forEnum: enumName, namedElements: true) : "")
                 """
     }
     
-    private func generateGetterName(forFields fields: [Field], inEnum enumName: String) -> String {
-        fields.count > 1 ? "\(enumName.firstLowercased)FieldsGetter" : "\(enumName.firstLowercased)\(fields.first!.name.capitalized)Getter"
+    private func generateIndividualGetters(for fields: [Field], in cases: [Case], forEnum enumName: String) -> String {
+        let tuplesArityRange = (2...10) // Bow has defined optics over tuples of arity 2-10
+        guard tuplesArityRange.contains(fields.count) else { return "" }
+        
+        let getterName = opticGetterName(forFields: fields, inEnum: enumName, namedElements: false)
+        let getters = fields.enumerated().map { (index, field) in
+            """
+                static let \(field.name)Getter: Getter<\(enumName), \(field.type)> = \(getterName) + Tuple\(fields.count)._\(index)
+            """
+        }
+        
+        return  """
+                
+                \(getters.joined(separator: "\n"))
+                """
+    }
+    
+    private func opticGetterName(forFields fields: [Field], inEnum enumName: String, namedElements: Bool) -> String {
+        fields.count > 1 ? "fields\(namedElements ? "Named" : "")Getter" : "\(fields.first!.name)Getter"
     }
 }

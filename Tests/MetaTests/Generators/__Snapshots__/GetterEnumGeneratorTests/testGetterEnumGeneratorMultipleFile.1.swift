@@ -1,3 +1,10 @@
+import Bow
+import BowOptics
+import Foundation
+
+
+// MARK: - Generated from file Article.swift
+
 extension PublicationState {
     
     static var fieldsGetter = Getter<PublicationState, (Date, String?)> { state in
