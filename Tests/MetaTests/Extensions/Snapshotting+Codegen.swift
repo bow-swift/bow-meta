@@ -6,13 +6,14 @@ import BowEffects
 
 
 extension Snapshotting where Value == URL, Format == String {
-    static let copyMethod: Snapshotting<URL, String> = .generatedCode(visitor: CopyVisitor())
-    static let fold: Snapshotting<URL, String> = .generatedCode(visitor: FoldVisitor())
-    static let iso: Snapshotting<URL, String> = .generatedCode(visitor: IsoVisitor())
-    static let lens: Snapshotting<URL, String> = .generatedCode(visitor: LensVisitor())
-    static let optional: Snapshotting<URL, String> = .generatedCode(visitor: OptionalVisitor())
-    static let prism: Snapshotting<URL, String> = .generatedCode(visitor: PrismVisitor())
-    static let traversal: Snapshotting<URL, String> = .generatedCode(visitor: TraversalVisitor())
+    static var copyMethod: Snapshotting<URL, String> { .generatedCode(visitor: CopyVisitor()) }
+    static var fold: Snapshotting<URL, String> { .generatedCode(visitor: FoldVisitor()) }
+    static var getterEnum: Snapshotting<URL, String> { .generatedCode(visitor: GetterEnumVisitor()) }
+    static var iso: Snapshotting<URL, String> { .generatedCode(visitor: IsoVisitor()) }
+    static var lens: Snapshotting<URL, String> { .generatedCode(visitor: LensVisitor()) }
+    static var optional: Snapshotting<URL, String> { .generatedCode(visitor: OptionalVisitor()) }
+    static var prism: Snapshotting<URL, String> { .generatedCode(visitor: PrismVisitor()) }
+    static var traversal: Snapshotting<URL, String> { .generatedCode(visitor: TraversalVisitor()) }
 }
 
 

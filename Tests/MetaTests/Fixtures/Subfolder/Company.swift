@@ -8,6 +8,6 @@ struct Company {
 
 struct Employee {
     let name: String
-    let phones: NEA<String>
+    let phoneNumbers: NEA<String>
     let emails: NonEmptyArray<String>
 }

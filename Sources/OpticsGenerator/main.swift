@@ -60,6 +60,10 @@ func generatePrism(_ input: URL, _ output: URL) -> Task<Void> {
     generate(input, output, "PrismGeneration.swift", PrismGenerator())
 }
 
+func generateGetterEnum(_ input: URL, _ output: URL) -> Task<Void> {
+    generate(input, output, "GetterEnumGeneration.swift", GetterEnumGenerator())
+}
+
 func main() -> Task<Void> {
     let input = Task<URL>.var()
     let output = Task<URL>.var()
@@ -73,6 +77,7 @@ func main() -> Task<Void> {
                         |<-generateTraversal(input.get, output.get),
                         |<-generateFold(input.get, output.get),
                         |<-generatePrism(input.get, output.get),
+                        |<-generateGetterEnum(input.get, output.get),
         yield:())^
 }
 

@@ -1,9 +1,16 @@
 import Foundation
 
+enum WrittingStyle {
+    case expository
+    case descriptive
+    case persuasive
+    case narrative
+}
+
 enum PublicationState {
-    case draft
-    case published(Date)
-    case deleted(Date, reason: String?)
+    case draft(date: Date, comments: String?)
+    case published(comments: String?, date: Date)
+    case deleted(date: Date, reason: String?, comments: String?)
 }
 
 struct Article {
@@ -11,6 +18,7 @@ struct Article {
     let subtitle: String?
     let state: PublicationState
     let author: Author
+    let style: WrittingStyle
 }
 
 struct Blog {

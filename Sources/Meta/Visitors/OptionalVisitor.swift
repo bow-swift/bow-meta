@@ -38,7 +38,7 @@ public class OptionalVisitor: SyntaxVisitor, CodegenVisitor {
             "\(value).\(field.name)"
         return """
             static var \(field.name)Optional: Optional<\(structName), \(field.type.nonOptional)> {
-                Optional(set: { $0.copy(with\(field.name.capitalized): .some($1)) },
+                Optional(set: { $0.copy(with\(field.name.firstUppercased): .some($1)) },
                          getOrModify: { \(value) in
                              \(optionField).fold(
                                  { Either.left(\(value)) },

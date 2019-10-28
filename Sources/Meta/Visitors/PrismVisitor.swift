@@ -93,17 +93,17 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
         let differentsNames = Array(Set(associatedNames)).count == associatedValues.count
         
         let optics = zip(associatedValues, associatedNames).enumerated().map { (index, associatedInfo) -> String in
-            let ((_, type), associatedName) = associatedInfo
+            let (field, associatedName) = associatedInfo
             let name = "\(associatedName)\(differentsNames ? "" : "\(index)")"
             return  """
-                            static let \(name)Optional: Optional<\(enumName), \(type)> = \(prismName) + Tuple\(associatedValues.count)._\(index)
+                            static let \(name)Optional: Optional<\(enumName), \(field.type)> = \(prismName) + Tuple\(associatedValues.count)._\(index)
                     """
         }
         
         return  """
                 
                 
-                    enum \(caseName.capitalized) {
+                    enum \(caseName.firstUppercased) {
                 \(optics.joined(separator: "\n"))
                     }
                 """

@@ -16,10 +16,10 @@ extension Company {
 
 extension Employee {
     func copy(withName name: String? = nil,
-			  withPhones phones: NEA<String>? = nil,
+			  withPhoneNumbers phoneNumbers: NEA<String>? = nil,
 			  withEmails emails: NonEmptyArray<String>? = nil) -> Employee {
         Employee(name: name ?? self.name,
-			phones: phones ?? self.phones,
+			phoneNumbers: phoneNumbers ?? self.phoneNumbers,
 			emails: emails ?? self.emails)
     }
 }
@@ -42,11 +42,13 @@ extension Article {
     func copy(withTitle title: String? = nil,
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
-			  withAuthor author: Author? = nil) -> Article {
+			  withAuthor author: Author? = nil,
+			  withStyle style: WrittingStyle? = nil) -> Article {
         Article(title: title ?? self.title,
 			subtitle: subtitle ?? self.subtitle,
 			state: state ?? self.state,
-			author: author ?? self.author)
+			author: author ?? self.author,
+			style: style ?? self.style)
     }
 }
 

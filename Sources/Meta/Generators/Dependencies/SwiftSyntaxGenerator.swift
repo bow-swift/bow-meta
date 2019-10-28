@@ -35,7 +35,10 @@ class SwiftSyntaxGenerator: CodeGenerator {
             """
             \(imports)
             
-            \(code)
+            
+            \(code.trimmingCharacters(in: .newlines))
+            
+            
             """
         }.env
     }

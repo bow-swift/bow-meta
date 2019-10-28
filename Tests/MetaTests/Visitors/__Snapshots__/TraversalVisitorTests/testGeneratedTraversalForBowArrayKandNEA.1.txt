@@ -1,9 +1,3 @@
-extension Blog {
-    static var articlesTraversal: Traversal<Blog, Article> {
-        articlesLens + [Article].traversal
-    }
-}
-
 extension Company {
     static var employeesTraversal: Traversal<Company, Employee> {
         employeesLens + ArrayK<Employee>.traversal
@@ -11,8 +5,8 @@ extension Company {
 }
 
 extension Employee {
-    static var phonesTraversal: Traversal<Employee, String> {
-        phonesLens + NEA<String>.traversal
+    static var phoneNumbersTraversal: Traversal<Employee, String> {
+        phoneNumbersLens + NEA<String>.traversal
     }
 
     static var emailsTraversal: Traversal<Employee, String> {

@@ -1,6 +1,15 @@
 import SwiftSyntax
 
-public typealias Field = (name: String, type: String)
+
+public struct Field: Equatable, Hashable {
+    let name: String
+    let type: String
+    
+    public init(name: String, type: String) {
+        self.name = name
+        self.type = type
+    }
+}
 
 public extension StructDeclSyntax {
     var fields: [Field] {
@@ -19,7 +28,7 @@ public class FieldVisitor: SyntaxVisitor {
                 let type = binding.typeAnnotation?.type.description else { return }
             
             let name = binding.pattern.description
-            fields.append((name: name, type: type))
+            fields.append(Field(name: name, type: type))
         }
         
         return .skipChildren
