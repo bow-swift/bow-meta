@@ -75,6 +75,9 @@
 		8B3FD56923630EE8001AD7B7 /* Case+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */; };
 		8B3FD578236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD577236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */; };
 		8B3FD57B23632F7F001AD7B7 /* String+NoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD57923632F7A001AD7B7 /* String+NoArray.swift */; };
+		8B3FD57D23634588001AD7B7 /* GetterEnumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD57C23634588001AD7B7 /* GetterEnumGenerator.swift */; };
+		8B3FD57F236345C6001AD7B7 /* GetterEnumVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD57E236345C6001AD7B7 /* GetterEnumVisitor.swift */; };
+		8B3FD58123634BE7001AD7B7 /* GetterEnumVisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FD58023634BE6001AD7B7 /* GetterEnumVisitorTests.swift */; };
 		8BFE7E3E234DE843003E97BF /* URL+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE7E3D234DE843003E97BF /* URL+Paths.swift */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +176,9 @@
 		8B3FD56823630EE8001AD7B7 /* Case+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Case+Equatable.swift"; sourceTree = "<group>"; };
 		8B3FD577236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testPrismGeneratorMultipleFile.1.swift; sourceTree = "<group>"; };
 		8B3FD57923632F7A001AD7B7 /* String+NoArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoArray.swift"; sourceTree = "<group>"; };
+		8B3FD57C23634588001AD7B7 /* GetterEnumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetterEnumGenerator.swift; sourceTree = "<group>"; };
+		8B3FD57E236345C6001AD7B7 /* GetterEnumVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterEnumVisitor.swift; sourceTree = "<group>"; };
+		8B3FD58023634BE6001AD7B7 /* GetterEnumVisitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetterEnumVisitorTests.swift; sourceTree = "<group>"; };
 		8BFE7E3D234DE843003E97BF /* URL+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Paths.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -303,6 +309,7 @@
 				113746E92343A56D00D9C1AD /* CopyVisitor.swift */,
 				113746E52343A4ED00D9C1AD /* FieldVisitor.swift */,
 				11F274CA234F7B4F00BC4CFB /* FoldVisitor.swift */,
+				8B3FD57E236345C6001AD7B7 /* GetterEnumVisitor.swift */,
 				113746E32343A47D00D9C1AD /* ImportVisitor.swift */,
 				111F8502234DCDBB003FE646 /* IsoVisitor.swift */,
 				11039BF6234E845B0022EE33 /* LensVisitor.swift */,
@@ -404,6 +411,7 @@
 			children = (
 				11433422234B50E200BFF775 /* CopyGenerator.swift */,
 				11F274CF234F7C5300BC4CFB /* FoldGenerator.swift */,
+				8B3FD57C23634588001AD7B7 /* GetterEnumGenerator.swift */,
 				111F8509234DD28D003FE646 /* IsoGenerator.swift */,
 				11039BFB234E87DC0022EE33 /* LensGenerator.swift */,
 				116867FC234F4D2D00976262 /* OptionalGenerator.swift */,
@@ -463,6 +471,7 @@
 				111F84FF234DCA98003FE646 /* CopyVisitorTests.swift */,
 				119DD0A12344E5BC00E1E62D /* FieldVisitorTests.swift */,
 				11F274CC234F7BE900BC4CFB /* FoldVisitorTests.swift */,
+				8B3FD58023634BE6001AD7B7 /* GetterEnumVisitorTests.swift */,
 				119DD09E2344E3E600E1E62D /* ImportVisitorTests.swift */,
 				111F8506234DD16E003FE646 /* IsoVisitorTests.swift */,
 				11039BF8234E86590022EE33 /* LensVisitorTests.swift */,
@@ -707,6 +716,7 @@
 				8B2D413C2361D91400EBFC88 /* PrismGenerator.swift in Sources */,
 				11433423234B50E200BFF775 /* CopyGenerator.swift in Sources */,
 				11F274D0234F7C5300BC4CFB /* FoldGenerator.swift in Sources */,
+				8B3FD57D23634588001AD7B7 /* GetterEnumGenerator.swift in Sources */,
 				113746E82343A51A00D9C1AD /* ComputedPropertyVisitor.swift in Sources */,
 				11039BFC234E87DC0022EE33 /* LensGenerator.swift in Sources */,
 				11433417234B468D00BFF775 /* CodeGenerator.swift in Sources */,
@@ -718,6 +728,7 @@
 				11433421234B4FAA00BFF775 /* IO.swift in Sources */,
 				11F274C4234F6F2F00BC4CFB /* TraversalGenerator.swift in Sources */,
 				11F274CB234F7B4F00BC4CFB /* FoldVisitor.swift in Sources */,
+				8B3FD57F236345C6001AD7B7 /* GetterEnumVisitor.swift in Sources */,
 				114333F2234B2AF900BFF775 /* CodegenVisitor.swift in Sources */,
 				1143340F234B430C00BFF775 /* Set.swift in Sources */,
 				8B3FD57B23632F7F001AD7B7 /* String+NoArray.swift in Sources */,
@@ -764,6 +775,7 @@
 				8B3FD578236315BE001AD7B7 /* testPrismGeneratorMultipleFile.1.swift in Sources */,
 				11039BFA234E865F0022EE33 /* LensVisitorTests.swift in Sources */,
 				119DD0A02344E3F100E1E62D /* ImportVisitorTests.swift in Sources */,
+				8B3FD58123634BE7001AD7B7 /* GetterEnumVisitorTests.swift in Sources */,
 				11686802234F4E4800976262 /* testOptionalGeneratorMultipleFiles.1.swift in Sources */,
 				111F8519234DD545003FE646 /* testCopyGeneratorMultipleFiles.1.swift in Sources */,
 				8B3FD56723630ABE001AD7B7 /* CaseVisitorTests.swift in Sources */,

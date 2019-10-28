@@ -8,6 +8,7 @@ import BowEffects
 extension Snapshotting where Value == URL, Format == String {
     static let copyMethod: Snapshotting<URL, String> = .generatedCode(visitor: CopyVisitor())
     static let fold: Snapshotting<URL, String> = .generatedCode(visitor: FoldVisitor())
+    static let getterEnum: Snapshotting<URL, String> = .generatedCode(visitor: GetterEnumVisitor())
     static let iso: Snapshotting<URL, String> = .generatedCode(visitor: IsoVisitor())
     static let lens: Snapshotting<URL, String> = .generatedCode(visitor: LensVisitor())
     static let optional: Snapshotting<URL, String> = .generatedCode(visitor: OptionalVisitor())
