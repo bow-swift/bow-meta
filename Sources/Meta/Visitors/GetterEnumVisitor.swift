@@ -10,8 +10,7 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
         guard cases.count > 0 else { return .skipChildren }
         
         let associatedTypes: [[String]] = node.cases.map { `case` in
-            guard let associated = `case`.associatedValues else { return [] }
-            return associated.compactMap { tuple in
+            `case`.associatedValues.compactMap { tuple in
                 guard !tuple.name.isEmpty else { return nil }
                 return "\(tuple.name):\(tuple.type)".trimmingCharacters(in: .whitespacesAndNewlines)
             }

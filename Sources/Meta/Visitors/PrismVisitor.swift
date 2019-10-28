@@ -27,7 +27,7 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
     }
     
     private func generatePrism(_ case: Case, enumName: String) -> String {
-        let hasAssociatedValues = `case`.associatedValues != nil
+        let hasAssociatedValues = `case`.associatedValues.count > 0
         return hasAssociatedValues ? generateAssociatedValuesPrism(in: `case`, enumName: enumName)
                                    : generatePrism(state: `case`.name, enumName: enumName)
     }
@@ -45,22 +45,29 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
     }
     
     private func generateAssociatedValuesPrism(in case: Case, enumName: String) -> String {
-        guard let associatedValues = `case`.associatedValues else { return "" }
+        func combineTypes(_ types: [String]) -> String {
+            guard types.count > 0 else { return "" }
+            return types.count > 1 ? "(\(types.joined(separator: ", ")))" : types.first!
+        }
         
+        guard `case`.associatedValues.count > 0 else { return "" }
+        
+        let associatedValues = `case`.associatedValues
         let state = `case`.name
         let prismName = "\(state)Prism"
         let opticsTypes = associatedValues.map { field in field.type }
-        let opticsTypesName = opticsTypes.count > 1 ? "(\(opticsTypes.joined(separator: ", ")))" : opticsTypes.first!
-        let opticsTypesParameters = opticsTypesName.lowercased().replacingOccurrences(of: "?", with: "")
-        
+        let opticsParameters = opticsTypes.enumerated().map { index, type in "\(type.lowercased().replacingOccurrences(of: "?", with: ""))\(index)" }
+        let opticsTypesName = combineTypes(opticsTypes)
+        let opticsParametersName = combineTypes(opticsParameters)
+                                                   
         let prism = """
                     
                         static var \(prismName): Prism<\(enumName), \(opticsTypesName)> {
                             Prism(getOrModify: { state in
-                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsTypesParameters) = state else { return Either.left(state) }"
-                                                        : "guard case let .\(state)(\(opticsTypesParameters)) = state else { return Either.left(state) }"
+                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsParametersName) = state else { return Either.left(state) }"
+                                                        : "guard case let .\(state)(\(opticsParametersName)) = state else { return Either.left(state) }"
                                 )
-                                return Either.right(\(opticsTypesParameters))
+                                return Either.right(\(opticsParametersName))
                             }, reverseGet: \(enumName).\(state))
                         }
                     """
@@ -75,7 +82,8 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
     
     
     private func generateAssociatedValuesOptics(inEnum enumName: String, case caseName: String, forPrism prismName: String, withAssociatedValues associatedValues: [Field]) -> String {
-        guard (2...10).contains(associatedValues.count) else { return "" }
+        let tuplesArityRange = (2...10) // Bow has defined optics over tuples of arity 2-10
+        guard tuplesArityRange.contains(associatedValues.count) else { return "" }
         
         let associatedNames = associatedValues.map { associated -> String in
             associated.name.isEmpty ? associated.type.lowercased().replacingOccurrences(of: "?", with: "")

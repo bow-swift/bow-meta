@@ -8,7 +8,7 @@ class CaseVisitorTests: XCTestCase {
         let ast = try SyntaxTreeParser.parse(URL.meta.fixtures.file(.article))
         ast.walk(visitor)
         
-        let expected: [Case] = [(name: "draft", nil),
+        let expected: [Case] = [(name: "draft", []),
                                 (name: "published",  [Field(name: "", type: "Date")]),
                                 (name: "deleted",    [Field(name: "", type: "Date"),
                                                       Field(name: "reason", type: "String?")])]

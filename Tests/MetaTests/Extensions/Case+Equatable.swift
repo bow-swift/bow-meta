@@ -2,11 +2,7 @@ import Foundation
 import Meta
 
 func ==(lhs: Case, rhs: Case) -> Bool {
-    let lhsAssociatedValues = lhs.associatedValues
-    let rhsAssociatedValues = rhs.associatedValues
-    let equalsAssociatedValues = lhsAssociatedValues.flatMap { l in rhsAssociatedValues.flatMap { r in l == r }} ?? (lhsAssociatedValues == nil && rhsAssociatedValues == nil)
-    
-    return equalsAssociatedValues && lhs.name == rhs.name
+    lhs.associatedValues == rhs.associatedValues && lhs.name == rhs.name
 }
 
 func ==(lhs: [Case], rhs: [Case]) -> Bool {
