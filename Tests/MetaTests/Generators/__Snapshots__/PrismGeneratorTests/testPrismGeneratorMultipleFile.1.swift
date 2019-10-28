@@ -70,16 +70,16 @@ extension PublicationState {
         static let commentsOptional: Optional<PublicationState, String?> = draftPrism + Tuple2._1
     }
 
-    static var publishedPrism: Prism<PublicationState, (Date, String?)> {
+    static var publishedPrism: Prism<PublicationState, (String?, Date)> {
         Prism(getOrModify: { state in
-            guard case let .published(date0, string1) = state else { return Either.left(state) }
-            return Either.right((date0, string1))
+            guard case let .published(string0, date1) = state else { return Either.left(state) }
+            return Either.right((string0, date1))
         }, reverseGet: PublicationState.published)
     }
 
     enum Published {
-        static let dateOptional: Optional<PublicationState, Date> = publishedPrism + Tuple2._0
-        static let commentsOptional: Optional<PublicationState, String?> = publishedPrism + Tuple2._1
+        static let commentsOptional: Optional<PublicationState, String?> = publishedPrism + Tuple2._0
+        static let dateOptional: Optional<PublicationState, Date> = publishedPrism + Tuple2._1
     }
 
     static var deletedPrism: Prism<PublicationState, (Date, String?, String?)> {

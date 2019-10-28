@@ -10,7 +10,7 @@ extension PublicationState {
     static var fieldsGetter = Getter<PublicationState, (Date, String?)> { state in
         switch state {
         case let .draft(date, comments): return (date, comments)
-        case let .published(date, comments): return (date, comments)
+        case let .published(comments, date): return (date, comments)
         case let .deleted(date, _, comments): return (date, comments)
         }
     }
@@ -18,7 +18,7 @@ extension PublicationState {
     static var fieldsNamedGetter = Getter<PublicationState, (date: Date, comments: String?)> { state in
         switch state {
         case let .draft(date, comments): return (date, comments)
-        case let .published(date, comments): return (date, comments)
+        case let .published(comments, date): return (date, comments)
         case let .deleted(date, _, comments): return (date, comments)
         }
     }

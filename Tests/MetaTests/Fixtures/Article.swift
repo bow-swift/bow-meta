@@ -9,7 +9,7 @@ enum WrittingStyle {
 
 enum PublicationState {
     case draft(date: Date, comments: String?)
-    case published(date: Date, comments: String?)
+    case published(comments: String?, date: Date)
     case deleted(date: Date, reason: String?, comments: String?)
 }
 
