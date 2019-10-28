@@ -28,9 +28,9 @@ extension Employee {
              set: { $0.copy(withName: $1) })
     }
 
-    static var phonesLens: Lens<Employee, NEA<String>> {
-        Lens(get: { $0.phones },
-             set: { $0.copy(withPhones: $1) })
+    static var phoneNumbersLens: Lens<Employee, NEA<String>> {
+        Lens(get: { $0.phoneNumbers },
+             set: { $0.copy(withPhoneNumbers: $1) })
     }
 
     static var emailsLens: Lens<Employee, NonEmptyArray<String>> {

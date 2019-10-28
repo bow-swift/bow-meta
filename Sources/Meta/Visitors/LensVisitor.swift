@@ -27,7 +27,7 @@ public class LensVisitor: SyntaxVisitor, CodegenVisitor {
         """
             static var \(field.name)Lens: Lens<\(structName), \(field.type)> {
                 Lens(get: { $0.\(field.name) },
-                     set: { $0.copy(with\(field.name.capitalized): $1) })
+                     set: { $0.copy(with\(field.name.firstUppercased): $1) })
             }
         """
     }

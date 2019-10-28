@@ -13,7 +13,7 @@ extension Company {
 
 extension Employee {
     static var iso: Iso<Employee, (String, NEA<String>, NonEmptyArray<String>)> {
-        Iso(get: { employee in (employee.name, employee.phones, employee.emails) }, reverseGet: Employee.init)
+        Iso(get: { employee in (employee.name, employee.phoneNumbers, employee.emails) }, reverseGet: Employee.init)
     }
 }
 

@@ -16,10 +16,10 @@ extension Company {
 
 extension Employee {
     func copy(withName name: String? = nil,
-			  withPhones phones: NEA<String>? = nil,
+			  withPhoneNumbers phoneNumbers: NEA<String>? = nil,
 			  withEmails emails: NonEmptyArray<String>? = nil) -> Employee {
         Employee(name: name ?? self.name,
-			phones: phones ?? self.phones,
+			phoneNumbers: phoneNumbers ?? self.phoneNumbers,
 			emails: emails ?? self.emails)
     }
 }

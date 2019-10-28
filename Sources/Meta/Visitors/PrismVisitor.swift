@@ -103,7 +103,7 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
         return  """
                 
                 
-                    enum \(caseName.capitalized) {
+                    enum \(caseName.firstUppercased) {
                 \(optics.joined(separator: "\n"))
                     }
                 """

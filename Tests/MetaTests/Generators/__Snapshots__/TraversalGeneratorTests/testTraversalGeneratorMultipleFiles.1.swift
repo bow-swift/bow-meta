@@ -12,8 +12,8 @@ extension Company {
 }
 
 extension Employee {
-    static var phonesTraversal: Traversal<Employee, String> {
-        phonesLens + NEA<String>.traversal
+    static var phoneNumbersTraversal: Traversal<Employee, String> {
+        phoneNumbersLens + NEA<String>.traversal
     }
 
     static var emailsTraversal: Traversal<Employee, String> {

@@ -22,7 +22,7 @@ public class CopyVisitor: SyntaxVisitor, CodegenVisitor {
     
     private func copyParameters(for members: [Field]) -> String {
         members.map { member in
-            "with\(member.name.capitalized) \(member.name): \(member.type)? = nil"
+            "with\(member.name.firstUppercased) \(member.name): \(member.type)? = nil"
         }.joined(separator: ",\n\t\t\t  ")
     }
     

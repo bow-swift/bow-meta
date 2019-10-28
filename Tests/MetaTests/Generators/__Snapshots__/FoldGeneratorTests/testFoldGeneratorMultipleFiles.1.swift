@@ -12,8 +12,8 @@ extension Company {
 }
 
 extension Employee {
-    static var phonesFold: Fold<Employee, String> {
-        phonesLens + NEA<String>.fold
+    static var phoneNumbersFold: Fold<Employee, String> {
+        phoneNumbersLens + NEA<String>.fold
     }
 
     static var emailsFold: Fold<Employee, String> {
