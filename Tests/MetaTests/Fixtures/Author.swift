@@ -1,3 +1,5 @@
+//  Copyright © 2019 Bow Authors. All rights reserved.
+
 import Foundation
 
 enum SocialNetwork {

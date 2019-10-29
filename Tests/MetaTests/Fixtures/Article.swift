@@ -1,3 +1,5 @@
+//  Copyright © 2019 47Degrees. All rights reserved.
+
 import Foundation
 
 enum WrittingStyle {
