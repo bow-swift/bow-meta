@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Generated from file Author.swift
 
-extension SocialNetwork {
+internal extension SocialNetwork {
 
     static var twitterPrism: Prism<SocialNetwork, String> {
         Prism(getOrModify: { state in
@@ -25,7 +25,7 @@ extension SocialNetwork {
 
 // MARK: - Generated from file Article.swift
 
-extension WrittingStyle {
+internal extension WrittingStyle {
     
     static var expositoryPrism: Prism<WrittingStyle, Void> {
         Prism(getOrModify: { state in
@@ -56,7 +56,41 @@ extension WrittingStyle {
     }
 }
 
-extension PublicationState {
+internal extension Article.NestedKeys1 {
+    
+    static var nested1Prism: Prism<Article.NestedKeys1, Void> {
+        Prism(getOrModify: { state in
+            guard case .nested1 = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { Article.NestedKeys1.nested1 })
+    }
+    
+    static var nested2Prism: Prism<Article.NestedKeys1, Void> {
+        Prism(getOrModify: { state in
+            guard case .nested2 = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { Article.NestedKeys1.nested2 })
+    }
+}
+
+internal extension Article.NestedKeys1.NestedKeys3 {
+    
+    static var nested4Prism: Prism<Article.NestedKeys1.NestedKeys3, Void> {
+        Prism(getOrModify: { state in
+            guard case .nested4 = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { Article.NestedKeys1.NestedKeys3.nested4 })
+    }
+    
+    static var nested5Prism: Prism<Article.NestedKeys1.NestedKeys3, Void> {
+        Prism(getOrModify: { state in
+            guard case .nested5 = state else { return Either.left(state) }
+            return Either.right(())
+        }, reverseGet: { Article.NestedKeys1.NestedKeys3.nested5 })
+    }
+}
+
+internal extension PublicationState {
 
     static var draftPrism: Prism<PublicationState, (Date, String?)> {
         Prism(getOrModify: { state in
