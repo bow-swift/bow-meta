@@ -1,30 +1,12 @@
 import SwiftSyntax
 
-
-public extension DeclSyntax where Self == EnumDeclSyntax {
+public extension NodeSyntax {
     var hasChildren: Bool {
         let visitor = ChilVisitor()
         self.walk(visitor)
         return visitor.hasChildren
     }
 }
-
-public extension DeclSyntax where Self == StructDeclSyntax {
-    var hasChildren: Bool {
-        let visitor = ChilVisitor()
-        self.walk(visitor)
-        return visitor.hasChildren
-    }
-}
-
-public extension DeclSyntax where Self == ClassDeclSyntax {
-    var hasChildren: Bool {
-        let visitor = ChilVisitor()
-        self.walk(visitor)
-        return visitor.hasChildren
-    }
-}
-
 
 public class ChilVisitor: SyntaxVisitor {
     public private(set) var enumNodes: [EnumDeclSyntax] = []

@@ -5,6 +5,8 @@ public protocol NodeSyntax {
     var hasChildren: Bool { get }
     var syntaxModifiers: [SyntaxModifier] { get }
     var isPrivate: Bool { get }
+    
+    func walk(_ visitor: SwiftSyntax.SyntaxVisitor)
 }
 
 extension NodeSyntax {

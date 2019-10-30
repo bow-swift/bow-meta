@@ -46,20 +46,20 @@ internal extension Article.NestedKeys1 {
     }
 }
 
-internal extension Article.NestedKeys1.NestedKeys3 {
+internal extension Article.NestedKeys1.NestedKeys4 {
     
-    static var nested4Prism: Prism<Article.NestedKeys1.NestedKeys3, Void> {
+    static var nested6Prism: Prism<Article.NestedKeys1.NestedKeys4, Void> {
         Prism(getOrModify: { state in
-            guard case .nested4 = state else { return Either.left(state) }
+            guard case .nested6 = state else { return Either.left(state) }
             return Either.right(())
-        }, reverseGet: { Article.NestedKeys1.NestedKeys3.nested4 })
+        }, reverseGet: { Article.NestedKeys1.NestedKeys4.nested6 })
     }
     
-    static var nested5Prism: Prism<Article.NestedKeys1.NestedKeys3, Void> {
+    static var nested7Prism: Prism<Article.NestedKeys1.NestedKeys4, Void> {
         Prism(getOrModify: { state in
-            guard case .nested5 = state else { return Either.left(state) }
+            guard case .nested7 = state else { return Either.left(state) }
             return Either.right(())
-        }, reverseGet: { Article.NestedKeys1.NestedKeys3.nested5 })
+        }, reverseGet: { Article.NestedKeys1.NestedKeys4.nested7 })
     }
 }
 

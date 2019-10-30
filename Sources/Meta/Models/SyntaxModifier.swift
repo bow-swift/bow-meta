@@ -1,13 +1,16 @@
 import SwiftSyntax
 
 public enum SyntaxModifier: String, CustomStringConvertible, CaseIterable, Equatable, Hashable {
+    public var description: String { rawValue }
+    
     case `private`
     case `internal`
     case `public`
     case `open`
-    
-    public var description: String { rawValue }
-    public var preference: Int {
+}
+
+fileprivate extension SyntaxModifier {
+    var preference: Int {
         switch self {
         case .private:  return 2
         case .internal: return 1
@@ -16,7 +19,6 @@ public enum SyntaxModifier: String, CustomStringConvertible, CaseIterable, Equat
         }
     }
 }
-
 
 extension Array where Element == SyntaxModifier {
     var modifier: SyntaxModifier {

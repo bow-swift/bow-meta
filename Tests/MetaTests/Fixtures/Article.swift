@@ -22,10 +22,14 @@ struct Article {
         private enum NestedKeys2 {
             case nested3
             case nested4
+            enum NestedKeys3 {
+                case nested4
+                case nested5
+            }
         }
-        enum NestedKeys3 {
-            case nested4
-            case nested5
+        enum NestedKeys4 {
+            case nested6
+            case nested7
         }
     }
 }
