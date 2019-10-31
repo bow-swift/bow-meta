@@ -7,7 +7,7 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.fields.filter(isOptionalType)
+        let fields = node.fields.optionalsType
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
@@ -21,8 +21,6 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         
         return visitorContinue
     }
-    
-    private func isOptionalType(_ field: Field) -> Bool { field.type.isOptionalType }
     
     private func generateOptionals(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateOptional(field, structName: structName) }.joined(separator: "\n\n")

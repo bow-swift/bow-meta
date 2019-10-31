@@ -30,6 +30,12 @@ extension Author {
     }
 }
 
+extension Author.NestedKeys1 {
+    static var nested8Traversal: Traversal<Author.NestedKeys1, String> {
+        nested8Lens + NEA<String>.traversal
+    }
+}
+
 
 // MARK: - Generated from file Article.swift
 

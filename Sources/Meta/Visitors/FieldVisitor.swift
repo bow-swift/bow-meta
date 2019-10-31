@@ -10,6 +10,7 @@ public struct Field: Equatable, Hashable {
     }
 }
 
+
 public extension StructDeclSyntax {
     var fields: [Field] {
         let visitor = FieldVisitor(self)

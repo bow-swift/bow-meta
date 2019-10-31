@@ -1,28 +1,26 @@
 import SwiftSyntax
 
-public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
+public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters
-        let fields = node.fields.filter(isArrayType)
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
         
-        if fields.count > 0 {
-            let traversalsCode = generateTraversals(for: fields, structName: structName)
-            
-            let code = """
-            extension \(structName) {
-            \(traversalsCode)
-            }
-            
-            """
-            print(code, to: &generatedCode)
+        let fields = node.fields.arraysType
+        guard fields.count > 0 else { return visitorContinue }
+        
+        let code = """
+        extension \(visitorFullyQualifiedName) {
+        \(generateTraversals(for: fields, structName: visitorFullyQualifiedName))
         }
         
-        return .skipChildren
+        """
+        
+        print(code, to: &generatedCode)
+        
+        return visitorContinue
     }
-    
-    private func isArrayType(_ field: Field) -> Bool { field.type.isArrayType }
     
     private func generateTraversals(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateTraversal(field, structName: structName) }.joined(separator: "\n\n")

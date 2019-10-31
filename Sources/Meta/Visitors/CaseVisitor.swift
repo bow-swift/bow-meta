@@ -10,6 +10,7 @@ public struct Case: Equatable {
     }
 }
 
+
 public extension EnumDeclSyntax {
     var cases: [Case] {
         let visitor = CaseVisitor(self)

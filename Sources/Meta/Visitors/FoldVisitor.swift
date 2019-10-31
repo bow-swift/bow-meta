@@ -7,7 +7,7 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.fields.filter(isArrayType)
+        let fields = node.fields.arraysType
         let structName = visitorFullyQualifiedName
         guard fields.count > 0 else { return visitorContinue }
         
@@ -22,8 +22,6 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
         
         return visitorContinue
     }
-    
-    private func isArrayType(_ field: Field) -> Bool { !field.type.isOptionalType && field.type.isArrayType }
     
     private func generateFolds(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateFold(field, structName: structName) }.joined(separator: "\n\n")
