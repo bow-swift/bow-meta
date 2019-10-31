@@ -28,8 +28,8 @@ struct Article {
             }
         }
         enum NestedKeys4 {
-            case nested6
-            case nested7
+            case nested6(nested: String)
+            case nested7(nested: String)
         }
     }
 }

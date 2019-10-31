@@ -1,18 +1,27 @@
 import SwiftSyntax
 
-public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
+public class GetterEnumVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: EnumDeclSyntax) -> SyntaxVisitorContinueKind {
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
+        
         let cases = node.cases
         let commonFields = commonAssociatedFields(in: cases)
-        guard commonFields.count > 0 else { return .skipChildren }
+        guard commonFields.count > 0 else { return visitorContinue }
         
-        let enumName = node.identifier.description.trimmingCharacters
+        let enumName = visitorFullyQualifiedName
+        let opticsGetters = generateGetters(for: commonFields, in: cases, forEnum: enumName)
+        let opticsIndividualGetters = generateIndividualGetters(for: commonFields, in: cases, forEnum: enumName)
+        let optics =    """
+                        \(opticsGetters)
+                        \(opticsIndividualGetters)
+                        """.trimmingCharacters
+        
         let code =  """
                     extension \(enumName) {
-                    \(generateGetters(for: commonFields, in: cases, forEnum: enumName))
-                    \(generateIndividualGetters(for: commonFields, in: cases, forEnum: enumName))
+                        \(optics)
                     }
                     
                     """
