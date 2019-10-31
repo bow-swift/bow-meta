@@ -28,7 +28,7 @@ public class GetterEnumVisitor: NestedDeclarationVisitor, CodegenVisitor {
 
         print(code, to: &generatedCode)
         
-        return .skipChildren
+        return visitorContinue
     }
     
     private func commonAssociatedFields(in cases: [Case]) -> [Field] {

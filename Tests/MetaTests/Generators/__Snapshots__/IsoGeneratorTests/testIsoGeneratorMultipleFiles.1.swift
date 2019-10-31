@@ -26,6 +26,18 @@ extension Author {
     }
 }
 
+extension Author.NestedKeys1 {
+    static var iso: Iso<Author.NestedKeys1, (Int, Int?, NEA<String>)> {
+        Iso(get: { nestedkeys1 in (nestedkeys1.nested1, nestedkeys1.nested2, nestedkeys1.nested8) }, reverseGet: Author.NestedKeys1.init)
+    }
+}
+
+extension Author.NestedKeys1.NestedKeys4 {
+    static var iso: Iso<Author.NestedKeys1.NestedKeys4, (String, String?, [String]?)> {
+        Iso(get: { nestedkeys4 in (nestedkeys4.nested6, nestedkeys4.nested7, nestedkeys4.nested8) }, reverseGet: Author.NestedKeys1.NestedKeys4.init)
+    }
+}
+
 
 // MARK: - Generated from file Article.swift
 

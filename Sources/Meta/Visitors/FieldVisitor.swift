@@ -1,6 +1,5 @@
 import SwiftSyntax
 
-
 public struct Field: Equatable, Hashable {
     let name: String
     let type: String
