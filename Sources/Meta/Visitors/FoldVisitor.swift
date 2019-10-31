@@ -7,7 +7,7 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.fields.arraysType
+        let fields = node.fields.arrays
         let structName = visitorFullyQualifiedName
         guard fields.count > 0 else { return visitorContinue }
         
@@ -30,7 +30,7 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private func generateFold(_ field: Field, structName: String) -> String {
         """
             static var \(field.name)Fold: Fold<\(structName), \(field.type.nonArray)> {
-                \(field.name)Lens + \(field.type).fold
+                \(field.name)\(field.type.isOptionalType ? "Optional" : "Lens") + \(field.type.nonOptional).fold
             }
         """
     }

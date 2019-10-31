@@ -7,7 +7,7 @@ public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.fields.arraysType
+        let fields = node.fields.arrays
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
@@ -29,7 +29,7 @@ public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private func generateTraversal(_ field: Field, structName: String) -> String {
         """
             static var \(field.name)Traversal: Traversal<\(structName), \(field.type.nonArray)> {
-                \(field.name)Lens + \(field.type).traversal
+                \(field.name)\(field.type.isOptionalType ? "Optional" : "Lens") + \(field.type.nonOptional).traversal
             }
         """
     }
