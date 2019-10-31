@@ -30,6 +30,12 @@ extension Author {
     }
 }
 
+extension Author.NestedKeys1 {
+    static var nested8Fold: Fold<Author.NestedKeys1, String> {
+        nested8Lens + NEA<String>.fold
+    }
+}
+
 
 // MARK: - Generated from file Article.swift
 

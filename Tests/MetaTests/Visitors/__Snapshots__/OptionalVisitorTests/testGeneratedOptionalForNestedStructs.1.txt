@@ -18,5 +18,14 @@ extension Author.NestedKeys1.NestedKeys4 {
                          Either.right)
                  })
     }
+
+    static var nested8Optional: Optional<Author.NestedKeys1.NestedKeys4, [String]> {
+        Optional(set: { $0.copy(withNested8: .some($1)) },
+                 getOrModify: { nestedkeys4 in
+                     nestedkeys4.nested8.toOption().fold(
+                         { Either.left(nestedkeys4) },
+                         Either.right)
+                 })
+    }
 }
 

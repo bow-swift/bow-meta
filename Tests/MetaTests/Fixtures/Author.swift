@@ -1,6 +1,7 @@
 //  Copyright © 2019 Bow Authors. All rights reserved.
 
 import Foundation
+import Bow
 
 enum SocialNetwork {
     case twitter(String)
@@ -30,17 +31,19 @@ struct Author {
     public struct NestedKeys1 {
         let nested1: Int
         let nested2: Int?
+        let nested8: NEA<String>
         private struct NestedKeys2 {
             let nested3: Bool
             let nested4: Bool?
             struct NestedKeys3 {
-                let nested4: Bool
+                let nested4: [Bool]
                 let nested5: Bool?
             }
         }
         struct NestedKeys4 {
             let nested6: String
             let nested7: String?
+            let nested8: [String]?
         }
     }
 }

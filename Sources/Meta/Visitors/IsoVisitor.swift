@@ -4,7 +4,7 @@ public class IsoVisitor: SyntaxVisitor, CodegenVisitor {
     public private(set) var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let structName = node.identifier.description.trimmingCharacters
         let fields = node.fields
         
         let generated = """

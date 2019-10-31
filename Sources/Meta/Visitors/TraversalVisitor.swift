@@ -4,7 +4,7 @@ public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let structName = node.identifier.description.trimmingCharacters
         let fields = node.fields.filter(isArrayType)
         
         if fields.count > 0 {

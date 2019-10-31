@@ -22,10 +22,7 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         return visitorContinue
     }
     
-    private func isOptionalType(_ field: Field) -> Bool {
-        return field.type.hasSuffix("?") ||
-            field.type.hasPrefix("Option<")
-    }
+    private func isOptionalType(_ field: Field) -> Bool { field.type.isOptionalType }
     
     private func generateOptionals(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateOptional(field, structName: structName) }.joined(separator: "\n\n")
@@ -47,11 +44,5 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
                          })
             }
         """
-    }
-}
-
-fileprivate extension String {
-    var nonOptional: String {
-        substring(pattern: "(?<=Option<).+(?=>)").clean("?")
     }
 }

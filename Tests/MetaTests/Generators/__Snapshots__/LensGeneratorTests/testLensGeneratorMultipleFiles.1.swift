@@ -64,6 +64,11 @@ extension Author.NestedKeys1 {
         Lens(get: { $0.nested2 },
              set: { $0.copy(withNested2: $1) })
     }
+
+    static var nested8Lens: Lens<Author.NestedKeys1, NEA<String>> {
+        Lens(get: { $0.nested8 },
+             set: { $0.copy(withNested8: $1) })
+    }
 }
 
 extension Author.NestedKeys1.NestedKeys4 {
@@ -75,6 +80,11 @@ extension Author.NestedKeys1.NestedKeys4 {
     static var nested7Lens: Lens<Author.NestedKeys1.NestedKeys4, String?> {
         Lens(get: { $0.nested7 },
              set: { $0.copy(withNested7: $1) })
+    }
+
+    static var nested8Lens: Lens<Author.NestedKeys1.NestedKeys4, [String]?> {
+        Lens(get: { $0.nested8 },
+             set: { $0.copy(withNested8: $1) })
     }
 }
 

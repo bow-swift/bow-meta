@@ -1,28 +1,29 @@
 import SwiftSyntax
 
-public class FoldVisitor: SyntaxVisitor, CodegenVisitor {
+public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
-        let fields = node.fields.filter(isArrayType)
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
         
-        if fields.count > 0 {
-            let foldsCode = generateFolds(for: fields, structName: structName)
-            
-            let code = """
-            extension \(structName) {
-            \(foldsCode)
-            }
-            
-            """
-            print(code, to: &generatedCode)
+        let fields = node.fields.filter(isArrayType)
+        let structName = visitorFullyQualifiedName
+        guard fields.count > 0 else { return visitorContinue }
+        
+        let code = """
+        extension \(structName) {
+        \(generateFolds(for: fields, structName: structName))
         }
         
-        return .skipChildren
+        """
+        
+        print(code, to: &generatedCode)
+        
+        return visitorContinue
     }
     
-    private func isArrayType(_ field: Field) -> Bool { field.type.isArrayType }
+    private func isArrayType(_ field: Field) -> Bool { !field.type.isOptionalType && field.type.isArrayType }
     
     private func generateFolds(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateFold(field, structName: structName) }.joined(separator: "\n\n")

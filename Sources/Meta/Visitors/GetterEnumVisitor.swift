@@ -8,7 +8,7 @@ public class GetterEnumVisitor: SyntaxVisitor, CodegenVisitor {
         let commonFields = commonAssociatedFields(in: cases)
         guard commonFields.count > 0 else { return .skipChildren }
         
-        let enumName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let enumName = node.identifier.description.trimmingCharacters
         let code =  """
                     extension \(enumName) {
                     \(generateGetters(for: commonFields, in: cases, forEnum: enumName))

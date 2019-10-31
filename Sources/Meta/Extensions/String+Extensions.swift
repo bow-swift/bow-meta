@@ -10,6 +10,10 @@ extension String {
         (first?.uppercased() ?? "") + dropFirst()
     }
     
+    var trimmingCharacters: String {
+        trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     func clean(_ ocurrences: String...) -> String {
         return ocurrences.reduce(self) { (output, ocurrence) in
             output.replacingOccurrences(of: ocurrence, with: "")

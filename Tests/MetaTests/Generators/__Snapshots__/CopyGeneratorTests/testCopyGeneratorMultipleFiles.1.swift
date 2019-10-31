@@ -37,17 +37,21 @@ extension Author {
 
 extension Author.NestedKeys1 {
     func copy(withNested1 nested1: Int? = nil,
-			  withNested2 nested2: Int?? = nil) -> Author.NestedKeys1 {
+			  withNested2 nested2: Int?? = nil,
+			  withNested8 nested8: NEA<String>? = nil) -> Author.NestedKeys1 {
         Author.NestedKeys1(nested1: nested1 ?? self.nested1,
-			nested2: nested2 ?? self.nested2)
+			nested2: nested2 ?? self.nested2,
+			nested8: nested8 ?? self.nested8)
     }
 }
 
 extension Author.NestedKeys1.NestedKeys4 {
     func copy(withNested6 nested6: String? = nil,
-			  withNested7 nested7: String?? = nil) -> Author.NestedKeys1.NestedKeys4 {
+			  withNested7 nested7: String?? = nil,
+			  withNested8 nested8: [String]?? = nil) -> Author.NestedKeys1.NestedKeys4 {
         Author.NestedKeys1.NestedKeys4(nested6: nested6 ?? self.nested6,
-			nested7: nested7 ?? self.nested7)
+			nested7: nested7 ?? self.nested7,
+			nested8: nested8 ?? self.nested8)
     }
 }
 

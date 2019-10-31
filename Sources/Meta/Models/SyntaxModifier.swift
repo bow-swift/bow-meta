@@ -29,7 +29,7 @@ extension Array where Element == SyntaxModifier {
 
 extension SwiftSyntax.Syntax {
     var modifiers: Set<SyntaxModifier> {
-        Set((description as String).trimmingCharacters(in: .whitespacesAndNewlines)
+        Set((description as String).trimmingCharacters
                                    .components(separatedBy: " ")
                                    .compactMap(SyntaxModifier.init))
     }
