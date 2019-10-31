@@ -1,0 +1,16 @@
+extension Company {
+    static var employeesTraversal: Traversal<Company, Employee> {
+        employeesLens + ArrayK<Employee>.traversal
+    }
+}
+
+extension Employee {
+    static var phoneNumbersTraversal: Traversal<Employee, String> {
+        phoneNumbersLens + NEA<String>.traversal
+    }
+
+    static var emailsTraversal: Traversal<Employee, String> {
+        emailsLens + NonEmptyArray<String>.traversal
+    }
+}
+

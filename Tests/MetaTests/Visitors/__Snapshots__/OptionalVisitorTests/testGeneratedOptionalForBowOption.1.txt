@@ -1,0 +1,11 @@
+extension Company {
+    static var ctoOptional: Optional<Company, Employee> {
+        Optional(set: { $0.copy(withCto: .some($1)) },
+                 getOrModify: { company in
+                     company.cto.fold(
+                         { Either.left(company) },
+                         Either.right)
+                 })
+    }
+}
+

@@ -1,11 +1,15 @@
 import SwiftSyntax
 
-public class CopyVisitor: SyntaxVisitor, CodegenVisitor {
+public class CopyVisitor: NestedDeclarationVisitor, CodegenVisitor {
     public private(set) var generatedCode = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
+        
         let fields = node.fields
+        let structName = visitorFullyQualifiedName
+        guard fields.count > 0 else { return visitorContinue }
         
         let generated = """
                         extension \(structName) {
@@ -15,9 +19,10 @@ public class CopyVisitor: SyntaxVisitor, CodegenVisitor {
                         }
                         
                         """
+        
         print(generated, to: &generatedCode)
         
-        return .skipChildren
+        return visitorContinue
     }
     
     private func copyParameters(for members: [Field]) -> String {

@@ -1,0 +1,16 @@
+extension Company {
+    static var employeesFold: Fold<Company, Employee> {
+        employeesLens + ArrayK<Employee>.fold
+    }
+}
+
+extension Employee {
+    static var phoneNumbersFold: Fold<Employee, String> {
+        phoneNumbersLens + NEA<String>.fold
+    }
+
+    static var emailsFold: Fold<Employee, String> {
+        emailsLens + NonEmptyArray<String>.fold
+    }
+}
+
