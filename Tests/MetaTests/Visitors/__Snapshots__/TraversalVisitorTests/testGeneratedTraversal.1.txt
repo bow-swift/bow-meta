@@ -1,6 +1,0 @@
-extension Blog {
-    static var articlesTraversal: Traversal<Blog, Article> {
-        articlesLens + [Article].traversal
-    }
-}
-

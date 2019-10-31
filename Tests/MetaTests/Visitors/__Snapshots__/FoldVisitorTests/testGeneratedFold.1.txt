@@ -1,6 +1,0 @@
-extension Blog {
-    static var articlesFold: Fold<Blog, Article> {
-        articlesLens + [Article].fold
-    }
-}
-
