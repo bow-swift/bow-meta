@@ -54,6 +54,30 @@ extension Author {
     }
 }
 
+extension Author.NestedKeys1 {
+    static var nested1Lens: Lens<Author.NestedKeys1, Int> {
+        Lens(get: { $0.nested1 },
+             set: { $0.copy(withNested1: $1) })
+    }
+
+    static var nested2Lens: Lens<Author.NestedKeys1, Int> {
+        Lens(get: { $0.nested2 },
+             set: { $0.copy(withNested2: $1) })
+    }
+}
+
+extension Author.NestedKeys1.NestedKeys4 {
+    static var nested6Lens: Lens<Author.NestedKeys1.NestedKeys4, String> {
+        Lens(get: { $0.nested6 },
+             set: { $0.copy(withNested6: $1) })
+    }
+
+    static var nested7Lens: Lens<Author.NestedKeys1.NestedKeys4, String> {
+        Lens(get: { $0.nested7 },
+             set: { $0.copy(withNested7: $1) })
+    }
+}
+
 
 // MARK: - Generated from file Article.swift
 

@@ -1,22 +1,25 @@
 import SwiftSyntax
 
-public class LensVisitor: SyntaxVisitor, CodegenVisitor {
+public class LensVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     public override func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
+        
         let fields = node.fields
-        let lensesCode = generateLenses(for: fields, structName: structName)
+        guard fields.count > 0 else { return visitorContinue }
         
         let code = """
-        extension \(structName) {
-        \(lensesCode)
+        extension \(visitorFullyQualifiedName) {
+        \(generateLenses(for: fields, structName: visitorFullyQualifiedName))
         }
         
         """
+        
         print(code, to: &generatedCode)
         
-        return .skipChildren
+        return visitorContinue
     }
     
     private func generateLenses(for fields: [Field], structName: String) -> String {

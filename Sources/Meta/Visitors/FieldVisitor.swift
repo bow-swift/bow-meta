@@ -13,7 +13,7 @@ public struct Field: Equatable, Hashable {
 
 public extension StructDeclSyntax {
     var fields: [Field] {
-        let visitor = FieldVisitor()
+        let visitor = FieldVisitor(self)
         self.walk(visitor)
         return visitor.fields
     }
@@ -21,6 +21,11 @@ public extension StructDeclSyntax {
 
 public class FieldVisitor: SyntaxVisitor {
     public private(set) var fields: [Field] = []
+    private let node: StructDeclSyntax
+    
+    public init(_ node: StructDeclSyntax) {
+        self.node = node
+    }
     
     override public func visit(_ node: VariableDeclSyntax) -> SyntaxVisitorContinueKind {
         node.bindings.forEach { binding in
@@ -34,7 +39,8 @@ public class FieldVisitor: SyntaxVisitor {
         return .skipChildren
     }
     
-    override public func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind {
-        return .skipChildren
+    public override func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind { .skipChildren }
+    public override func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
+        self.node == node ? .visitChildren : .skipChildren
     }
 }
