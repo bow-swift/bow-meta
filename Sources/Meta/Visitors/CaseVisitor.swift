@@ -28,7 +28,7 @@ public class CaseVisitor: SyntaxVisitor {
     
     override public func visit(_ node: EnumCaseDeclSyntax) -> SyntaxVisitorContinueKind {
         let cases: [Case] = node.elements.reduce(into: []) { partial, element in
-            let newCase = Case(name: element.identifier.description.trimmingCharacters(in: .whitespaces),
+            let newCase = Case(name: element.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines),
                                associatedValues: element.associatedValues)
             partial.append(newCase)
         }
@@ -52,8 +52,8 @@ extension EnumCaseElementSyntax {
         return parameterList.compactMap { parameter in
             guard let type = parameter.type?.description else { return nil }
             let paramName = parameter.firstName?.description ?? ""
-            return Field(name: paramName.trimmingCharacters(in: .whitespaces),
-                         type: type.trimmingCharacters(in: .whitespaces))
+            return Field(name: paramName.trimmingCharacters(in: .whitespacesAndNewlines),
+                         type: type.trimmingCharacters(in: .whitespacesAndNewlines))
         }
     }
 }

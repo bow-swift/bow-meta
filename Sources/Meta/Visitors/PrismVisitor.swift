@@ -1,6 +1,6 @@
 import SwiftSyntax
 
-public class PrismVisitor: Visitor, CodegenVisitor {
+public class PrismVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: EnumDeclSyntax) -> SyntaxVisitorContinueKind {
@@ -11,8 +11,8 @@ public class PrismVisitor: Visitor, CodegenVisitor {
         guard cases.count > 0 else { return visitorContinue }
         
         let code =  """
-                    \(visitorModifier) extension \(visitorFamilyName) {
-                    \(generatePrisms(for: cases, enumName: visitorFamilyName))
+                    \(visitorModifier) extension \(visitorFullyQualifiedName) {
+                    \(generatePrisms(for: cases, enumName: visitorFullyQualifiedName))
                     }
                     
                     """

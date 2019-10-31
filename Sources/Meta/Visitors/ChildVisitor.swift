@@ -2,13 +2,13 @@ import SwiftSyntax
 
 public extension NodeSyntax {
     var hasChildren: Bool {
-        let visitor = ChilVisitor()
+        let visitor = ChildVisitor()
         self.walk(visitor)
         return visitor.hasChildren
     }
 }
 
-public class ChilVisitor: SyntaxVisitor {
+public class ChildVisitor: SyntaxVisitor {
     public private(set) var enumNodes: [EnumDeclSyntax] = []
     public private(set) var structNodes: [StructDeclSyntax] = []
     
