@@ -1,4 +1,4 @@
-extension Author.NestedKeys1 {
+internal extension Author.NestedKeys1 {
     static var nested2Optional: Optional<Author.NestedKeys1, Int> {
         Optional(set: { $0.copy(withNested2: .some($1)) },
                  getOrModify: { nestedkeys1 in
@@ -9,7 +9,7 @@ extension Author.NestedKeys1 {
     }
 }
 
-extension Author.NestedKeys1.NestedKeys4 {
+internal extension Author.NestedKeys1.NestedKeys4 {
     static var nested7Optional: Optional<Author.NestedKeys1.NestedKeys4, String> {
         Optional(set: { $0.copy(withNested7: .some($1)) },
                  getOrModify: { nestedkeys4 in

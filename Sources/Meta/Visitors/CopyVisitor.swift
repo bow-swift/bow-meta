@@ -12,7 +12,7 @@ public class CopyVisitor: NestedDeclarationVisitor, CodegenVisitor {
         guard fields.count > 0 else { return visitorContinue }
         
         let generated = """
-                        extension \(structName) {
+                        \(visitorModifier) extension \(structName) {
                             func copy(\(copyParameters(for: fields))) -> \(structName) {
                                 \(body(for: structName, with: fields))
                             }

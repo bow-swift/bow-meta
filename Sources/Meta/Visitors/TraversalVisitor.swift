@@ -11,7 +11,7 @@ public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
-        extension \(visitorFullyQualifiedName) {
+        \(visitorModifier) extension \(visitorFullyQualifiedName) {
         \(generateTraversals(for: fields, structName: visitorFullyQualifiedName))
         }
         

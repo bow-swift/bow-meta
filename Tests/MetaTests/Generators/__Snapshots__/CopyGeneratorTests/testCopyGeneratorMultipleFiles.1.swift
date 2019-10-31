@@ -4,7 +4,7 @@ import Foundation
 
 // MARK: - Generated from file Company.swift
 
-extension Company {
+internal extension Company {
     func copy(withCeo ceo: Employee? = nil,
 			  withCto cto: Option<Employee>? = nil,
 			  withEmployees employees: ArrayK<Employee>? = nil) -> Company {
@@ -14,7 +14,7 @@ extension Company {
     }
 }
 
-extension Employee {
+internal extension Employee {
     func copy(withName name: String? = nil,
 			  withPhoneNumbers phoneNumbers: NEA<String>? = nil,
 			  withEmails emails: NonEmptyArray<String>? = nil) -> Employee {
@@ -27,7 +27,7 @@ extension Employee {
 
 // MARK: - Generated from file Author.swift
 
-extension Author {
+internal extension Author {
     func copy(withName name: String? = nil,
 			  withSocial social: Array<SocialNetwork>? = nil) -> Author {
         Author(name: name ?? self.name,
@@ -35,7 +35,7 @@ extension Author {
     }
 }
 
-extension Author.NestedKeys1 {
+internal extension Author.NestedKeys1 {
     func copy(withNested1 nested1: Int? = nil,
 			  withNested2 nested2: Int?? = nil,
 			  withNested8 nested8: NEA<String>? = nil) -> Author.NestedKeys1 {
@@ -45,7 +45,7 @@ extension Author.NestedKeys1 {
     }
 }
 
-extension Author.NestedKeys1.NestedKeys4 {
+internal extension Author.NestedKeys1.NestedKeys4 {
     func copy(withNested6 nested6: String? = nil,
 			  withNested7 nested7: String?? = nil,
 			  withNested8 nested8: [String]?? = nil) -> Author.NestedKeys1.NestedKeys4 {
@@ -58,7 +58,7 @@ extension Author.NestedKeys1.NestedKeys4 {
 
 // MARK: - Generated from file Article.swift
 
-extension Article {
+internal extension Article {
     func copy(withTitle title: String? = nil,
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
@@ -72,7 +72,7 @@ extension Article {
     }
 }
 
-extension Blog {
+internal extension Blog {
     func copy(withArticles articles: [Article]? = nil) -> Blog {
         Blog(articles: articles ?? self.articles)
     }

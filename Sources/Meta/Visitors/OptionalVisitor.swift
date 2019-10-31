@@ -11,7 +11,7 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
-        extension \(visitorFullyQualifiedName) {
+        \(visitorModifier) extension \(visitorFullyQualifiedName) {
         \(generateOptionals(for: fields, structName: visitorFullyQualifiedName))
         }
         

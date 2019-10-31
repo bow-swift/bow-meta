@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Generated from file Article.swift
 
-extension Article.NestedKeys1.NestedKeys4 {
+internal extension Article.NestedKeys1.NestedKeys4 {
     static var nestedGetter = Getter<Article.NestedKeys1.NestedKeys4, String> { state in
         switch state {
         case let .nested6(nested): return nested
@@ -14,7 +14,7 @@ extension Article.NestedKeys1.NestedKeys4 {
     }
 }
 
-extension PublicationState {
+internal extension PublicationState {
     static var fieldsGetter = Getter<PublicationState, (Date, String?)> { state in
         switch state {
         case let .draft(date, comments): return (date, comments)

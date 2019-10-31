@@ -12,7 +12,7 @@ public class IsoVisitor: NestedDeclarationVisitor, CodegenVisitor {
         
         let structName = visitorFullyQualifiedName
         let generated = """
-                        extension \(structName) {
+                        \(visitorModifier) extension \(structName) {
                             static var iso: \(type(structName, fields)) {
                                 \(body(structName, fields))
                             }

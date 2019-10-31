@@ -5,13 +5,13 @@ import Foundation
 
 // MARK: - Generated from file Company.swift
 
-extension Company {
+internal extension Company {
     static var employeesTraversal: Traversal<Company, Employee> {
         employeesLens + ArrayK<Employee>.traversal
     }
 }
 
-extension Employee {
+internal extension Employee {
     static var phoneNumbersTraversal: Traversal<Employee, String> {
         phoneNumbersLens + NEA<String>.traversal
     }
@@ -24,19 +24,19 @@ extension Employee {
 
 // MARK: - Generated from file Author.swift
 
-extension Author {
+internal extension Author {
     static var socialTraversal: Traversal<Author, SocialNetwork> {
         socialLens + Array<SocialNetwork>.traversal
     }
 }
 
-extension Author.NestedKeys1 {
+internal extension Author.NestedKeys1 {
     static var nested8Traversal: Traversal<Author.NestedKeys1, String> {
         nested8Lens + NEA<String>.traversal
     }
 }
 
-extension Author.NestedKeys1.NestedKeys4 {
+internal extension Author.NestedKeys1.NestedKeys4 {
     static var nested8Traversal: Traversal<Author.NestedKeys1.NestedKeys4, String> {
         nested8Optional + [String].traversal
     }
@@ -45,7 +45,7 @@ extension Author.NestedKeys1.NestedKeys4 {
 
 // MARK: - Generated from file Article.swift
 
-extension Blog {
+internal extension Blog {
     static var articlesTraversal: Traversal<Blog, Article> {
         articlesLens + [Article].traversal
     }

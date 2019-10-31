@@ -20,7 +20,7 @@ public class GetterEnumVisitor: NestedDeclarationVisitor, CodegenVisitor {
                         """.trimmingCharacters
         
         let code =  """
-                    extension \(enumName) {
+                    \(visitorModifier) extension \(enumName) {
                         \(optics)
                     }
                     

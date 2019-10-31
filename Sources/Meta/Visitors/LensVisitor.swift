@@ -11,7 +11,7 @@ public class LensVisitor: NestedDeclarationVisitor, CodegenVisitor {
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
-        extension \(visitorFullyQualifiedName) {
+        \(visitorModifier) extension \(visitorFullyQualifiedName) {
         \(generateLenses(for: fields, structName: visitorFullyQualifiedName))
         }
         

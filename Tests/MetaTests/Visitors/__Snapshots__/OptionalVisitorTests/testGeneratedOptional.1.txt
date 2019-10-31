@@ -1,4 +1,4 @@
-extension Article {
+internal extension Article {
     static var subtitleOptional: Optional<Article, String> {
         Optional(set: { $0.copy(withSubtitle: .some($1)) },
                  getOrModify: { article in

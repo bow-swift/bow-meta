@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Generated from file Company.swift
 
-extension Company {
+internal extension Company {
     static var ceoLens: Lens<Company, Employee> {
         Lens(get: { $0.ceo },
              set: { $0.copy(withCeo: $1) })
@@ -22,7 +22,7 @@ extension Company {
     }
 }
 
-extension Employee {
+internal extension Employee {
     static var nameLens: Lens<Employee, String> {
         Lens(get: { $0.name },
              set: { $0.copy(withName: $1) })
@@ -42,7 +42,7 @@ extension Employee {
 
 // MARK: - Generated from file Author.swift
 
-extension Author {
+internal extension Author {
     static var nameLens: Lens<Author, String> {
         Lens(get: { $0.name },
              set: { $0.copy(withName: $1) })
@@ -54,7 +54,7 @@ extension Author {
     }
 }
 
-extension Author.NestedKeys1 {
+internal extension Author.NestedKeys1 {
     static var nested1Lens: Lens<Author.NestedKeys1, Int> {
         Lens(get: { $0.nested1 },
              set: { $0.copy(withNested1: $1) })
@@ -71,7 +71,7 @@ extension Author.NestedKeys1 {
     }
 }
 
-extension Author.NestedKeys1.NestedKeys4 {
+internal extension Author.NestedKeys1.NestedKeys4 {
     static var nested6Lens: Lens<Author.NestedKeys1.NestedKeys4, String> {
         Lens(get: { $0.nested6 },
              set: { $0.copy(withNested6: $1) })
@@ -91,7 +91,7 @@ extension Author.NestedKeys1.NestedKeys4 {
 
 // MARK: - Generated from file Article.swift
 
-extension Article {
+internal extension Article {
     static var titleLens: Lens<Article, String> {
         Lens(get: { $0.title },
              set: { $0.copy(withTitle: $1) })
@@ -118,7 +118,7 @@ extension Article {
     }
 }
 
-extension Blog {
+internal extension Blog {
     static var articlesLens: Lens<Blog, [Article]> {
         Lens(get: { $0.articles },
              set: { $0.copy(withArticles: $1) })

@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Generated from file Company.swift
 
-extension Company {
+internal extension Company {
     static var ctoOptional: Optional<Company, Employee> {
         Optional(set: { $0.copy(withCto: .some($1)) },
                  getOrModify: { company in
@@ -19,7 +19,7 @@ extension Company {
 
 // MARK: - Generated from file Author.swift
 
-extension Author.NestedKeys1 {
+internal extension Author.NestedKeys1 {
     static var nested2Optional: Optional<Author.NestedKeys1, Int> {
         Optional(set: { $0.copy(withNested2: .some($1)) },
                  getOrModify: { nestedkeys1 in
@@ -30,7 +30,7 @@ extension Author.NestedKeys1 {
     }
 }
 
-extension Author.NestedKeys1.NestedKeys4 {
+internal extension Author.NestedKeys1.NestedKeys4 {
     static var nested7Optional: Optional<Author.NestedKeys1.NestedKeys4, String> {
         Optional(set: { $0.copy(withNested7: .some($1)) },
                  getOrModify: { nestedkeys4 in
@@ -53,7 +53,7 @@ extension Author.NestedKeys1.NestedKeys4 {
 
 // MARK: - Generated from file Article.swift
 
-extension Article {
+internal extension Article {
     static var subtitleOptional: Optional<Article, String> {
         Optional(set: { $0.copy(withSubtitle: .some($1)) },
                  getOrModify: { article in

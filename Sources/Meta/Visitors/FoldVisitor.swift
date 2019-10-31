@@ -12,7 +12,7 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """
-        extension \(structName) {
+        \(visitorModifier) extension \(structName) {
         \(generateFolds(for: fields, structName: structName))
         }
         
