@@ -1,6 +1,6 @@
 import SwiftSyntax
 
-public enum SyntaxModifier: String, CustomStringConvertible, CaseIterable, Equatable, Hashable {
+public enum VisibilityModifier: String, CustomStringConvertible, CaseIterable, Equatable, Hashable {
     case `private`
     case `internal`
     case `public`
@@ -9,7 +9,7 @@ public enum SyntaxModifier: String, CustomStringConvertible, CaseIterable, Equat
     public var description: String { rawValue }
 }
 
-fileprivate extension SyntaxModifier {
+fileprivate extension VisibilityModifier {
     var precedence: Int {
         switch self {
         case .private:  return 3
@@ -20,17 +20,17 @@ fileprivate extension SyntaxModifier {
     }
 }
 
-extension Array where Element == SyntaxModifier {
-    var modifier: SyntaxModifier {
+extension Array where Element == VisibilityModifier {
+    var modifier: VisibilityModifier {
         guard self.count > 0 else { return .internal }
         return sorted { v1, v2 in v1.precedence > v2.precedence }.first!
     }
 }
 
 extension SwiftSyntax.Syntax {
-    var modifiers: Set<SyntaxModifier> {
-        Set((description as String).trimmingCharacters
-                                   .components(separatedBy: " ")
-                                   .compactMap(SyntaxModifier.init))
+    var modifiers: Set<VisibilityModifier> {
+        Set(description.trimmingCharacters(in: .whitespacesAndNewlines)
+                       .components(separatedBy: " ")
+                       .compactMap(VisibilityModifier.init))
     }
 }

@@ -3,7 +3,7 @@ import SwiftSyntax
 public protocol NodeSyntax {
     var id: String { get }
     var hasChildren: Bool { get }
-    var syntaxModifiers: [SyntaxModifier] { get }
+    var syntaxModifiers: [VisibilityModifier] { get }
     var isPrivate: Bool { get }
     
     var identifier: TokenSyntax { get }
@@ -17,13 +17,13 @@ extension NodeSyntax {
 
 
 extension ClassDeclSyntax: NodeSyntax {
-    public var syntaxModifiers: [SyntaxModifier] { Array(modifiers?.modifiers ?? []) }
+    public var syntaxModifiers: [VisibilityModifier] { Array(modifiers?.modifiers ?? []) }
 }
 
 extension StructDeclSyntax: NodeSyntax {
-    public var syntaxModifiers: [SyntaxModifier] { Array(modifiers?.modifiers ?? []) }
+    public var syntaxModifiers: [VisibilityModifier] { Array(modifiers?.modifiers ?? []) }
 }
 
 extension EnumDeclSyntax: NodeSyntax {
-    public var syntaxModifiers: [SyntaxModifier] { Array(modifiers?.modifiers ?? []) }
+    public var syntaxModifiers: [VisibilityModifier] { Array(modifiers?.modifiers ?? []) }
 }
