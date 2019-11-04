@@ -37,8 +37,8 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
                 Optional(set: { $0.copy(with\(field.name.firstUppercased): .some($1)) },
                          getOrModify: { \(value) in
                              \(optionField).fold(
-                                 { Either.left(\(value)) },
-                                 Either.right)
+                                 { Bow.Either.left(\(value)) },
+                                   Bow.Either.right)
                          })
             }
         """

@@ -3,8 +3,8 @@ internal extension Company {
         Optional(set: { $0.copy(withCto: .some($1)) },
                  getOrModify: { company in
                      company.cto.fold(
-                         { Either.left(company) },
-                         Either.right)
+                         { Bow.Either.left(company) },
+                           Bow.Either.right)
                  })
     }
 }

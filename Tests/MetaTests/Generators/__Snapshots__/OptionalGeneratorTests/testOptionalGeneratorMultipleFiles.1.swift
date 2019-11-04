@@ -10,8 +10,8 @@ internal extension Company {
         Optional(set: { $0.copy(withCto: .some($1)) },
                  getOrModify: { company in
                      company.cto.fold(
-                         { Either.left(company) },
-                         Either.right)
+                         { Bow.Either.left(company) },
+                           Bow.Either.right)
                  })
     }
 }
@@ -24,8 +24,8 @@ internal extension Author.NestedKeys1 {
         Optional(set: { $0.copy(withNested2: .some($1)) },
                  getOrModify: { nestedkeys1 in
                      nestedkeys1.nested2.toOption().fold(
-                         { Either.left(nestedkeys1) },
-                         Either.right)
+                         { Bow.Either.left(nestedkeys1) },
+                           Bow.Either.right)
                  })
     }
 }
@@ -35,8 +35,8 @@ internal extension Author.NestedKeys1.NestedKeys4 {
         Optional(set: { $0.copy(withNested7: .some($1)) },
                  getOrModify: { nestedkeys4 in
                      nestedkeys4.nested7.toOption().fold(
-                         { Either.left(nestedkeys4) },
-                         Either.right)
+                         { Bow.Either.left(nestedkeys4) },
+                           Bow.Either.right)
                  })
     }
 
@@ -44,8 +44,8 @@ internal extension Author.NestedKeys1.NestedKeys4 {
         Optional(set: { $0.copy(withNested8: .some($1)) },
                  getOrModify: { nestedkeys4 in
                      nestedkeys4.nested8.toOption().fold(
-                         { Either.left(nestedkeys4) },
-                         Either.right)
+                         { Bow.Either.left(nestedkeys4) },
+                           Bow.Either.right)
                  })
     }
 }
@@ -58,8 +58,8 @@ internal extension Article {
         Optional(set: { $0.copy(withSubtitle: .some($1)) },
                  getOrModify: { article in
                      article.subtitle.toOption().fold(
-                         { Either.left(article) },
-                         Either.right)
+                         { Bow.Either.left(article) },
+                           Bow.Either.right)
                  })
     }
 }
