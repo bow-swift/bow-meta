@@ -1,14 +1,15 @@
 extension String {
     var nonOptional: String {
-        substring(pattern: "(?<=Optional<).*(?=>)")
-            .substring(pattern: "(?<=Option<).*(?=>)")
-            .clean("?")
-            .trimmingCharacters
+        let trimmed = self.trimmingCharacters
+        
+        if trimmed.ends(with: "?") { return String(trimmed.dropLast()) }
+        else if trimmed.starts(with: "Optional<"), trimmed.ends(with: ">") { return String(trimmed.dropFirst("Optional<".count).dropLast()) }
+        else if trimmed.starts(with: "Option<"), trimmed.ends(with: ">")   { return String(trimmed.dropFirst("Option<".count).dropLast()) }
+        
+        return trimmed
     }
     
     var isOptionalType: Bool {
-        contains("?") ||
-        contains("Optional<") ||
-        contains("Option<")
+        trimmingCharacters != nonOptional
     }
 }
