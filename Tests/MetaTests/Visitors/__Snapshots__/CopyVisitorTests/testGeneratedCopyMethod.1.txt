@@ -1,4 +1,4 @@
-extension Article {
+internal extension Article {
     func copy(withTitle title: String? = nil,
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
@@ -12,7 +12,7 @@ extension Article {
     }
 }
 
-extension Blog {
+internal extension Blog {
     func copy(withArticles articles: [Article]? = nil) -> Blog {
         Blog(articles: articles ?? self.articles)
     }

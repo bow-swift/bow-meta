@@ -18,7 +18,7 @@ class SwiftSyntaxGenerator: CodeGenerator {
         return binding(
                  |<-ConsoleIO.print("Generating code for file: \(file.lastPathComponent)"),
                  code <- self.runVisitor(for: file),
-            yield: code.get)^.env
+        yield: code.get.trimmingCharacters(in: .newlines))^.env
     }
     
     func generateImport(forFile file: URL) -> RIO<Any, Set<String>> {

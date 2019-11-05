@@ -1,10 +1,10 @@
-extension Company {
+internal extension Company {
     static var employeesFold: Fold<Company, Employee> {
         employeesLens + ArrayK<Employee>.fold
     }
 }
 
-extension Employee {
+internal extension Employee {
     static var phoneNumbersFold: Fold<Employee, String> {
         phoneNumbersLens + NEA<String>.fold
     }

@@ -20,16 +20,17 @@ struct Article {
         case nested1
         case nested2
         private enum NestedKeys2 {
-            case nested3
-            case nested4
+            case nested1
+            case nested2
             enum NestedKeys3 {
-                case nested4
-                case nested5
+                case nested1
+                case nested2
+                case nested3
             }
         }
         enum NestedKeys4 {
-            case nested6
-            case nested7
+            case nested1(nested: String)
+            case nested2(nested: String)
         }
     }
 }

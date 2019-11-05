@@ -1,6 +1,5 @@
 import SwiftSyntax
 
-
 public struct Field: Equatable, Hashable {
     let name: String
     let type: String
@@ -11,9 +10,10 @@ public struct Field: Equatable, Hashable {
     }
 }
 
+
 public extension StructDeclSyntax {
     var fields: [Field] {
-        let visitor = FieldVisitor()
+        let visitor = FieldVisitor(self)
         self.walk(visitor)
         return visitor.fields
     }
@@ -21,20 +21,26 @@ public extension StructDeclSyntax {
 
 public class FieldVisitor: SyntaxVisitor {
     public private(set) var fields: [Field] = []
+    private let node: StructDeclSyntax
+    
+    public init(_ node: StructDeclSyntax) {
+        self.node = node
+    }
     
     override public func visit(_ node: VariableDeclSyntax) -> SyntaxVisitorContinueKind {
         node.bindings.forEach { binding in
             guard !binding.isComputed,
-                let type = binding.typeAnnotation?.type.description.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+                let type = binding.typeAnnotation?.type.description.trimmingCharacters else { return }
             
-            let name = binding.pattern.description.trimmingCharacters(in: .whitespacesAndNewlines)
+            let name = binding.pattern.description.trimmingCharacters
             fields.append(Field(name: name, type: type))
         }
         
         return .skipChildren
     }
     
-    override public func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind {
-        return .skipChildren
+    public override func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind { .skipChildren }
+    public override func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
+        self.node == node ? .visitChildren : .skipChildren
     }
 }

@@ -16,7 +16,9 @@ extension CodeGenerator {
         RIO { _ in
             files.map(URL.init(fileURLWithPath:))
                 .traverse { url in self.generate(for: url).provide(()) }
-                .map { codes in codes.joined(separator: "\n") }^
+                .map { codes in
+                    codes.map { $0.trimmingCharacters(in: .newlines) }.filter { !$0.isEmpty }.joined(separator: "\n\n\n")
+                }^
         }
     }
     

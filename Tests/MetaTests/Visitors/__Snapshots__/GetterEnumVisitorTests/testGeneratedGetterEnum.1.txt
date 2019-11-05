@@ -1,5 +1,13 @@
-extension PublicationState {
-    
+internal extension Article.NestedKeys1.NestedKeys4 {
+    static var nestedGetter = Getter<Article.NestedKeys1.NestedKeys4, String> { state in
+        switch state {
+        case let .nested1(nested): return nested
+        case let .nested2(nested): return nested
+        }
+    }
+}
+
+internal extension PublicationState {
     static var fieldsGetter = Getter<PublicationState, (Date, String?)> { state in
         switch state {
         case let .draft(date, comments): return (date, comments)

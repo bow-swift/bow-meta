@@ -5,13 +5,13 @@ import Foundation
 
 // MARK: - Generated from file Company.swift
 
-extension Company {
+internal extension Company {
     static var employeesFold: Fold<Company, Employee> {
         employeesLens + ArrayK<Employee>.fold
     }
 }
 
-extension Employee {
+internal extension Employee {
     static var phoneNumbersFold: Fold<Employee, String> {
         phoneNumbersLens + NEA<String>.fold
     }
@@ -24,16 +24,28 @@ extension Employee {
 
 // MARK: - Generated from file Author.swift
 
-extension Author {
+internal extension Author {
     static var socialFold: Fold<Author, SocialNetwork> {
         socialLens + Array<SocialNetwork>.fold
+    }
+}
+
+internal extension Author.NestedKeys1 {
+    static var nested8Fold: Fold<Author.NestedKeys1, String> {
+        nested8Lens + NEA<String>.fold
+    }
+}
+
+internal extension Author.NestedKeys1.NestedKeys4 {
+    static var nested4Fold: Fold<Author.NestedKeys1.NestedKeys4, String> {
+        nested4Optional + [String].fold
     }
 }
 
 
 // MARK: - Generated from file Article.swift
 
-extension Blog {
+internal extension Blog {
     static var articlesFold: Fold<Blog, Article> {
         articlesLens + [Article].fold
     }

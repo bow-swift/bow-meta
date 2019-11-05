@@ -10,6 +10,7 @@ public struct Case: Equatable {
     }
 }
 
+
 public extension EnumDeclSyntax {
     var cases: [Case] {
         let visitor = CaseVisitor(self)
@@ -28,7 +29,7 @@ public class CaseVisitor: SyntaxVisitor {
     
     override public func visit(_ node: EnumCaseDeclSyntax) -> SyntaxVisitorContinueKind {
         let cases: [Case] = node.elements.reduce(into: []) { partial, element in
-            let newCase = Case(name: element.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines),
+            let newCase = Case(name: element.identifier.description.trimmingCharacters,
                                associatedValues: element.associatedValues)
             partial.append(newCase)
         }
@@ -52,8 +53,8 @@ extension EnumCaseElementSyntax {
         return parameterList.compactMap { parameter in
             guard let type = parameter.type?.description else { return nil }
             let paramName = parameter.firstName?.description ?? ""
-            return Field(name: paramName.trimmingCharacters(in: .whitespacesAndNewlines),
-                         type: type.trimmingCharacters(in: .whitespacesAndNewlines))
+            return Field(name: paramName.trimmingCharacters,
+                         type: type.trimmingCharacters)
         }
     }
 }

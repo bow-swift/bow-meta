@@ -1,10 +1,10 @@
-extension Article {
+internal extension Article {
     static var subtitleOptional: Optional<Article, String> {
         Optional(set: { $0.copy(withSubtitle: .some($1)) },
                  getOrModify: { article in
                      article.subtitle.toOption().fold(
-                         { Either.left(article) },
-                         Either.right)
+                         { Bow.Either.left(article) },
+                           Bow.Either.right)
                  })
     }
 }
