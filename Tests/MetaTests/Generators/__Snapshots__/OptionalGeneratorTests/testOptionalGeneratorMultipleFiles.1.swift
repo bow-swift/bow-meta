@@ -31,19 +31,19 @@ internal extension Author.NestedKeys1 {
 }
 
 internal extension Author.NestedKeys1.NestedKeys4 {
-    static var nested7Optional: Optional<Author.NestedKeys1.NestedKeys4, String> {
-        Optional(set: { $0.copy(withNested7: .some($1)) },
+    static var nested2Optional: Optional<Author.NestedKeys1.NestedKeys4, Int> {
+        Optional(set: { $0.copy(withNested2: .some($1)) },
                  getOrModify: { nestedkeys4 in
-                     nestedkeys4.nested7.toOption().fold(
+                     nestedkeys4.nested2.toOption().fold(
                          { Bow.Either.left(nestedkeys4) },
                            Bow.Either.right)
                  })
     }
 
-    static var nested8Optional: Optional<Author.NestedKeys1.NestedKeys4, [String]> {
-        Optional(set: { $0.copy(withNested8: .some($1)) },
+    static var nested4Optional: Optional<Author.NestedKeys1.NestedKeys4, [String]> {
+        Optional(set: { $0.copy(withNested4: .some($1)) },
                  getOrModify: { nestedkeys4 in
-                     nestedkeys4.nested8.toOption().fold(
+                     nestedkeys4.nested4.toOption().fold(
                          { Bow.Either.left(nestedkeys4) },
                            Bow.Either.right)
                  })

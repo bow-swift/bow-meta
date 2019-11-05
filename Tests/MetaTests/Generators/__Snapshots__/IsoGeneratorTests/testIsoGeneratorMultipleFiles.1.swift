@@ -33,8 +33,8 @@ internal extension Author.NestedKeys1 {
 }
 
 internal extension Author.NestedKeys1.NestedKeys4 {
-    static var iso: Iso<Author.NestedKeys1.NestedKeys4, (String, String?, [String]?)> {
-        Iso(get: { nestedkeys4 in (nestedkeys4.nested6, nestedkeys4.nested7, nestedkeys4.nested8) }, reverseGet: Author.NestedKeys1.NestedKeys4.init)
+    static var iso: Iso<Author.NestedKeys1.NestedKeys4, (Int, Int?, [String]?)> {
+        Iso(get: { nestedkeys4 in (nestedkeys4.nested1, nestedkeys4.nested2, nestedkeys4.nested4) }, reverseGet: Author.NestedKeys1.NestedKeys4.init)
     }
 }
 

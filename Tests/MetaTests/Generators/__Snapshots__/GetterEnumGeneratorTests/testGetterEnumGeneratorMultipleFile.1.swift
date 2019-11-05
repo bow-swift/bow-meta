@@ -8,8 +8,8 @@ import Foundation
 internal extension Article.NestedKeys1.NestedKeys4 {
     static var nestedGetter = Getter<Article.NestedKeys1.NestedKeys4, String> { state in
         switch state {
-        case let .nested6(nested): return nested
-        case let .nested7(nested): return nested
+        case let .nested1(nested): return nested
+        case let .nested2(nested): return nested
         }
     }
 }

@@ -33,17 +33,17 @@ struct Author {
         let nested2: Int?
         let nested8: NEA<String>
         private struct NestedKeys2 {
-            let nested3: Bool
-            let nested4: Bool?
+            let nested1: Bool
+            let nested2: Bool?
             struct NestedKeys3 {
-                let nested4: [Bool]
-                let nested5: Bool?
+                let nested1: [Bool]
+                let nested2: Bool?
             }
         }
         struct NestedKeys4 {
-            let nested6: String
-            let nested7: String?
-            let nested8: [String]?
+            let nested1: Int
+            let nested2: Int?
+            let nested4: [String]?
         }
     }
 }
