@@ -34,7 +34,7 @@ public class IsoVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let instance = structName.components(separatedBy: ".").last!.lowercased()
         let tuple = fields.map { field in "\(instance).\(field.name)" }.joined(separator: ", ")
         let get = "{ \(instance) in (\(tuple)) }"
-        let reverseGet = "\(structName).init"
+        let reverseGet = "\(structName).init(\(fields.map { "_with\($0.name.firstUppercased):" }.joined()))"
         return """
                Iso(get: \(get), reverseGet: \(reverseGet))
                """

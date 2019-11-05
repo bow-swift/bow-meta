@@ -1,12 +1,12 @@
 internal extension Article {
     static var iso: Iso<Article, (String, String?, PublicationState, Author, WrittingStyle)> {
-        Iso(get: { article in (article.title, article.subtitle, article.state, article.author, article.style) }, reverseGet: Article.init)
+        Iso(get: { article in (article.title, article.subtitle, article.state, article.author, article.style) }, reverseGet: Article.init(_withTitle:_withSubtitle:_withState:_withAuthor:_withStyle:))
     }
 }
 
 internal extension Blog {
     static var iso: Iso<Blog, ([Article])> {
-        Iso(get: { blog in (blog.articles) }, reverseGet: Blog.init)
+        Iso(get: { blog in (blog.articles) }, reverseGet: Blog.init(_withArticles:))
     }
 }
 
