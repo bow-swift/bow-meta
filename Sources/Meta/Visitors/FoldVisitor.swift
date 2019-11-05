@@ -7,7 +7,8 @@ public class FoldVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = (node.fields.arrays + node.fields.optionalsWithArray).uniques
+        let nodeFields = node.nonPrivateFields
+        let fields = (nodeFields.arrays + nodeFields.optionalsWithArray).uniques
         let structName = visitorFullyQualifiedName
         guard fields.count > 0 else { return visitorContinue }
         

@@ -42,8 +42,8 @@ internal extension Author.NestedKeys1.NestedKeys4 {
 // MARK: - Generated from file Article.swift
 
 internal extension Article {
-    static var iso: Iso<Article, (String, String?, PublicationState, Author, WrittingStyle)> {
-        Iso(get: { article in (article.title, article.subtitle, article.state, article.author, article.style) }, reverseGet: Article.init(_withTitle:_withSubtitle:_withState:_withAuthor:_withStyle:))
+    static var iso: Iso<Article, (String, String?, PublicationState, Author)> {
+        Iso(get: { article in (article.title, article.subtitle, article.state, article.author) }, reverseGet: Article.init(_withTitle:_withSubtitle:_withState:_withAuthor:))
     }
 }
 

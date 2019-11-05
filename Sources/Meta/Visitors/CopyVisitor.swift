@@ -7,7 +7,7 @@ public class CopyVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.fields
+        let fields = node.nonPrivateFields
         let structName = visitorFullyQualifiedName
         guard fields.count > 0 else { return visitorContinue }
         

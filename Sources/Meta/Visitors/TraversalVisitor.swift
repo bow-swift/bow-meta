@@ -7,7 +7,8 @@ public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = (node.fields.arrays + node.fields.optionalsWithArray).uniques
+        let nodeFields = node.nonPrivateFields
+        let fields = (nodeFields.arrays + nodeFields.optionalsWithArray).uniques
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """

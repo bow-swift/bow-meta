@@ -3,25 +3,21 @@ internal extension Article {
     init(_withTitle title: String,
 		 _withSubtitle subtitle: String?,
 		 _withState state: PublicationState,
-		 _withAuthor author: Author,
-		 _withStyle style: WrittingStyle) {
+		 _withAuthor author: Author) {
         self.title = title
 		self.subtitle = subtitle
 		self.state = state
 		self.author = author
-		self.style = style
     }
     
     func copy(withTitle title: String? = nil,
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
-			  withAuthor author: Author? = nil,
-			  withStyle style: WrittingStyle? = nil) -> Article {
+			  withAuthor author: Author? = nil) -> Article {
         Article.init(_withTitle: title ?? self.title,
 			  _withSubtitle: subtitle ?? self.subtitle,
 			  _withState: state ?? self.state,
-			  _withAuthor: author ?? self.author,
-			  _withStyle: style ?? self.style)
+			  _withAuthor: author ?? self.author)
     }
 }
 

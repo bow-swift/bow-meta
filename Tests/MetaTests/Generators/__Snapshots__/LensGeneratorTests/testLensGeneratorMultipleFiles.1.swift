@@ -111,11 +111,6 @@ internal extension Article {
         Lens(get: { $0.author },
              set: { $0.copy(withAuthor: $1) })
     }
-
-    static var styleLens: Lens<Article, WrittingStyle> {
-        Lens(get: { $0.style },
-             set: { $0.copy(withStyle: $1) })
-    }
 }
 
 internal extension Blog {
