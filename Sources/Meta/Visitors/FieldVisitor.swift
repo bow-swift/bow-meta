@@ -25,9 +25,9 @@ public class FieldVisitor: SyntaxVisitor {
     override public func visit(_ node: VariableDeclSyntax) -> SyntaxVisitorContinueKind {
         node.bindings.forEach { binding in
             guard !binding.isComputed,
-                let type = binding.typeAnnotation?.type.description else { return }
+                let type = binding.typeAnnotation?.type.description.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
-            let name = binding.pattern.description
+            let name = binding.pattern.description.trimmingCharacters(in: .whitespacesAndNewlines)
             fields.append(Field(name: name, type: type))
         }
         

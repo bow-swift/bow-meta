@@ -1,25 +1,25 @@
 import SwiftSyntax
 
-public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
+public class PrismVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: EnumDeclSyntax) -> SyntaxVisitorContinueKind {
-        let cases = node.cases
-        guard cases.count > 0 else { return .skipChildren }
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
         
-        let enumName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
-        let prismsCode = generatePrisms(for: cases, enumName: enumName)
+        let cases = node.cases
+        guard cases.count > 0 else { return visitorContinue }
         
         let code =  """
-                    extension \(enumName) {
-                    \(prismsCode)
+                    \(visitorModifier) extension \(visitorFullyQualifiedName) {
+                    \(generatePrisms(for: cases, enumName: visitorFullyQualifiedName))
                     }
                     
                     """
         
         print(code, to: &generatedCode)
         
-        return .skipChildren
+        return visitorContinue
     }
     
     private func generatePrisms(for cases: [Case], enumName: String) -> String {
@@ -78,8 +78,6 @@ public class PrismVisitor: SyntaxVisitor, CodegenVisitor {
                 \(prism)\(associatedValuesOptics)
                 """
     }
-    
-    
     
     private func generateAssociatedValuesOptics(inEnum enumName: String, case caseName: String, forPrism prismName: String, withAssociatedValues associatedValues: [Field]) -> String {
         let tuplesArityRange = (2...10) // Bow has defined optics over tuples of arity 2-10

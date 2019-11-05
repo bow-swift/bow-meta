@@ -12,7 +12,7 @@ public struct Case: Equatable {
 
 public extension EnumDeclSyntax {
     var cases: [Case] {
-        let visitor = CaseVisitor()
+        let visitor = CaseVisitor(self)
         self.walk(visitor)
         return visitor.cases
     }
@@ -20,10 +20,16 @@ public extension EnumDeclSyntax {
 
 public class CaseVisitor: SyntaxVisitor {
     public private(set) var cases: [Case] = []
+    private let node: EnumDeclSyntax
+    
+    public init(_ node: EnumDeclSyntax) {
+        self.node = node
+    }
     
     override public func visit(_ node: EnumCaseDeclSyntax) -> SyntaxVisitorContinueKind {
         let cases: [Case] = node.elements.reduce(into: []) { partial, element in
-            let newCase = Case(name: element.identifier.description, associatedValues: element.associatedValues)
+            let newCase = Case(name: element.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines),
+                               associatedValues: element.associatedValues)
             partial.append(newCase)
         }
         
@@ -31,8 +37,9 @@ public class CaseVisitor: SyntaxVisitor {
         return .skipChildren
     }
     
-    override public func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind {
-        return .skipChildren
+    public override func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind { .skipChildren }
+    public override func visit(_ node: EnumDeclSyntax) -> SyntaxVisitorContinueKind {
+        self.node == node ? .visitChildren : .skipChildren
     }
 }
 
@@ -45,7 +52,8 @@ extension EnumCaseElementSyntax {
         return parameterList.compactMap { parameter in
             guard let type = parameter.type?.description else { return nil }
             let paramName = parameter.firstName?.description ?? ""
-            return Field(name: paramName, type: type)
+            return Field(name: paramName.trimmingCharacters(in: .whitespacesAndNewlines),
+                         type: type.trimmingCharacters(in: .whitespacesAndNewlines))
         }
     }
 }
