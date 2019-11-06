@@ -37,8 +37,8 @@ public class PrismVisitor: NestedDeclarationVisitor, CodegenVisitor {
             
             static var \(state)Prism: Prism<\(enumName), Void> {
                 Prism(getOrModify: { state in
-                    guard case .\(state) = state else { return Either.left(state) }
-                    return Either.right(())
+                    guard case .\(state) = state else { return Bow.Either.left(state) }
+                    return Bow.Either.right(())
                 }, reverseGet: { \(enumName).\(state) })
             }
         """
@@ -64,10 +64,10 @@ public class PrismVisitor: NestedDeclarationVisitor, CodegenVisitor {
                     
                         static var \(prismName): Prism<\(enumName), \(opticsTypesName)> {
                             Prism(getOrModify: { state in
-                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsParametersName) = state else { return Either.left(state) }"
-                                                        : "guard case let .\(state)(\(opticsParametersName)) = state else { return Either.left(state) }"
+                                \(opticsTypes.count > 1 ? "guard case let .\(state)\(opticsParametersName) = state else { return Bow.Either.left(state) }"
+                                                        : "guard case let .\(state)(\(opticsParametersName)) = state else { return Bow.Either.left(state) }"
                                 )
-                                return Either.right(\(opticsParametersName))
+                                return Bow.Either.right(\(opticsParametersName))
                             }, reverseGet: \(enumName).\(state))
                         }
                     """

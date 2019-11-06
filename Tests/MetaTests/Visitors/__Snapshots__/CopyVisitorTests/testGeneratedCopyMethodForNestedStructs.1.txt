@@ -1,0 +1,50 @@
+internal extension Author {                            
+    init(_withName name: String,
+		 _withSocial social: Array<SocialNetwork>) {
+        self.name = name
+		self.social = social
+    }
+    
+    func copy(withName name: String? = nil,
+			  withSocial social: Array<SocialNetwork>? = nil) -> Author {
+        Author(_withName: name ?? self.name,
+			  _withSocial: social ?? self.social)
+    }
+}
+
+internal extension Author.NestedKeys1 {                            
+    init(_withNested1 nested1: Int,
+		 _withNested2 nested2: Int?,
+		 _withNested8 nested8: NEA<String>) {
+        self.nested1 = nested1
+		self.nested2 = nested2
+		self.nested8 = nested8
+    }
+    
+    func copy(withNested1 nested1: Int? = nil,
+			  withNested2 nested2: Int?? = nil,
+			  withNested8 nested8: NEA<String>? = nil) -> Author.NestedKeys1 {
+        Author.NestedKeys1(_withNested1: nested1 ?? self.nested1,
+			  _withNested2: nested2 ?? self.nested2,
+			  _withNested8: nested8 ?? self.nested8)
+    }
+}
+
+internal extension Author.NestedKeys1.NestedKeys4 {                            
+    init(_withNested1 nested1: Int,
+		 _withNested22 nested22: Int?,
+		 _withNested44 nested44: [String]?) {
+        self.nested1 = nested1
+		self.nested22 = nested22
+		self.nested44 = nested44
+    }
+    
+    func copy(withNested1 nested1: Int? = nil,
+			  withNested22 nested22: Int?? = nil,
+			  withNested44 nested44: [String]?? = nil) -> Author.NestedKeys1.NestedKeys4 {
+        Author.NestedKeys1.NestedKeys4(_withNested1: nested1 ?? self.nested1,
+			  _withNested22: nested22 ?? self.nested22,
+			  _withNested44: nested44 ?? self.nested44)
+    }
+}
+

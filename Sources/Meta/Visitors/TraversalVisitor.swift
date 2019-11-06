@@ -1,28 +1,27 @@
 import SwiftSyntax
 
-public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
+public class TraversalVisitor: NestedDeclarationVisitor, CodegenVisitor {
     private(set) public var generatedCode: String = ""
     
     override public func visit(_ node: StructDeclSyntax) -> SyntaxVisitorContinueKind {
-        let structName = node.identifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
-        let fields = node.fields.filter(isArrayType)
+        let visitorContinue = super.visit(node)
+        guard !node.isPrivate else { return .skipChildren }
         
-        if fields.count > 0 {
-            let traversalsCode = generateTraversals(for: fields, structName: structName)
-            
-            let code = """
-            extension \(structName) {
-            \(traversalsCode)
-            }
-            
-            """
-            print(code, to: &generatedCode)
+        let nodeFields = node.accessibleFields
+        let fields = (nodeFields.arrays + nodeFields.optionalsWithArray).uniques
+        guard fields.count > 0 else { return visitorContinue }
+        
+        let code = """
+        \(visitorModifier) extension \(visitorFullyQualifiedName) {
+        \(generateTraversals(for: fields, structName: visitorFullyQualifiedName))
         }
         
-        return .skipChildren
+        """
+        
+        print(code, to: &generatedCode)
+        
+        return visitorContinue
     }
-    
-    private func isArrayType(_ field: Field) -> Bool { field.type.isArrayType }
     
     private func generateTraversals(for fields: [Field], structName: String) -> String {
         fields.map { field in self.generateTraversal(field, structName: structName) }.joined(separator: "\n\n")
@@ -30,8 +29,8 @@ public class TraversalVisitor: SyntaxVisitor, CodegenVisitor {
     
     private func generateTraversal(_ field: Field, structName: String) -> String {
         """
-            static var \(field.name)Traversal: Traversal<\(structName), \(field.type.nonArray)> {
-                \(field.name)Lens + \(field.type).traversal
+            static var \(field.name)Traversal: Traversal<\(structName), \(field.type.nonOptional.nonArray)> {
+                \(field.name)\(field.type.isOptionalType ? "Optional" : "Lens") + \(field.type.nonOptional).traversal
             }
         """
     }

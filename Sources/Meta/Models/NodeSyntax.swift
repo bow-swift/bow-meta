@@ -12,7 +12,7 @@ public protocol NodeSyntax {
 
 extension NodeSyntax {
     public var isPrivate: Bool { syntaxModifiers.modifier == .private }
-    public var id: String { identifier.description.trimmingCharacters(in: .whitespacesAndNewlines) }
+    public var id: String { identifier.description.trimmingCharacters }
 }
 
 

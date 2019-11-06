@@ -1,4 +1,4 @@
-extension Article {
+internal extension Article {
     static var titleLens: Lens<Article, String> {
         Lens(get: { $0.title },
              set: { $0.copy(withTitle: $1) })
@@ -18,14 +18,9 @@ extension Article {
         Lens(get: { $0.author },
              set: { $0.copy(withAuthor: $1) })
     }
-
-    static var styleLens: Lens<Article, WrittingStyle> {
-        Lens(get: { $0.style },
-             set: { $0.copy(withStyle: $1) })
-    }
 }
 
-extension Blog {
+internal extension Blog {
     static var articlesLens: Lens<Blog, [Article]> {
         Lens(get: { $0.articles },
              set: { $0.copy(withArticles: $1) })

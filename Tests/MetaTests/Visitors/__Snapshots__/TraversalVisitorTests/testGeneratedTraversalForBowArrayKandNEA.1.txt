@@ -1,10 +1,10 @@
-extension Company {
+internal extension Company {
     static var employeesTraversal: Traversal<Company, Employee> {
         employeesLens + ArrayK<Employee>.traversal
     }
 }
 
-extension Employee {
+internal extension Employee {
     static var phoneNumbersTraversal: Traversal<Employee, String> {
         phoneNumbersLens + NEA<String>.traversal
     }

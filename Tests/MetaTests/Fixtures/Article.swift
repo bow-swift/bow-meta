@@ -12,24 +12,25 @@ enum WrittingStyle {
 struct Article {
     let title: String
     let subtitle: String?
-    let state: PublicationState
-    let author: Author
-    let style: WrittingStyle
+    public let state: PublicationState
+    internal let author: Author
+    private let style: WrittingStyle = .descriptive
     
     public enum NestedKeys1 {
         case nested1
         case nested2
         private enum NestedKeys2 {
-            case nested3
-            case nested4
+            case nested1
+            case nested2
             enum NestedKeys3 {
-                case nested4
-                case nested5
+                case nested1
+                case nested2
+                case nested3
             }
         }
         enum NestedKeys4 {
-            case nested6
-            case nested7
+            case nested1(nested: String)
+            case nested2(nested: String)
         }
     }
 }

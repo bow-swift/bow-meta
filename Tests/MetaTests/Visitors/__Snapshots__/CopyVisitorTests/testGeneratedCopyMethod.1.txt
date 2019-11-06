@@ -1,20 +1,32 @@
-extension Article {
+internal extension Article {                            
+    init(_withTitle title: String,
+		 _withSubtitle subtitle: String?,
+		 _withState state: PublicationState,
+		 _withAuthor author: Author) {
+        self.title = title
+		self.subtitle = subtitle
+		self.state = state
+		self.author = author
+    }
+    
     func copy(withTitle title: String? = nil,
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
-			  withAuthor author: Author? = nil,
-			  withStyle style: WrittingStyle? = nil) -> Article {
-        Article(title: title ?? self.title,
-			subtitle: subtitle ?? self.subtitle,
-			state: state ?? self.state,
-			author: author ?? self.author,
-			style: style ?? self.style)
+			  withAuthor author: Author? = nil) -> Article {
+        Article(_withTitle: title ?? self.title,
+			  _withSubtitle: subtitle ?? self.subtitle,
+			  _withState: state ?? self.state,
+			  _withAuthor: author ?? self.author)
     }
 }
 
-extension Blog {
+internal extension Blog {                            
+    init(_withArticles articles: [Article]) {
+        self.articles = articles
+    }
+    
     func copy(withArticles articles: [Article]? = nil) -> Blog {
-        Blog(articles: articles ?? self.articles)
+        Blog(_withArticles: articles ?? self.articles)
     }
 }
 

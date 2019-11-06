@@ -10,4 +10,8 @@ class OptionalVisitorTests: XCTestCase {
     func testGeneratedOptionalForBowOption() {
         assertSnapshot(matching: URL.meta.fixtures.file(.company), as: .optional)
     }
+    
+    func testGeneratedOptionalForNestedStructs() {
+        assertSnapshot(matching: URL.meta.fixtures.file(.author), as: .optional)
+    }
 }

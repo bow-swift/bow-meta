@@ -1,0 +1,18 @@
+internal extension Author {
+    static var socialTraversal: Traversal<Author, SocialNetwork> {
+        socialLens + Array<SocialNetwork>.traversal
+    }
+}
+
+internal extension Author.NestedKeys1 {
+    static var nested8Traversal: Traversal<Author.NestedKeys1, String> {
+        nested8Lens + NEA<String>.traversal
+    }
+}
+
+internal extension Author.NestedKeys1.NestedKeys4 {
+    static var nested44Traversal: Traversal<Author.NestedKeys1.NestedKeys4, String> {
+        nested44Optional + [String].traversal
+    }
+}
+
