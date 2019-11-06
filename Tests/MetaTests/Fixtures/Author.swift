@@ -42,8 +42,10 @@ struct Author {
         }
         struct NestedKeys4 {
             let nested1: Int
-            let nested2: Int?
-            let nested4: [String]?
+            let nested2: Int? = 2 // immutable values may only be initialized once
+            var nested22: Int? = 2
+            let nested4: [String]? = []
+            var nested44: [String]? = []
         }
     }
 }

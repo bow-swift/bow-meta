@@ -37,8 +37,8 @@ internal extension Author.NestedKeys1 {
 }
 
 internal extension Author.NestedKeys1.NestedKeys4 {
-    static var nested4Fold: Fold<Author.NestedKeys1.NestedKeys4, String> {
-        nested4Optional + [String].fold
+    static var nested44Fold: Fold<Author.NestedKeys1.NestedKeys4, String> {
+        nested44Optional + [String].fold
     }
 }
 

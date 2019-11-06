@@ -30,7 +30,7 @@ public class CaseVisitor: SyntaxVisitor {
     override public func visit(_ node: EnumCaseDeclSyntax) -> SyntaxVisitorContinueKind {
         let visibilityModifier = Array(node.modifiers).modifier
         let cases: [Case] = node.elements.reduce(into: []) { partial, element in
-            let newCase = Case(name: element.identifier.description.trimmingCharacters,
+            let newCase = Case(name: element.identifier.text.trimmingCharacters,
                                associatedValues: element.associatedValues(visibilityModifier: visibilityModifier))
             partial.append(newCase)
         }
@@ -52,11 +52,13 @@ extension EnumCaseElementSyntax {
         guard let parameterList = associatedValue?.parameterList else { return [] }
         
         return parameterList.compactMap { parameter in
-            guard let type = parameter.type?.description else { return nil }
-            let paramName = parameter.firstName?.description ?? ""
-            return Field(name: paramName.trimmingCharacters,
-                         type: type.trimmingCharacters,
-                         modifier: visibilityModifier)
+            guard let type = parameter.type?.description.trimmingCharacters else { return nil }
+            let paramName = parameter.firstName?.text.trimmingCharacters ?? ""
+            
+            return Field(name: paramName,
+                         type: type,
+                         modifier: visibilityModifier,
+                         inmutableValue: true)
         }
     }
 }

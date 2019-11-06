@@ -77,14 +77,14 @@ internal extension Author.NestedKeys1.NestedKeys4 {
              set: { $0.copy(withNested1: $1) })
     }
 
-    static var nested2Lens: Lens<Author.NestedKeys1.NestedKeys4, Int?> {
-        Lens(get: { $0.nested2 },
-             set: { $0.copy(withNested2: $1) })
+    static var nested22Lens: Lens<Author.NestedKeys1.NestedKeys4, Int?> {
+        Lens(get: { $0.nested22 },
+             set: { $0.copy(withNested22: $1) })
     }
 
-    static var nested4Lens: Lens<Author.NestedKeys1.NestedKeys4, [String]?> {
-        Lens(get: { $0.nested4 },
-             set: { $0.copy(withNested4: $1) })
+    static var nested44Lens: Lens<Author.NestedKeys1.NestedKeys4, [String]?> {
+        Lens(get: { $0.nested44 },
+             set: { $0.copy(withNested44: $1) })
     }
 }
 

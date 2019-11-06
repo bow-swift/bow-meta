@@ -7,7 +7,7 @@ public class OptionalVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.nonPrivateFields.optionals
+        let fields = node.accessibleFields.optionals
         guard fields.count > 0 else { return visitorContinue }
         
         let code = """

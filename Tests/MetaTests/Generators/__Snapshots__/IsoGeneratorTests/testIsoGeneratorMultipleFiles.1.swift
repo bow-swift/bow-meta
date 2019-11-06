@@ -34,7 +34,7 @@ internal extension Author.NestedKeys1 {
 
 internal extension Author.NestedKeys1.NestedKeys4 {
     static var iso: Iso<Author.NestedKeys1.NestedKeys4, (Int, Int?, [String]?)> {
-        Iso(get: { nestedkeys4 in (nestedkeys4.nested1, nestedkeys4.nested2, nestedkeys4.nested4) }, reverseGet: Author.NestedKeys1.NestedKeys4.init(_withNested1:_withNested2:_withNested4:))
+        Iso(get: { nestedkeys4 in (nestedkeys4.nested1, nestedkeys4.nested22, nestedkeys4.nested44) }, reverseGet: Author.NestedKeys1.NestedKeys4.init(_withNested1:_withNested22:_withNested44:))
     }
 }
 

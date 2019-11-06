@@ -7,13 +7,12 @@ public class CopyVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.nonPrivateFields
+        let fields = node.accessibleFields
         let structName = visitorFullyQualifiedName
         guard fields.count > 0 else { return visitorContinue }
         
         let generated = """
-                        \(visitorModifier) extension \(structName) {
-                            
+                        \(visitorModifier) extension \(structName) {                            
                             init(\(initParameters(for: fields))) {
                                 \(constructor(for: structName, with: fields))
                             }
@@ -50,6 +49,6 @@ public class CopyVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let copyArguments = members.map { member in "_with\(member.name.firstUppercased): \(member.name) ?? self.\(member.name)" }
                                    .joined(separator: ",\n\t\t\t  ")
         
-        return "\(structName).init(\(copyArguments))"
+        return "\(structName)(\(copyArguments))"
     }
 }

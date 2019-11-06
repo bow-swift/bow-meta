@@ -1,5 +1,4 @@
-internal extension Article {
-    
+internal extension Article {                            
     init(_withTitle title: String,
 		 _withSubtitle subtitle: String?,
 		 _withState state: PublicationState,
@@ -14,21 +13,20 @@ internal extension Article {
 			  withSubtitle subtitle: String?? = nil,
 			  withState state: PublicationState? = nil,
 			  withAuthor author: Author? = nil) -> Article {
-        Article.init(_withTitle: title ?? self.title,
+        Article(_withTitle: title ?? self.title,
 			  _withSubtitle: subtitle ?? self.subtitle,
 			  _withState: state ?? self.state,
 			  _withAuthor: author ?? self.author)
     }
 }
 
-internal extension Blog {
-    
+internal extension Blog {                            
     init(_withArticles articles: [Article]) {
         self.articles = articles
     }
     
     func copy(withArticles articles: [Article]? = nil) -> Blog {
-        Blog.init(_withArticles: articles ?? self.articles)
+        Blog(_withArticles: articles ?? self.articles)
     }
 }
 

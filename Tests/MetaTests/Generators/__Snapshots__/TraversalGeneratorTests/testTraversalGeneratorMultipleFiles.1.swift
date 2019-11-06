@@ -37,8 +37,8 @@ internal extension Author.NestedKeys1 {
 }
 
 internal extension Author.NestedKeys1.NestedKeys4 {
-    static var nested4Traversal: Traversal<Author.NestedKeys1.NestedKeys4, String> {
-        nested4Optional + [String].traversal
+    static var nested44Traversal: Traversal<Author.NestedKeys1.NestedKeys4, String> {
+        nested44Optional + [String].traversal
     }
 }
 

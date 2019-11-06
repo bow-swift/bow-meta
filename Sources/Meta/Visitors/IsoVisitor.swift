@@ -7,7 +7,7 @@ public class IsoVisitor: NestedDeclarationVisitor, CodegenVisitor {
         let visitorContinue = super.visit(node)
         guard !node.isPrivate else { return .skipChildren }
         
-        let fields = node.nonPrivateFields
+        let fields = node.accessibleFields
         guard fields.count > 0 else { return visitorContinue }
         
         let structName = visitorFullyQualifiedName
